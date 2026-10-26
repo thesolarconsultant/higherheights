@@ -5,18 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Higher Heights Films — Film, Aerial &amp; Photography</title>
 <meta name="description" content="Higher Heights Films is a UK film, aerial and photography studio. Commercial films, brand stories, automotive, product, events and stills — story-led, filmed worldwide." />
-<meta name="theme-color" content="#0B1A26" />
+<meta name="theme-color" content="#0C0D0C" />
+<link rel="canonical" href="https://higher-heights.vercel.app/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Higher Heights Films" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://higher-heights.vercel.app/" />
 <meta property="og:title" content="Higher Heights Films — Film, Aerial &amp; Photography" />
 <meta property="og:description" content="Higher Heights Films is a UK film, aerial and photography studio. Commercial films, brand stories, automotive, product, events and stills — story-led, filmed worldwide." />
-<meta property="og:image" content="assets/img/poster-hero.jpg" />
+<meta property="og:image" content="https://higher-heights.vercel.app/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Higher Heights Films — film, aerial and photography" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://higher-heights.vercel.app/assets/img/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 
 <link rel="icon" href="assets/img/hh-gold.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/img/icon-180.png" />
@@ -25,30 +32,30 @@
 /* ══════════════════════════════════════════════════════════════
    HIGHER HEIGHTS — design tokens
    Palette sampled directly from the supplied brand logo files:
-   navy #0B1A26 · cream #F4EFE6 · gold #C9AE7C
+   navy #0C0D0C · cream #E9E5DB · gold #8A9A86
    ══════════════════════════════════════════════════════════════ */
 :root{
-  --navy:      #0B1A26;
-  --navy-2:    #0E2130;
-  --navy-3:    #102838;
-  --cream:     #F4EFE6;
-  --gold:      #C9AE7C;
-  --gold-deep: #7A6038;
-  --line:      rgba(201,174,124,.20);
-  --line-soft: rgba(244,239,230,.10);
-  --muted:     rgba(244,239,230,.56);
-  --muted-2:   rgba(244,239,230,.38);
+  --navy:      #0C0D0C;
+  --navy-2:    #151716;
+  --navy-3:    #1E201F;
+  --cream:     #E9E5DB;
+  --gold:      #8A9A86;
+  --gold-deep: #4F5E4C;
+  --line:      rgba(138,154,134,.20);
+  --line-soft: rgba(233,229,219,.10);
+  --muted:     rgba(233,229,219,.56);
+  --muted-2:   rgba(233,229,219,.38);
 
-  --ink:       #0B1A26;
-  --ink-muted: rgba(11,26,38,.58);
-  --ink-line:  rgba(11,26,38,.14);
+  --ink:       #0C0D0C;
+  --ink-muted: rgba(12,13,12,.58);
+  --ink-line:  rgba(12,13,12,.14);
 
   --measure-tight: 34ch;   /* lede, pull quotes */
   --measure:       46ch;   /* body copy */
   --measure-wide:  62ch;   /* long-form only */
 
-  --sans: "Switzer", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --gutter: clamp(1.1rem, 3vw, 2.4rem);
   --pad:    clamp(1.25rem, 4.4vw, 5.5rem);
@@ -56,11 +63,11 @@
   --max:    1680px;
 
   --fs-hero:  clamp(3rem, 8.6vw, 9.2rem);
-  --fs-h2:    clamp(2.1rem, 4.6vw, 4.4rem);
-  --fs-state: clamp(1.55rem, 3.5vw, 3.15rem);
+  --fs-h2:    clamp(2.4rem, 6vw, 5.75rem);
+  --fs-state: clamp(1.75rem, 4.2vw, 3.9rem);
   --fs-lead:  clamp(1rem, 1.35vw, 1.24rem);
   --fs-body:  clamp(.9375rem, 1.02vw, 1.05rem);
-  --fs-micro: clamp(.6875rem, .74vw, .78rem);
+  --fs-micro: clamp(.72rem, .78vw, .8rem);
 
   --ease: cubic-bezier(.16,1,.3,1);
   --ease-io: cubic-bezier(.65,.05,.36,1);
@@ -75,7 +82,7 @@ body{
   color:var(--cream);
   font-family:var(--sans);
   font-size:var(--fs-body);
-  font-weight:300;
+  font-weight:400;
   line-height:1.62;
   letter-spacing:-.005em;
   -webkit-font-smoothing:antialiased;
@@ -108,7 +115,7 @@ body::after{
   font-family:var(--mono);
   font-size:var(--fs-micro);
   font-weight:400;
-  letter-spacing:.19em;
+  letter-spacing:.09em;
   text-transform:uppercase;
   color:var(--gold);
 }
@@ -178,7 +185,7 @@ body::after{
   border-bottom:1px solid transparent;
 }
 .nav.is-stuck{
-  background:rgba(11,26,38,.82);
+  background:rgba(12,13,12,.82);
   backdrop-filter:blur(18px) saturate(1.2);
   -webkit-backdrop-filter:blur(18px) saturate(1.2);
   border-bottom-color:var(--line-soft);
@@ -201,7 +208,7 @@ body::after{
   white-space:nowrap;
 }
 .nav__links{ display:flex; align-items:center; gap:clamp(1.4rem,2.6vw,2.6rem); }
-.nav a, .nav__links a{ text-shadow:0 1px 14px rgba(11,26,38,.9); }
+.nav a, .nav__links a{ text-shadow:0 1px 14px rgba(12,13,12,.9); }
 .nav__links a{
   font-family:var(--mono);
   font-size:var(--fs-micro); letter-spacing:.15em; text-transform:uppercase;
@@ -243,10 +250,10 @@ body::after{
   }
   .nav.is-open + .nav__drawer{ opacity:1; pointer-events:auto; transform:none; }
   .nav__drawer a{
-    font-size:clamp(2rem,9vw,3.2rem); font-weight:300; letter-spacing:-.03em;
+    font-size:clamp(2rem,9vw,3.2rem); font-weight:400; letter-spacing:-.03em;
     padding-block:.28em; border-bottom:1px solid var(--line-soft);
   }
-  .nav__drawer a span{ font-family:var(--mono); font-size:.62rem; letter-spacing:.2em; color:var(--gold); vertical-align:super; margin-right:.9rem; }
+  .nav__drawer a span{ font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; color:var(--gold); vertical-align:super; margin-right:.9rem; }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -316,9 +323,8 @@ body::after{
 .hero__scrim{
   position:absolute; inset:0; z-index:-1;
   background:
-    linear-gradient(to top, rgba(11,26,38,.94) 0%, rgba(11,26,38,.72) 14%, rgba(11,26,38,.26) 38%, rgba(11,26,38,.04) 60%, transparent 78%),
-    linear-gradient(to bottom, rgba(11,26,38,.78) 0%, rgba(11,26,38,.42) 9%, transparent 19%),
-    radial-gradient(95% 70% at 12% 102%, rgba(11,26,38,.80) 0%, transparent 62%);
+    linear-gradient(to top, rgba(12,13,12,.88) 0%, rgba(12,13,12,.45) 30%, rgba(12,13,12,0) 58%),
+    linear-gradient(to bottom, rgba(12,13,12,.55) 0%, rgba(12,13,12,0) 16%);
 }
 
 .hero__inner{
@@ -360,24 +366,31 @@ body::after{
 .hero__foot{ display:grid; grid-template-columns:1fr auto; align-items:end; gap:clamp(1.5rem,4vw,4rem); }
 h1.hero__title{
   font-family:var(--sans);
-  font-size:clamp(3.2rem,8.8vw,9.4rem);
-  font-weight:500;
-  line-height:.9;
-  letter-spacing:-.045em;
-  text-wrap:balance;
+  font-size:clamp(4rem,min(22vw,32svh),22rem);
+  font-weight:600;
+  line-height:.82;
+  letter-spacing:-.055em;
+}
+@media (max-width:700px){ h1.hero__title{ font-size:clamp(4rem,min(25vw,30svh),12rem); } }
+.hero__tc{ font-variant-numeric:tabular-nums; color:var(--cream); opacity:.7; }
+.hero__inner{ justify-content:flex-end; }
+@media (max-width:700px){
+  .hero__aside{ flex-wrap:wrap; gap:.4rem 1.2rem; }
+  .hero__aside .mono{ white-space:nowrap; }
+  .hero__scroll{ display:none !important; }
 }
 h1.hero__title em{ font-style:normal;
   font-style:normal;
   display:block;
 }
-h1.hero__title em + em{ padding-left:.09em; }
+h1.hero__title em + em{ padding-left:.04em; }
 h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .hero__sub{
   max-width:var(--measure-tight);
-  font-size:var(--fs-lead);
-  font-weight:300;
+  font-size:clamp(1.1rem,1.6vw,1.45rem);
+  font-weight:400;
   line-height:1.5;
-  color:rgba(244,239,230,.82);
+  color:rgba(233,229,219,.82);
   letter-spacing:-.01em;
   margin-top:clamp(1.4rem,2.6vw,2.2rem);
 }
@@ -431,8 +444,8 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   margin-top:clamp(2.2rem,4.5vw,3.6rem);
 }
 .statement__lead{
-  font-family:var(--sans); font-style:italic;
-  font-size:var(--fs-state); line-height:1.14; letter-spacing:-.022em;
+  font-family:var(--sans); font-style:normal; font-weight:500;
+  font-size:var(--fs-state); line-height:1.04; letter-spacing:-.04em;
   text-wrap:balance;
 }
 .statement__lead span{ color:var(--gold-deep); }
@@ -463,7 +476,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   letter-spacing:.16em; text-transform:uppercase; white-space:nowrap;
   padding-inline:clamp(1.1rem,2.2vw,2rem);
   display:flex; align-items:center; gap:clamp(1.1rem,2.2vw,2rem);
-  color:rgba(11,26,38,.72);
+  color:rgba(12,13,12,.72);
 }
 .marquee__track span::after{ content:"·"; color:var(--gold-deep); font-size:1.1em; }
 
@@ -482,7 +495,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   padding-bottom:clamp(1.4rem,2.6vw,2.2rem);
   border-bottom:1px solid var(--line); margin-bottom:clamp(2.4rem,5vw,4.5rem);
 }
-.sect-head h2{ font-size:var(--fs-h2); font-weight:200; line-height:1; letter-spacing:-.04em; margin-top:.7rem; }
+.sect-head h2{ font-size:var(--fs-h2); font-weight:500; line-height:1; letter-spacing:-.045em; margin-top:.7rem; }
 .sect-head__meta{ text-align:right; display:flex; flex-direction:column; gap:.45rem; }
 @media (max-width:700px){ .sect-head__meta{ text-align:left; } }
 
@@ -519,7 +532,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 
 .film__scrim{
   position:absolute; inset:0; z-index:2; pointer-events:none;
-  background:linear-gradient(to top, rgba(11,26,38,.92) 0%, rgba(11,26,38,.5) 26%, rgba(11,26,38,0) 58%);
+  background:linear-gradient(to top, rgba(12,13,12,.92) 0%, rgba(12,13,12,.5) 26%, rgba(12,13,12,0) 58%);
   opacity:.9; transition:opacity .6s var(--ease);
 }
 .film:hover .film__scrim{ opacity:1; }
@@ -550,7 +563,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .film__play{
   position:absolute; z-index:4; right:clamp(1rem,1.8vw,1.6rem); top:clamp(1rem,1.8vw,1.6rem);
   width:clamp(38px,3.4vw,50px); aspect-ratio:1; border-radius:50%;
-  border:1px solid rgba(244,239,230,.34);
+  border:1px solid rgba(233,229,219,.34);
   display:grid; place-items:center;
   opacity:0; transform:scale(.82);
   transition:opacity .5s var(--ease), transform .5s var(--ease), background .4s, border-color .4s;
@@ -606,7 +619,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .aerial{ position:relative; padding:var(--sect) 0; background:var(--navy-2); overflow:hidden; }
 .aerial::before{
   content:""; position:absolute; inset:0; pointer-events:none;
-  background:radial-gradient(90% 60% at 80% 0%, rgba(201,174,124,.07), transparent 70%);
+  background:radial-gradient(90% 60% at 80% 0%, rgba(138,154,134,.07), transparent 70%);
 }
 .aerial__grid{
   display:grid; grid-template-columns:.85fr 1.15fr;
@@ -614,7 +627,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   margin-top:clamp(2.4rem,4vw,3.4rem);
 }
 .aerial__copy{ position:sticky; top:calc(clamp(64px,7.2vw,88px) + 3rem); display:flex; flex-direction:column; gap:1.4rem; }
-.aerial__copy h2{ font-size:var(--fs-h2); font-weight:200; line-height:1; letter-spacing:-.04em; }
+.aerial__copy h2{ font-size:var(--fs-h2); font-weight:500; line-height:1; letter-spacing:-.045em; }
 .aerial__copy p{ color:var(--muted); max-width:var(--measure-tight); }
 .aerial__specs{ display:flex; flex-direction:column; margin-top:.6rem; }
 .aerial__specs div{
@@ -644,12 +657,12 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 }
 .shot::after{
   content:""; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(to top, rgba(11,26,38,.72) 0%, rgba(11,26,38,.12) 34%, transparent 60%);
+  background:linear-gradient(to top, rgba(12,13,12,.72) 0%, rgba(12,13,12,.12) 34%, transparent 60%);
 }
 .shot figcaption{
   position:absolute; z-index:2; left:clamp(.85rem,1.5vw,1.3rem); bottom:clamp(.8rem,1.3vw,1.15rem);
   font-family:var(--mono); font-size:var(--fs-micro);
-  letter-spacing:.14em; text-transform:uppercase; color:rgba(244,239,230,.86);
+  letter-spacing:.14em; text-transform:uppercase; color:rgba(233,229,219,.86);
 }
 @media (max-width:900px){
   .aerial__grid{ grid-template-columns:1fr; gap:2.4rem; }
@@ -664,7 +677,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
    ══════════════════════════════════════════════════════════ */
 .product{ padding:var(--sect) 0; }
 .product__head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:clamp(1.8rem,3.4vw,2.8rem); }
-.product__head h2{ font-size:var(--fs-h2); font-weight:200; letter-spacing:-.04em; line-height:1.02; margin-top:.7rem; }
+.product__head h2{ font-size:var(--fs-h2); font-weight:500; letter-spacing:-.045em; line-height:1.02; margin-top:.7rem; }
 .carousel{ position:relative; }
 .strip{
   display:flex; gap:clamp(.8rem,1.4vw,1.3rem);
@@ -700,7 +713,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 }
 @media (prefers-reduced-motion:reduce){ .carousel__bar{ transition:none } }
 .strip::-webkit-scrollbar{ height:3px; }
-.strip::-webkit-scrollbar-track{ background:rgba(244,239,230,.06); }
+.strip::-webkit-scrollbar-track{ background:rgba(233,229,219,.06); }
 .strip::-webkit-scrollbar-thumb{ background:var(--line); }
 .strip figure{
   flex:0 0 auto; width:clamp(190px,20vw,300px); scroll-snap-align:start;
@@ -726,12 +739,12 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .studio__figures{ display:flex; flex-direction:column; gap:clamp(1rem,2vw,1.5rem); }
 .studio__figure{ position:relative; }
 .studio__band{ margin-top:clamp(2.4rem,5vw,4.5rem); }
-.studio__band .studio__bandFrame{ position:relative; overflow:hidden; aspect-ratio:12/5; background:#0B1A26; }
+.studio__band .studio__bandFrame{ position:relative; overflow:hidden; aspect-ratio:12/5; background:#0C0D0C; }
 .studio__band img{ width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
 .studio__band figcaption{
   margin-top:.9rem; display:flex; justify-content:space-between; gap:1rem;
   font-family:var(--mono); font-size:var(--fs-micro);
-  letter-spacing:.13em; text-transform:uppercase; color:rgba(11,26,38,.5);
+  letter-spacing:.13em; text-transform:uppercase; color:rgba(12,13,12,.5);
 }
 @media (max-width:700px){
   .studio__band .studio__bandFrame{ aspect-ratio:16/10; }
@@ -741,13 +754,13 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .studio__figure figcaption{
   margin-top:.95rem; display:flex; justify-content:space-between; gap:1rem;
   font-family:var(--mono); font-size:var(--fs-micro);
-  letter-spacing:.13em; text-transform:uppercase; color:rgba(11,26,38,.5);
+  letter-spacing:.13em; text-transform:uppercase; color:rgba(12,13,12,.5);
 }
-.studio__copy h2{ font-size:var(--fs-h2); font-weight:200; letter-spacing:-.04em; line-height:1.02; margin-bottom:1.4rem; }
+.studio__copy h2{ font-size:var(--fs-h2); font-weight:500; letter-spacing:-.045em; line-height:1.02; margin-bottom:1.4rem; }
 .studio__copy p{ color:var(--ink-muted); margin-bottom:1.1rem; max-width:54ch; line-height:1.72; }
 .studio__copy p strong{ color:var(--ink); font-weight:500; }
 .pull{
-  font-family:var(--sans); font-style:italic;
+  font-family:var(--sans); font-style:normal; font-weight:500;
   font-size:clamp(1.35rem,2.2vw,1.95rem); line-height:1.22; letter-spacing:-.02em;
   color:var(--ink); border-left:1px solid var(--gold-deep);
   padding-left:clamp(1rem,1.8vw,1.6rem); margin:1.9rem 0;
@@ -757,8 +770,8 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .chip{
   font-family:var(--mono); font-size:var(--fs-micro);
   letter-spacing:.13em; text-transform:uppercase;
-  border:1px solid rgba(11,26,38,.18); border-radius:999px;
-  padding:.62em 1.15em; color:rgba(11,26,38,.72);
+  border:1px solid rgba(12,13,12,.18); border-radius:999px;
+  padding:.62em 1.15em; color:rgba(12,13,12,.72);
   transition:background .4s var(--ease), color .4s var(--ease), border-color .4s;
 }
 .chip:hover{ background:var(--ink); color:var(--cream); border-color:var(--ink); }
@@ -960,6 +973,11 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   transition:border-color .35s var(--ease); }
 .enq__field::placeholder{ color:var(--muted-2); }
 .enq__field:focus{ outline:none; border-color:var(--gold); }
+.enq__field + .enq__field{ margin-top:1.1rem; }
+.enq__text{ display:block; resize:vertical; min-height:5.2rem; line-height:1.4; }
+.enq__hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.enq__err{ margin-top:1rem; min-height:1.4em; font-size:.92rem; color:#F0A38F; }
+.enq__err a{ color:inherit; }
 
 /* budget — the 'formbudget' idea, rebuilt */
 .enq__money{ font-family:var(--sans);
@@ -1009,14 +1027,14 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 @media(max-width:860px){ .letter__q,.letter__a{ max-width:none } }
 .contact__inner{ display:grid; grid-template-columns:1.3fr .7fr; gap:clamp(2rem,6vw,6rem); align-items:end; }
 .contact h2{
-  font-size:clamp(2.4rem,6.4vw,6.2rem); font-weight:200;
-  line-height:.94; letter-spacing:-.045em; margin-top:1.2rem; text-wrap:balance;
+  font-size:clamp(2.4rem,7vw,6.8rem); font-weight:500;
+  line-height:.92; letter-spacing:-.05em; margin-top:1.2rem; text-wrap:balance;
 }
-.contact h2 em{ font-family:var(--sans); font-style:italic; letter-spacing:-.02em; }
+.contact h2 em{ font-family:var(--sans); font-style:normal; letter-spacing:-.02em; }
 .contact__mail{
   display:inline-flex; align-items:center; gap:1rem;
   margin-top:clamp(1.8rem,3vw,2.8rem);
-  font-size:clamp(1.05rem,2vw,1.7rem); font-weight:300; letter-spacing:-.02em;
+  font-size:clamp(1.05rem,2vw,1.7rem); font-weight:400; letter-spacing:-.02em;
   border-bottom:1px solid var(--line); padding-bottom:.45rem;
   transition:border-color .5s var(--ease), color .4s;
 }
@@ -1067,7 +1085,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   width:40px; height:40px; border:1px solid var(--line);
   display:grid; place-items:center; transition:background .35s, border-color .35s;
 }
-.screen__btn:hover{ background:rgba(201,174,124,.12); border-color:var(--gold); }
+.screen__btn:hover{ background:rgba(138,154,134,.12); border-color:var(--gold); }
 .screen__btn svg{ width:13px; height:11px; fill:none; stroke:var(--cream); stroke-width:1.3; }
 .screen__btn:disabled{ opacity:.28; pointer-events:none; }
 .screen__close{ margin-left:.5rem; }
@@ -1092,7 +1110,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   padding:clamp(1rem,2.2vw,1.8rem) var(--pad) clamp(1.4rem,2.6vw,2.2rem);
   border-top:1px solid var(--line-soft);
 }
-.screen__title{ font-size:clamp(1.2rem,2.4vw,2rem); font-weight:300; letter-spacing:-.03em; line-height:1.1; }
+.screen__title{ font-size:clamp(1.2rem,2.4vw,2rem); font-weight:400; letter-spacing:-.03em; line-height:1.1; }
 .screen__blurb{ color:var(--muted); max-width:64ch; margin-top:.55rem; font-size:var(--fs-body); }
 .screen__tags{ display:flex; gap:.5rem; flex-wrap:wrap; justify-content:flex-end; }
 .screen__tags span{
@@ -1113,6 +1131,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 }
 .skip:focus{ left:1rem; top:1rem; }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio. Commercial films, brand stories, automotive, product, events and stills — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
 </head>
 <body>
 
@@ -1160,14 +1179,6 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
       </video>
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
-    <div class="print" aria-hidden="true">
-      <div class="print__grain"></div>
-      <div class="print__flick"></div>
-      <div class="print__scratch" style="--x:23%;--d:0s"></div>
-      <div class="print__scratch" style="--x:61%;--d:2.4s"></div>
-      <div class="print__scratch" style="--x:84%;--d:3.7s"></div>
-    </div>
-
     <div class="hero__inner">
 
       <div class="hero__foot">
@@ -1180,6 +1191,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
         </div>
         <div class="hero__aside">
           <span class="mono mono--dim">London · Worldwide</span>
+          <span class="mono hero__tc" id="heroTc" aria-hidden="true">00:00:00:00</span>
           <span class="hero__scroll">Scroll</span>
         </div>
       </div>
@@ -1218,19 +1230,19 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
       <div class="mono clients__label">Selected clients</div>
       <div class="marquee" aria-label="Client list">
         <div class="marquee__track" id="marqueeTrack" data-dir="-1">
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="Richard Mille"
                 style="width:150px;height:12px;-webkit-mask-image:url(assets/img/clients/richardmille.png);mask-image:url(assets/img/clients/richardmille.png)"></span>
             </div>
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="Matchroom"
                 style="width:38px;height:38px;-webkit-mask-image:url(assets/img/clients/matchroom.png);mask-image:url(assets/img/clients/matchroom.png)"></span>
             </div>
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="WatchTrader & Co"
                 style="width:150px;height:10px;-webkit-mask-image:url(assets/img/clients/watchtrader.png);mask-image:url(assets/img/clients/watchtrader.png)"></span>
             </div>
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="WHOOP"
                 style="width:72px;height:38px;-webkit-mask-image:url(assets/img/clients/whoop.png);mask-image:url(assets/img/clients/whoop.png)"></span>
             </div>
@@ -1238,7 +1250,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
               <span class="client__mark" role="img" aria-label="LADbible Group"
                 style="width:48px;height:38px;-webkit-mask-image:url(assets/img/clients/ladbible.png);mask-image:url(assets/img/clients/ladbible.png)"></span>
             </div>
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="NOBL"
                 style="width:150px;height:37px;-webkit-mask-image:url(assets/img/clients/nobl.png);mask-image:url(assets/img/clients/nobl.png)"></span>
             </div>
@@ -1250,16 +1262,16 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
               <span class="client__mark" role="img" aria-label="Clean Co"
                 style="width:46px;height:38px;-webkit-mask-image:url(assets/img/clients/cleanco.png);mask-image:url(assets/img/clients/cleanco.png)"></span>
             </div>
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="Oakridge Property Group"
                 style="width:52px;height:38px;-webkit-mask-image:url(assets/img/clients/oakridge.png);mask-image:url(assets/img/clients/oakridge.png)"></span>
             </div>
           </div>
         <div class="marquee__track" id="marqueeTrack2" data-dir="1">
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="The REAL Drinks Co"
                 style="width:147px;height:38px;-webkit-mask-image:url(assets/img/clients/real.png);mask-image:url(assets/img/clients/real.png)"></span>
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="Be"
                 style="width:38px;height:38px;-webkit-mask-image:url(assets/img/clients/be.png);mask-image:url(assets/img/clients/be.png)"></span>
             </div>
@@ -1292,7 +1304,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
               <span class="client__mark" role="img" aria-label="Tony's Pie & Mash"
                 style="width:63px;height:38px;-webkit-mask-image:url(assets/img/clients/piemash.png);mask-image:url(assets/img/clients/piemash.png)"></span>
             </div>
-<div class="client" style="--tint:#0B1A26">
+<div class="client" style="--tint:#0C0D0C">
               <span class="client__mark" role="img" aria-label="TJ"
                 style="width:38px;height:38px;-webkit-mask-image:url(assets/img/clients/tj.png);mask-image:url(assets/img/clients/tj.png)"></span>
             </div>
@@ -1640,7 +1652,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
         <form id="enqForm" novalidate>
 
           <section class="enq__screen is-on" data-step="0">
-            <span class="enq__hint">The machine</span>
+            <span class="enq__hint">The subject</span>
             <h3 class="enq__q">What are we filming?</h3>
             <div class="enq__opts">
               <label class="enq__opt"><input type="radio" name="subject" value="A brand or product" required><span>A brand or product</span></label>
@@ -1675,15 +1687,22 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
           <section class="enq__screen" data-step="3">
             <span class="enq__hint">The reply</span>
             <h3 class="enq__q">Where do I send it?</h3>
+            <input class="enq__field" type="text" name="name" placeholder="Your name"
+                   autocomplete="name" maxlength="120" aria-label="Your name" required />
             <input class="enq__field" type="email" name="email" placeholder="you@company.com"
-                   autocomplete="email" required />
+                   autocomplete="email" maxlength="200" aria-label="Your email" required />
+            <textarea class="enq__field enq__text" name="message" rows="3" maxlength="3000"
+                   placeholder="A line or two about what it is and where" aria-label="About the project" required></textarea>
+            <div class="enq__hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+            <input type="hidden" name="t" value="" />
+            <p class="enq__err" id="enqErr" role="alert" aria-live="assertive"></p>
           </section>
 
           <section class="enq__screen enq__done" data-step="4">
             <h3 class="enq__q">Thank you.</h3>
             <p id="enqSummary"></p>
-            <p>This opens your email so you can send it — and read it back before you do.
-            The reply comes from me, not an autoresponder.</p>
+            <p>Your enquiry has reached the studio.
+            The reply comes from me, not an autoresponder, usually within a day.</p>
           </section>
 
           <div class="enq__nav">
@@ -2054,7 +2073,9 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
     function valid(i) {
       if (i === 0) return !!form.querySelector('[name="subject"]:checked');
       if (i === 1) return !!form.querySelector('[name="timing"]:checked');
-      if (i === 3) return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.elements.email.value.trim());
+      if (i === 3) return !!form.elements.name.value.trim() &&
+        /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.elements.email.value.trim()) &&
+        form.elements.message.value.trim().length >= 10;
       return true;
     }
 
@@ -2065,23 +2086,39 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
       back.hidden = i === 0 || i === screens.length - 1;
       nav.hidden = i === screens.length - 1;
       next.firstChild.textContent = i === 3 ? "Send it " : "Continue ";
-      const f = screens[i].querySelector("input:not([type=radio]), input[type=radio]");
+      const f = screens[i].querySelector("input:not([type=radio]):not([type=hidden]):not([name=website]), input[type=radio]");
       if (f && i !== 2) { try { f.focus({ preventScroll: true }); } catch (e) {} }
     }
+
+    const err = document.getElementById("enqErr");
+    if (form.elements.t) form.elements.t.value = String(Date.now());
 
     function finish() {
       const d = new FormData(form);
       const line = [d.get("subject"), d.get("timing"), gbp(d.get("budget"))]
         .filter(Boolean).join(" · ");
-      document.getElementById("enqSummary").textContent = line;
-      // PLACEHOLDER: swap for a real endpoint once the domain exists
-      const body = encodeURIComponent(
-        "Filming: " + d.get("subject") + "\nTiming: " + d.get("timing") +
-        "\nBudget: " + gbp(d.get("budget")) + "\nReply to: " + d.get("email"));
-      window.location.href =
-        "mailto:hello@higherheights.studio?subject=" +
-        encodeURIComponent("Enquiry — " + d.get("subject")) + "&body=" + body;
-      show(4);
+      err.textContent = "";
+      next.disabled = true;
+      fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          services: [d.get("subject")], timing: d.get("timing"),
+          budget: gbp(d.get("budget")) + " (slider)",
+          name: d.get("name"), email: d.get("email"), message: d.get("message"),
+          website: d.get("website"), t: d.get("t")
+        })
+      })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (r) {
+          next.disabled = false;
+          if (r.ok) { document.getElementById("enqSummary").textContent = line; show(4); return; }
+          err.textContent = (r.j && r.j.error) || "That didn't send.";
+        })
+        .catch(function () {
+          next.disabled = false;
+          err.textContent = "Couldn't reach the server. Please email hello@higherheights.studio and I'll reply directly.";
+        });
     }
 
     next.addEventListener("click", function () {
@@ -2103,7 +2140,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
       if (e.target.type === "radio" && at < 2) setTimeout(function () { next.click(); }, 240);
     });
     form.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); next.click(); }
+      if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") { e.preventDefault(); next.click(); }
     });
   })();
 
@@ -2228,11 +2265,26 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
     const c = navigator.connection || {};
     const thrifty = c.saveData === true ||
                     /^(slow-2g|2g|3g)$/.test(c.effectiveType || "");
-    if (thrifty) { v.removeAttribute("autoplay"); v.load(); return; }  // poster only
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const tc = document.getElementById("heroTc");
+    if (thrifty || calm) {                                       // poster only
+      v.removeAttribute("autoplay"); v.load(); if (tc) tc.hidden = true; return;
+    }
     src.src = window.matchMedia("(max-width: 860px)").matches
       ? src.dataset.srcNarrow : src.dataset.srcWide;
     v.load();
     v.play().catch(function () {});
+    if (tc) {
+      const pad = function (n) { return (n < 10 ? "0" : "") + n; };
+      (function tick() {
+        if (!v.paused) {
+          const t = v.currentTime || 0;
+          tc.textContent = pad(Math.floor(t / 3600)) + ":" + pad(Math.floor(t / 60) % 60) + ":" +
+            pad(Math.floor(t) % 60) + ":" + pad(Math.floor((t % 1) * 25));
+        }
+        requestAnimationFrame(tick);
+      })();
+    }
   })();
 
   /* ── live London clock in the hero strip ─────────────── */
