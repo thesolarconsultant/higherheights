@@ -1328,6 +1328,14 @@ body{ counter-reset:sec; }
 .mega{ background:linear-gradient(180deg, rgba(4,20,16,.97), rgba(5,32,25,.97)); }
 .nav.is-compact .nav__inner{ background:rgba(5,28,22,.82); }
 .screen__count{ display:none; }
+
+/* hero: headline block sits lower; the small details share the button's row */
+.hero__eyebrow .mono{ text-shadow:0 1px 14px rgba(5,16,13,.85); }
+@media (min-width:861px){
+  .hero__foot{ gap:0 !important; }
+  .hero__aside{ position:absolute; left:var(--pad); right:var(--pad); bottom:calc(clamp(1.6rem,3.4vh,3.2rem) + 1rem); width:auto; pointer-events:none; }
+  .hero__aside .hero__tc{ margin-left:auto; margin-right:1.8rem; }
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
 </head>
