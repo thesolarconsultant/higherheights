@@ -50,3 +50,7 @@ higher-heights/
 
 # Puppeteer browser profile: automation scratch, holds Chrome credential stores
 .pptr/
+
+# Scratch: browser profiles, superseded builds, one-off scripts
+site-v*/
+tools/archive/
