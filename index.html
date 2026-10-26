@@ -51,11 +51,11 @@
   --max:    1680px;
 
   --fs-hero:  clamp(3rem, 8.6vw, 9.2rem);
-  --fs-h2:    clamp(2.1rem, 4.6vw, 4.4rem);
-  --fs-state: clamp(1.55rem, 3.5vw, 3.15rem);
+  --fs-h2:    clamp(2.4rem, 6vw, 5.75rem);
+  --fs-state: clamp(1.75rem, 4.2vw, 3.9rem);
   --fs-lead:  clamp(1rem, 1.35vw, 1.24rem);
   --fs-body:  clamp(.94rem, 1.02vw, 1.03rem);
-  --fs-micro: clamp(.62rem, .72vw, .70rem);
+  --fs-micro: clamp(.72rem, .78vw, .78rem);
 
   --ease: cubic-bezier(.16,1,.3,1);
   --ease-io: cubic-bezier(.65,.05,.36,1);
@@ -70,7 +70,7 @@ body{
   color:var(--cream);
   font-family:"Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-size:var(--fs-body);
-  font-weight:300;
+  font-weight:400;
   line-height:1.62;
   letter-spacing:-.005em;
   -webkit-font-smoothing:antialiased;
@@ -103,7 +103,7 @@ body::after{
   font-family:"DM Mono",ui-monospace,monospace;
   font-size:var(--fs-micro);
   font-weight:400;
-  letter-spacing:.19em;
+  letter-spacing:.09em;
   text-transform:uppercase;
   color:var(--gold);
 }
@@ -239,10 +239,10 @@ body::after{
   }
   .nav.is-open + .nav__drawer{ opacity:1; pointer-events:auto; transform:none; }
   .nav__drawer a{
-    font-size:clamp(2rem,9vw,3.2rem); font-weight:300; letter-spacing:-.03em;
+    font-size:clamp(2rem,9vw,3.2rem); font-weight:400; letter-spacing:-.03em;
     padding-block:.28em; border-bottom:1px solid var(--line-soft);
   }
-  .nav__drawer a span{ font-family:"DM Mono",monospace; font-size:.62rem; letter-spacing:.2em; color:var(--gold); vertical-align:super; margin-right:.9rem; }
+  .nav__drawer a span{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.12em; color:var(--gold); vertical-align:super; margin-right:.9rem; }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -312,18 +312,17 @@ body::after{
 .hero__scrim{
   position:absolute; inset:0; z-index:-1;
   background:
-    linear-gradient(to top, rgba(12,13,12,.94) 0%, rgba(12,13,12,.72) 14%, rgba(12,13,12,.26) 38%, rgba(12,13,12,.04) 60%, transparent 78%),
-    linear-gradient(to bottom, rgba(12,13,12,.78) 0%, rgba(12,13,12,.42) 9%, transparent 19%),
-    radial-gradient(95% 70% at 12% 102%, rgba(12,13,12,.80) 0%, transparent 62%);
+    linear-gradient(to top, rgba(12,13,12,.88) 0%, rgba(12,13,12,.45) 30%, rgba(12,13,12,0) 58%),
+    linear-gradient(to bottom, rgba(12,13,12,.55) 0%, rgba(12,13,12,0) 16%);
 }
 
 .hero__inner{
   grid-row:1 / -1;
   position:relative;
   max-width:var(--max); margin-inline:auto; width:100%;
-  padding:clamp(6rem,12vh,9rem) var(--pad) clamp(2rem,4vh,3.2rem);
+  padding:clamp(5.5rem,10vh,9rem) var(--pad) clamp(1.6rem,3.4vh,3.2rem);
   display:flex; flex-direction:column; justify-content:space-between;
-  gap:3rem;
+  gap:clamp(1rem,3vh,3rem);
 }
 .hero__top{ display:flex; justify-content:space-between; align-items:center; gap:2rem; }
 .hero__top .mono, .hero__status{ text-shadow:0 1px 16px rgba(12,13,12,.95), 0 0 3px rgba(12,13,12,.8); }
@@ -363,34 +362,36 @@ body::after{
   .hero__avail i::after{ animation:none; display:none }
 }
 
-.hero__foot{ display:grid; grid-template-columns:1fr auto; align-items:end; gap:clamp(1.5rem,4vw,4rem); }
+.hero__foot{ display:block; }
+.hero__row{ display:flex; justify-content:space-between; align-items:flex-end; gap:1.5rem 3rem; flex-wrap:wrap; margin-top:clamp(1.4rem,2.6vw,2.2rem); }
+.hero__tc{ font-variant-numeric:tabular-nums; color:var(--cream); opacity:.7; }
 h1.hero__title{
   font-family:"Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  font-size:clamp(3.4rem,9.4vw,10rem);
-  font-weight:500;
-  line-height:.92;
-  letter-spacing:-.022em;
-  text-wrap:balance;
+  font-size:clamp(4rem,min(22vw,32svh),22rem);
+  font-weight:600;
+  line-height:.82;
+  letter-spacing:-.055em;
 }
+@media (max-width:700px){ h1.hero__title{ font-size:clamp(4rem,min(25vw,30svh),12rem); } }
 h1.hero__title em{
   font-style:normal;
   display:block;
 }
-h1.hero__title em + em{ padding-left:.09em; }
+h1.hero__title em + em{ padding-left:.04em; }
 h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .hero__sub{
-  max-width:34ch;
-  font-size:var(--fs-lead);
-  font-weight:300;
-  line-height:1.5;
-  color:rgba(233,229,219,.82);
-  letter-spacing:-.01em;
-  margin-top:clamp(1.4rem,2.6vw,2.2rem);
+  max-width:26ch;
+  font-size:clamp(1.2rem,2vw,1.85rem);
+  font-weight:400;
+  line-height:1.2;
+  color:var(--cream);
+  letter-spacing:-.02em;
+  margin-top:0;
 }
 .hero__aside{ display:flex; flex-direction:column; align-items:flex-end; gap:1.1rem; text-align:right; padding-bottom:.4rem; }
 .hero__scroll{
   display:flex; flex-direction:column; align-items:center; gap:.75rem;
-  font-family:"DM Mono",monospace; font-size:.58rem; letter-spacing:.22em;
+  font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.14em;
   text-transform:uppercase; color:var(--muted-2);
   writing-mode:vertical-rl;
 }
@@ -438,7 +439,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 }
 .statement__lead{
   font-family:"Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-style:normal;
-  font-size:var(--fs-state); line-height:1.14; letter-spacing:-.022em;
+  font-size:var(--fs-state); font-weight:500; line-height:1.04; letter-spacing:-.04em;
   text-wrap:balance;
 }
 .statement__lead span{ color:var(--gold-deep); }
@@ -477,7 +478,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   padding-bottom:clamp(1.4rem,2.6vw,2.2rem);
   border-bottom:1px solid var(--line); margin-bottom:clamp(2.4rem,5vw,4.5rem);
 }
-.sect-head h2{ font-size:var(--fs-h2); font-weight:200; line-height:1; letter-spacing:-.04em; margin-top:.7rem; }
+.sect-head h2{ font-size:var(--fs-h2); font-weight:500; line-height:1; letter-spacing:-.045em; margin-top:.7rem; }
 .sect-head__meta{ text-align:right; display:flex; flex-direction:column; gap:.45rem; }
 @media (max-width:700px){ .sect-head__meta{ text-align:left; } }
 
@@ -612,7 +613,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   margin-top:clamp(2.4rem,4vw,3.4rem);
 }
 .aerial__copy{ position:sticky; top:calc(clamp(64px,7.2vw,88px) + 3rem); display:flex; flex-direction:column; gap:1.4rem; }
-.aerial__copy h2{ font-size:var(--fs-h2); font-weight:200; line-height:1; letter-spacing:-.04em; }
+.aerial__copy h2{ font-size:var(--fs-h2); font-weight:500; line-height:1; letter-spacing:-.045em; }
 .aerial__copy p{ color:var(--muted); max-width:38ch; }
 .aerial__specs{ display:flex; flex-direction:column; margin-top:.6rem; }
 .aerial__specs div{
@@ -662,7 +663,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
    ══════════════════════════════════════════════════════════ */
 .product{ padding:var(--sect) 0; }
 .product__head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:clamp(1.8rem,3.4vw,2.8rem); }
-.product__head h2{ font-size:var(--fs-h2); font-weight:200; letter-spacing:-.04em; line-height:1.02; margin-top:.7rem; }
+.product__head h2{ font-size:var(--fs-h2); font-weight:500; letter-spacing:-.045em; line-height:1.02; margin-top:.7rem; }
 .carousel{ position:relative; }
 .strip{
   display:flex; gap:clamp(.8rem,1.4vw,1.3rem);
@@ -741,7 +742,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   font-family:"DM Mono",monospace; font-size:var(--fs-micro);
   letter-spacing:.13em; text-transform:uppercase; color:rgba(12,13,12,.5);
 }
-.studio__copy h2{ font-size:var(--fs-h2); font-weight:200; letter-spacing:-.04em; line-height:1.02; margin-bottom:1.4rem; }
+.studio__copy h2{ font-size:var(--fs-h2); font-weight:500; letter-spacing:-.045em; line-height:1.02; margin-bottom:1.4rem; }
 .studio__copy p{ color:var(--ink-muted); margin-bottom:1.1rem; max-width:54ch; line-height:1.72; }
 .studio__copy p strong{ color:var(--ink); font-weight:500; }
 .pull{
@@ -999,14 +1000,14 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 @media(max-width:860px){ .letter__q,.letter__a{ max-width:none } }
 .contact__inner{ display:grid; grid-template-columns:1.3fr .7fr; gap:clamp(2rem,6vw,6rem); align-items:end; }
 .contact h2{
-  font-size:clamp(2.4rem,6.4vw,6.2rem); font-weight:200;
-  line-height:.94; letter-spacing:-.045em; margin-top:1.2rem; text-wrap:balance;
+  font-size:clamp(2.4rem,7vw,6.8rem); font-weight:500;
+  line-height:.92; letter-spacing:-.05em; margin-top:1.2rem; text-wrap:balance;
 }
 .contact h2 em{ font-family:"Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-style:normal; letter-spacing:-.02em; }
 .contact__mail{
   display:inline-flex; align-items:center; gap:1rem;
   margin-top:clamp(1.8rem,3vw,2.8rem);
-  font-size:clamp(1.05rem,2vw,1.7rem); font-weight:300; letter-spacing:-.02em;
+  font-size:clamp(1.05rem,2vw,1.7rem); font-weight:400; letter-spacing:-.02em;
   border-bottom:1px solid var(--line); padding-bottom:.45rem;
   transition:border-color .5s var(--ease), color .4s;
 }
@@ -1082,7 +1083,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   padding:clamp(1rem,2.2vw,1.8rem) var(--pad) clamp(1.4rem,2.6vw,2.2rem);
   border-top:1px solid var(--line-soft);
 }
-.screen__title{ font-size:clamp(1.2rem,2.4vw,2rem); font-weight:300; letter-spacing:-.03em; line-height:1.1; }
+.screen__title{ font-size:clamp(1.2rem,2.4vw,2rem); font-weight:400; letter-spacing:-.03em; line-height:1.1; }
 .screen__blurb{ color:var(--muted); max-width:64ch; margin-top:.55rem; font-size:var(--fs-body); }
 .screen__tags{ display:flex; gap:.5rem; flex-wrap:wrap; justify-content:flex-end; }
 .screen__tags span{
@@ -1142,21 +1143,12 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   <!-- ══════════ HERO ══════════ -->
   <section class="hero" aria-label="Introduction">
     <div class="hero__media">
-      <video id="heroVideo" autoplay muted loop playsinline preload="auto"
-             poster="assets/img/poster-commercial.jpg" aria-hidden="true" tabindex="-1">
-        <source src="assets/vid/commercial.mp4" type="video/mp4" />
-      </video>
+      <video id="heroVideo" muted loop playsinline preload="none"
+             poster="assets/img/poster-commercial.jpg" data-src="assets/vid/commercial.mp4"
+             aria-hidden="true" tabindex="-1"></video>
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
-    <div class="print" aria-hidden="true">
-      <div class="print__grain"></div>
-      <div class="print__flick"></div>
-      <div class="print__scratch" style="--x:23%;--d:0s"></div>
-      <div class="print__scratch" style="--x:61%;--d:2.4s"></div>
-      <div class="print__scratch" style="--x:84%;--d:3.7s"></div>
-    </div>
-
-    <div class="hero__inner">
+<div class="hero__inner">
       <div class="hero__top">
         <span class="mono hero__disc" aria-label="Film, aerial and photography">
           <i>Film</i><b aria-hidden="true">·</b><i>Aerial</i><b aria-hidden="true">·</b><i>Photography</i>
@@ -1169,16 +1161,14 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
       </div>
 
       <div class="hero__foot">
-        <div>
-          <h1 class="hero__title"><em class="rise"><span>Higher</span></em><em class="rise"><span>Heights</span></em></h1>
-          <p class="hero__sub">
-            Superyachts, classic cars and the machines people give
-            their lives to — filmed through the people who keep them alive.
-          </p>
-        </div>
-        <div class="hero__aside">
-          <span class="mono mono--dim">London · Worldwide</span>
-          <span class="hero__scroll">Scroll</span>
+        <h1 class="hero__title"><em class="rise"><span>Higher</span></em><em class="rise"><span>Heights</span></em></h1>
+        <div class="hero__row">
+          <p class="hero__sub">A film and photography studio for fashion, luxury, automotive and sport.</p>
+          <div class="hero__aside">
+            <span class="mono hero__tc" id="heroTc" aria-hidden="true">00:00:00:00</span>
+            <span class="mono mono--dim">London · Worldwide</span>
+            <span class="hero__scroll">Scroll</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1257,16 +1247,16 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
         </button>
 
         <!-- 02 -->
-        <button class="film film--v f2 reveal" data-film="nobl" aria-label="Screen Styled By You, brand film for NOBL">
+        <button class="film film--v f2 reveal" data-film="rm69" aria-label="Screen RM 69, product film for Richard Mille">
           <div class="film__frame">
-            <img class="film__poster" src="assets/img/poster-nobl.jpg" alt="Guests at a NOBL menswear event in a warm-lit private club" loading="lazy" width="1080" height="1920" />
-            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/nobl.mp4" aria-hidden="true"></video>
+            <img class="film__poster" src="assets/img/poster-rm69.jpg" alt="Richard Mille RM 69 watch photographed on a dark graphic surface" loading="lazy" width="1080" height="1920" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/rm69.mp4" aria-hidden="true"></video>
             <div class="film__scrim"></div>
             <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
             <div class="film__body">
               <span class="film__idx">02</span>
-              <span class="film__title">Styled By You</span>
-              <span class="film__meta">NOBL <i></i> Brand film <i></i> 2026</span>
+              <span class="film__title">RM 69</span>
+              <span class="film__meta">Richard Mille <i></i> Product <i></i> 2025</span>
             </div>
           </div>
         </button>
@@ -1287,16 +1277,16 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
         </button>
 
         <!-- 04 -->
-        <button class="film film--v f4 reveal" data-film="rm69" aria-label="Screen RM 69, product film for Richard Mille">
+        <button class="film film--v f4 reveal" data-film="nobl" aria-label="Screen Styled By You, brand film for NOBL">
           <div class="film__frame">
-            <img class="film__poster" src="assets/img/poster-rm69.jpg" alt="Richard Mille RM 69 watch photographed on a dark graphic surface" loading="lazy" width="1080" height="1920" />
-            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/rm69.mp4" aria-hidden="true"></video>
+            <img class="film__poster" src="assets/img/poster-nobl.jpg" alt="Guests at a NOBL menswear event in a warm-lit private club" loading="lazy" width="1080" height="1920" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/nobl.mp4" aria-hidden="true"></video>
             <div class="film__scrim"></div>
             <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
             <div class="film__body">
               <span class="film__idx">04</span>
-              <span class="film__title">RM 69</span>
-              <span class="film__meta">Richard Mille <i></i> Product <i></i> 2025</span>
+              <span class="film__title">Styled By You</span>
+              <span class="film__meta">NOBL <i></i> Brand film <i></i> 2026</span>
             </div>
           </div>
         </button>
@@ -1645,12 +1635,14 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
         <form id="enqForm" novalidate>
 
           <section class="enq__screen is-on" data-step="0">
-            <span class="enq__hint">The machine</span>
+            <span class="enq__hint">The subject</span>
             <h3 class="enq__q">What are we filming?</h3>
             <div class="enq__opts">
-              <label class="enq__opt"><input type="radio" name="subject" value="Yacht or boat" required><span>A yacht or boat</span></label>
-              <label class="enq__opt"><input type="radio" name="subject" value="Classic car"><span>A classic car</span></label>
-              <label class="enq__opt"><input type="radio" name="subject" value="Supercar"><span>A supercar</span></label>
+              <label class="enq__opt"><input type="radio" name="subject" value="Brand film or commercial" required><span>Brand film or commercial</span></label>
+              <label class="enq__opt"><input type="radio" name="subject" value="Automotive or marine"><span>Automotive or marine</span></label>
+              <label class="enq__opt"><input type="radio" name="subject" value="Luxury or product"><span>Luxury or product</span></label>
+              <label class="enq__opt"><input type="radio" name="subject" value="Fashion or lifestyle"><span>Fashion or lifestyle</span></label>
+              <label class="enq__opt"><input type="radio" name="subject" value="Sport or event"><span>Sport or event</span></label>
               <label class="enq__opt"><input type="radio" name="subject" value="Something else"><span>Something else</span></label>
             </div>
           </section>
@@ -1714,8 +1706,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
           <div class="foot__brand">
             <img src="assets/img/wordmark-cream.svg" width="1600" height="357"
                  alt="Higher Heights — Film, Aerial, Photography" loading="lazy" />
-            <p class="foot__tag">Story-led films about extraordinary machines on land and sea,
-            and the people who keep them alive.</p>
+            <p class="foot__tag">Film and photography for fashion, luxury, automotive and sport.</p>
           </div>
           <nav class="foot__col" aria-label="Work">
             <h4>Work</h4>
@@ -1812,7 +1803,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
       blurb: "Brand event coverage for Aduna's breakfast with Melissa Hemsley — daylight, real guests, product in hand."
     }
   };
-  const ORDER = ["roller", "nobl", "wtc", "rm69", "cleanco", "highland", "whoop", "aduna"];
+  const ORDER = ["roller", "rm69", "wtc", "nobl", "cleanco", "highland", "whoop", "aduna"];
 
   const $  = (s, c) => (c || document).querySelector(s);
   const $$ = (s, c) => Array.prototype.slice.call((c || document).querySelectorAll(s));
@@ -2319,20 +2310,42 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   const track = $("#marqueeTrack");
   if (track) track.innerHTML += track.innerHTML;
 
-  /* ── hero video: pause when off-screen, resume on return ─ */
+  /* ── hero video: poster first, film only where it is welcome ─ */
   const hero = $("#heroVideo");
   if (hero) {
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (reduced) return;
-          if (en.isIntersecting) { hero.play().catch(function () {}); }
-          else { try { hero.pause(); } catch (e) {} }
-        });
-      }, { threshold: 0.12 }).observe(hero);
+    const conn = navigator.connection || {};
+    const lean = reduced || conn.saveData === true || /(^|-)2g$/.test(conn.effectiveType || "") ||
+      window.matchMedia("(max-width: 700px)").matches;
+    if (!lean) {
+      const start = function () {
+        hero.src = hero.dataset.src;
+        hero.play().catch(function () {});
+        const tc = $("#heroTc");
+        const pad = function (n) { return (n < 10 ? "0" : "") + n; };
+        (function tick() {
+          if (tc && !hero.paused) {
+            const t = hero.currentTime || 0;
+            tc.textContent = pad(Math.floor(t / 3600)) + ":" + pad(Math.floor(t / 60) % 60) + ":" +
+              pad(Math.floor(t) % 60) + ":" + pad(Math.floor((t % 1) * 25));
+          }
+          requestAnimationFrame(tick);
+        })();
+      };
+      if (document.readyState === "complete") start(); else window.addEventListener("load", start);
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!hero.src) return;
+            if (en.isIntersecting) { hero.play().catch(function () {}); }
+            else { try { hero.pause(); } catch (e) {} }
+          });
+        }, { threshold: 0.12 }).observe(hero);
+      }
+      // graceful fallback: if the video can't play, the poster stands in
+      hero.addEventListener("error", function () { hero.removeAttribute("src"); hero.load(); });
+    } else {
+      const tc = $("#heroTc"); if (tc) tc.hidden = true;
     }
-    // graceful fallback: if the video can't play, the poster stands in
-    hero.addEventListener("error", function () { hero.style.display = "none"; });
   }
 })();
 </script>
