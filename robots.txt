@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://higher-heights.vercel.app/sitemap.xml
