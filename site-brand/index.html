@@ -1417,6 +1417,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
   .hhload__mark{ opacity:1; transform:none; animation:none; }
   .hhload__bar::after{ animation:none; transform:scaleX(1); }
 }
+#enquiry{ scroll-margin-top:clamp(96px,10vw,124px); }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
 <script type="application/ld+json">
@@ -1495,7 +1496,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
   <div class="nav__inner">
     <nav class="nav__side nav__side--l" aria-label="Primary">
       <a href="#work">Work</a>
-      <a href="/corporate-video-production">Services</a>
+      <a href="#services">Services</a>
     </nav>
     <div class="nav__core">
       <a class="brand" href="#top" aria-label="Higher Heights — home">
@@ -1593,7 +1594,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
             Adverts, brand films, product, events, aerial and stills.
             Based in the UK, filming worldwide.
           </p>
-          <a class="cbtn cbtn--main hero__cta" href="#contact">Tell me what you need</a>
+          <a class="cbtn cbtn--main hero__cta" href="#enquiry">Tell us what you need</a>
         </div>
         <div class="hero__aside">
           <span class="mono mono--dim">London · Worldwide</span>
@@ -2053,7 +2054,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
         <div class="band__ask">
           <h2 id="contact-head" data-gw="letters">Have something<br />worth <em>filming?</em></h2>
           <p class="band__lede reveal">A launch, a campaign, a build, an event.
-          Tell me what it is and when it happens.</p>
+          Tell us what it is and when it happens.</p>
           <!-- PLACEHOLDER: confirm the studio contact address before going live -->
           <a class="band__mail reveal" href="mailto:hello@higherheights.studio">
             hello@higherheights.studio
@@ -2109,7 +2110,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
 
           <section class="enq__screen" data-step="3">
             <span class="enq__hint">The reply</span>
-            <h3 class="enq__q">Where do I send it?</h3>
+            <h3 class="enq__q">Where should we send it?</h3>
             <input class="enq__field" type="text" name="name" placeholder="Your name"
                    autocomplete="name" maxlength="120" aria-label="Your name" required />
             <input class="enq__field" type="email" name="email" placeholder="you@company.com"
@@ -2125,7 +2126,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
             <h3 class="enq__q">Thank you.</h3>
             <p id="enqSummary"></p>
             <p>Your enquiry has reached the studio.
-            The reply comes from me, not an autoresponder, usually within a day.</p>
+            The reply comes from Morgan, not an autoresponder, usually within a day.</p>
           </section>
 
           <div class="enq__nav">
@@ -2548,7 +2549,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
         })
         .catch(function () {
           next.disabled = false;
-          err.textContent = "Couldn't reach the server. Please email hello@higherheights.studio and I'll reply directly.";
+          err.textContent = "Couldn't reach the server. Please email hello@higherheights.studio and we'll reply directly.";
         });
     }
 
