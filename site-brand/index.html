@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Higher Heights Films — Film, Aerial &amp; Photography</title>
-<meta name="description" content="Higher Heights Films is a UK film, aerial and photography studio. Commercial films, brand stories, automotive, product, events and stills — story-led, filmed worldwide." />
+<meta name="description" content="Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide." />
 <meta name="theme-color" content="#0C0D0C" />
 <link rel="canonical" href="https://higher-heights.vercel.app/" />
 
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="en_GB" />
 <meta property="og:url" content="https://higher-heights.vercel.app/" />
 <meta property="og:title" content="Higher Heights Films — Film, Aerial &amp; Photography" />
-<meta property="og:description" content="Higher Heights Films is a UK film, aerial and photography studio. Commercial films, brand stories, automotive, product, events and stills — story-led, filmed worldwide." />
+<meta property="og:description" content="Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide." />
 <meta property="og:image" content="https://higher-heights.vercel.app/assets/img/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -23,7 +23,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
 <link rel="icon" href="assets/img/hh-gold.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/img/icon-180.png" />
@@ -54,8 +54,8 @@
   --measure:       46ch;   /* body copy */
   --measure-wide:  62ch;   /* long-form only */
 
-  --sans: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
   --gutter: clamp(1.1rem, 3vw, 2.4rem);
   --pad:    clamp(1.25rem, 4.4vw, 5.5rem);
@@ -1130,8 +1130,69 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
 }
 .skip:focus{ left:1rem; top:1rem; }
+
+/* ══ Design system A — Marcellus capitals + Jost, sage touches ═════ */
+:root{ --display:"Marcellus",Georgia,"Times New Roman",serif; --gw-ease:cubic-bezier(.22,1,.36,1); }
+body{ counter-reset:sec; }
+.statement__lead,.pull,.enq__q,.enq__money{ font-family:var(--display); font-weight:400; letter-spacing:0; }
+.statement__lead{ font-size:clamp(1.75rem,3.5vw,3.25rem); line-height:1.12; }
+.sect-head h2,.aerial__copy h2,.product__head h2,.studio__copy h2,.contact h2,.svc__h{
+  font-family:var(--display); font-weight:400; text-transform:uppercase; letter-spacing:.08em;
+  line-height:1.12; font-size:clamp(1.65rem,3.2vw,3rem); }
+.contact h2{ font-size:clamp(1.8rem,4.2vw,4rem); }
+.contact h2 em{ font-style:normal; color:var(--gold); }
+.statement__lead span{ color:inherit; }
+.statement__lead .hl,.statement__lead .hl span{ color:var(--gold-deep); }
+.mono{ font-weight:500; letter-spacing:.2em; }
+.mono--dim{ color:var(--muted); }
+
+/* eyebrows: number, rule, label — same tracked capitals as the logo's “FILMS” */
+.eyebrow{ align-items:center; gap:.95rem; }
+.eyebrow .mono{ letter-spacing:.24em; }
+.eyebrow--n::before{ content:counter(sec,decimal-leading-zero); counter-increment:sec;
+  font-family:var(--mono); font-size:var(--fs-micro); font-weight:500; letter-spacing:.24em; color:var(--gold); }
+.band-cream .eyebrow--n::before{ color:var(--gold-deep); }
+.eyebrow__line{ width:clamp(28px,3.4vw,48px); opacity:.7; transform:none; transform-origin:left; }
+.gw-on .eyebrow.reveal .eyebrow__line{ transform:scaleX(0); }
+.gw-on .eyebrow.reveal.in .eyebrow__line{ transform:none; transition:transform .9s var(--gw-ease) .2s; }
+
+/* hero: the logo carries the name; the headline says what we do */
+.hero__copy{ max-width:1120px; }
+.hero__eyebrow{ margin-bottom:clamp(1.1rem,2.2vw,1.8rem); color:var(--gold); flex-wrap:wrap; }
+.hero__h1{ font-family:var(--display); font-weight:400; font-size:clamp(2.2rem,5vw,4.9rem);
+  line-height:1.08; letter-spacing:0; color:var(--cream); max-width:21ch; text-wrap:balance; }
+.hero__sub{ max-width:34rem; margin-top:clamp(1.1rem,2vw,1.6rem); font-size:clamp(1.05rem,1.5vw,1.35rem); font-weight:300; }
+.hero__cta{ margin-top:clamp(1.4rem,2.4vw,2rem); }
+@media (max-width:520px){ .hero__eyebrow{ gap:.5rem; } .hero__eyebrow .eyebrow__line{ width:14px; } .hero__eyebrow .mono{ letter-spacing:.1em; font-size:.68rem; } }
+.cbtn{ font-family:var(--mono); font-size:var(--fs-micro); font-weight:500; letter-spacing:.22em; text-transform:uppercase; }
+
+/* what we make */
+.svc{ padding-block:var(--sect) clamp(2.5rem,5vw,4.5rem); background:var(--navy); color:var(--cream); }
+.svc__h{ margin-top:1.1rem; max-width:26ch; text-wrap:balance; }
+.svc__grid{ list-style:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 clamp(1.5rem,3vw,3rem); margin-top:clamp(2rem,4vw,3.4rem); }
+.svc__grid li{ border-top:1px solid var(--line-soft); padding:1.15rem 0 1.6rem; }
+.svc__grid .mono{ display:block; color:var(--gold); }
+.svc__name{ display:block; margin-top:.55rem; font-family:var(--display); font-size:clamp(1.05rem,1.6vw,1.45rem); letter-spacing:.1em; text-transform:uppercase; line-height:1.25; }
+@media (max-width:860px){ .svc__grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:520px){ .svc__grid{ grid-template-columns:1fr; } }
+
+/* text motion — mechanics adapted from the Goodwork Library:
+   Rising Words (hero), Focus-In Words (statement), Staggered Tagline (titles).
+   Content is visible by default; the script only hides it once it can reveal it. */
+.gw-slot{ display:inline-block; overflow:hidden; vertical-align:top; padding:.14em .06em .2em; margin:-.14em -.06em -.2em; }
+.gw-w,.gw-c{ display:inline-block; }
+[data-gw=rise].gw--anim .gw-w{ opacity:0; transform:translateY(112%); filter:blur(6px); }
+[data-gw=rise].gw--in .gw-w{ opacity:1; transform:none; filter:none;
+  transition:transform .9s var(--gw-ease) calc(var(--_i) * 90ms), opacity .7s var(--gw-ease) calc(var(--_i) * 90ms), filter .8s var(--gw-ease) calc(var(--_i) * 90ms); }
+[data-gw=focus].gw--anim .gw-w{ opacity:.12; filter:blur(9px); transform:scale(1.04); }
+[data-gw=focus].gw--in .gw-w{ opacity:1; filter:none; transform:none;
+  transition:opacity .8s var(--gw-ease) calc(var(--_i) * 70ms), filter .9s var(--gw-ease) calc(var(--_i) * 70ms), transform .9s var(--gw-ease) calc(var(--_i) * 70ms); }
+[data-gw=letters].gw--anim .gw-c{ opacity:0; transform:translateY(118%); }
+[data-gw=letters].gw--in .gw-c{ opacity:1; transform:none;
+  transition:transform .8s var(--gw-ease) calc(var(--_i) * 26ms), opacity .45s var(--gw-ease) calc(var(--_i) * 26ms); }
+@media (prefers-reduced-motion:reduce){ .gw-w,.gw-c{ opacity:1 !important; transform:none !important; filter:none !important; transition:none !important; } }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio. Commercial films, brand stories, automotive, product, events and stills — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
 </head>
 <body>
 
@@ -1182,12 +1243,18 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
     <div class="hero__inner">
 
       <div class="hero__foot">
-        <div>
-          <h1 class="hero__title"><em class="rise"><span>Higher</span></em><em class="rise"><span>Heights</span></em></h1>
+        <div class="hero__copy">
+          <div class="eyebrow hero__eyebrow">
+            <span class="mono">Videography</span><span class="eyebrow__line"></span>
+            <span class="mono">Advertising</span><span class="eyebrow__line"></span>
+            <span class="mono">Photography</span>
+          </div>
+          <h1 class="hero__h1" data-gw="rise">Video and photography for businesses, brands and people.</h1>
           <p class="hero__sub">
-            Commercial film, brand stories, aerial and stills — for cars, boats,
-            products and the people behind them. UK based, filming worldwide.
+            Adverts, brand films, product, events, aerial and stills.
+            Based in the UK, filming worldwide.
           </p>
+          <a class="cbtn cbtn--main hero__cta" href="#contact">Tell me what you need</a>
         </div>
         <div class="hero__aside">
           <span class="mono mono--dim">London · Worldwide</span>
@@ -1201,21 +1268,21 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   <!-- ══════════ STATEMENT / CLIENTS ══════════ -->
   <section class="band-cream" aria-labelledby="statement-head">
     <div class="wrap statement">
-      <div class="eyebrow reveal">
+      <div class="eyebrow eyebrow--n reveal">
         <span class="eyebrow__line"></span>
         <span class="mono" id="statement-head">The studio</span>
       </div>
 
       <div class="statement__grid">
-        <p class="statement__lead reveal">
+        <p class="statement__lead" data-gw="focus">
           The difference between footage and a film is the decision
-          behind <span>every single frame</span>.
+          behind <span class="hl">every single frame</span>.
         </p>
         <div class="statement__body reveal">
           <p>
-            Higher Heights is a film and photography studio working across fashion,
-            luxury, automotive and sport — on set with brands, agencies and the
-            occasional very particular private client.
+            A film and photography studio for businesses, brands and people. From
+            adverts and brand films to events, product and aerial — on set with
+            companies, agencies and the occasional very particular private client.
           </p>
           <p>
             Every project starts the same way: find the frame that actually says
@@ -1316,13 +1383,30 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   </section>
 
   <!-- ══════════ WORK ══════════ -->
+  <section class="svc" id="services" aria-labelledby="svc-head">
+    <div class="wrap">
+      <div class="eyebrow eyebrow--n reveal">
+        <span class="eyebrow__line"></span><span class="mono">What we make</span>
+      </div>
+      <h2 class="svc__h" id="svc-head" data-gw="letters">For everyone who needs to be seen</h2>
+      <ol class="svc__grid">
+        <li class="reveal"><span class="mono">01</span><span class="svc__name">Adverts &amp; commercials</span></li>
+        <li class="reveal"><span class="mono">02</span><span class="svc__name">Brand films</span></li>
+        <li class="reveal"><span class="mono">03</span><span class="svc__name">Product &amp; stills</span></li>
+        <li class="reveal"><span class="mono">04</span><span class="svc__name">Events &amp; coverage</span></li>
+        <li class="reveal"><span class="mono">05</span><span class="svc__name">Aerial</span></li>
+        <li class="reveal"><span class="mono">06</span><span class="svc__name">Social cutdowns</span></li>
+      </ol>
+    </div>
+  </section>
+
   <section class="work" id="work" aria-labelledby="work-head">
     <div class="wrap">
       <div class="sect-head">
         <div>
-          <div class="eyebrow">
+          <div class="eyebrow eyebrow--n">
         <span class="eyebrow__line"></span><span class="mono">Selected work</span></div>
-          <h2 id="work-head">Eight films,<br />five disciplines.</h2>
+          <h2 id="work-head" data-gw="letters">Eight films,<br />five disciplines.</h2>
         </div>
         <div class="sect-head__meta">
           <span class="mono mono--dim">2024 — 2026</span>
@@ -1461,12 +1545,12 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   <!-- ══════════ AERIAL ══════════ -->
   <section class="aerial" id="aerial" aria-labelledby="aerial-head">
     <div class="wrap">
-      <div class="eyebrow reveal">
+      <div class="eyebrow eyebrow--n reveal">
         <span class="eyebrow__line"></span><span class="mono">Aerial unit</span></div>
 
       <div class="aerial__grid">
         <div class="aerial__copy">
-          <h2 id="aerial-head">Shot from<br />above.</h2>
+          <h2 id="aerial-head" data-gw="letters">Shot from<br />above.</h2>
           <p>
             Drone and ground units shooting in tandem — one continuous move from
             the air to eye level, so the film never has to cut to prove the scale.
@@ -1506,9 +1590,9 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
     <div class="wrap">
       <div class="product__head">
         <div>
-          <div class="eyebrow reveal">
+          <div class="eyebrow eyebrow--n reveal">
         <span class="eyebrow__line"></span><span class="mono">Product &amp; stills</span></div>
-          <h2 id="product-head">Movement,<br />up close.</h2>
+          <h2 id="product-head" data-gw="letters">Movement,<br />up close.</h2>
         </div>
         <span class="mono mono--dim">Macro · Studio · Drag to explore</span>
       </div>
@@ -1549,7 +1633,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   <section class="studio" id="studio" aria-labelledby="studio-head">
     <div class="hh-wm hh-wm--studio" aria-hidden="true"><img src="assets/img/hh-navy.svg" alt=""></div>
     <div class="wrap">
-      <div class="eyebrow reveal">
+      <div class="eyebrow eyebrow--n reveal">
         <span class="eyebrow__line"></span><span class="mono">Studio</span></div>
 
       <div class="studio__grid">
@@ -1559,7 +1643,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
         </figure>
 
         <div class="studio__copy reveal">
-          <h2 id="studio-head">One pair of eyes<br />on the whole thing.</h2>
+          <h2 id="studio-head" data-gw="letters">One pair of eyes<br />on the whole thing.</h2>
           <p>
             Higher Heights is run by <strong>Morgan</strong> — a filmmaker and
             photographer who shoots, directs and edits the majority of the work
@@ -1623,12 +1707,12 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   <section class="contact" id="contact" aria-labelledby="contact-head">
     <div class="hh-wm hh-wm--contact" aria-hidden="true"><img src="assets/img/hh-cream.svg" alt=""></div>
     <div class="wrap">
-      <div class="eyebrow reveal">
+      <div class="eyebrow eyebrow--n reveal">
         <span class="eyebrow__line"></span><span class="mono">Contact</span></div>
 
       <div class="band">
         <div class="band__ask">
-          <h2 id="contact-head" class="reveal">Have something<br />worth <em>filming?</em></h2>
+          <h2 id="contact-head" data-gw="letters">Have something<br />worth <em>filming?</em></h2>
           <p class="band__lede reveal">A launch, a campaign, a build, an event.
           Tell me what it is and when it happens.</p>
           <!-- PLACEHOLDER: confirm the studio contact address before going live -->
@@ -1722,8 +1806,8 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
           <div class="foot__brand">
             <img src="assets/img/wordmark-cream.svg" width="1600" height="357"
                  alt="Higher Heights — Film, Aerial, Photography" loading="lazy" />
-            <p class="foot__tag">Film, aerial and photography for brands, machines
-            and the people behind them. Story first, every time.</p>
+            <p class="foot__tag">Film, aerial and photography for businesses, brands
+            and people. Story first, every time.</p>
           </div>
           <nav class="foot__col" aria-label="Work">
             <h4>Work</h4>
@@ -2427,6 +2511,41 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
     // graceful fallback: if the video can't play, the poster stands in
     hero.addEventListener("error", function () { hero.style.display = "none"; });
   }
+})();
+</script>
+<script>
+/* Text motion — adapted from the Goodwork Library (Rising Words, Focus-In Words, Staggered Tagline).
+   Entrances 800–900ms on cubic-bezier(.22,1,.36,1). Skipped entirely for reduced motion or
+   browsers without IntersectionObserver, so the text just stays where it is. */
+(function () {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("gw-on");
+  function make(cls, text, i) { const s = document.createElement("span"); s.className = cls; s.textContent = text; if (i != null) s.style.setProperty("--_i", i); return s; }
+  document.querySelectorAll("[data-gw]").forEach(function (root) {
+    const mode = root.dataset.gw; let n = 0;
+    root.setAttribute("aria-label", root.textContent.replace(/\s+/g, " ").trim());
+    (function split(el) {
+      Array.prototype.slice.call(el.childNodes).forEach(function (node) {
+        if (node.nodeType === 1) { if (node.tagName === "BR") node.setAttribute("aria-hidden", "true"); else split(node); return; }
+        const bits = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (!part.trim()) { bits.append(" "); return; }
+          let piece;
+          if (mode === "focus") { piece = make("gw-w", part, n++); }
+          else if (mode === "rise") { piece = make("gw-slot", ""); piece.append(make("gw-w", part, n++)); }
+          else { piece = make("gw-slot", ""); Array.from(part).forEach(function (ch) { piece.append(make("gw-c", ch, n++)); }); }
+          piece.setAttribute("aria-hidden", "true");
+          bits.append(piece);
+        });
+        node.replaceWith(bits);
+      });
+    })(root);
+    root.classList.add("gw--anim");
+    new IntersectionObserver(function (entries, io) {
+      entries.forEach(function (en) { if (en.isIntersecting) { root.classList.add("gw--in"); io.unobserve(root); } });
+    }, { threshold: 0.2, rootMargin: "0px 0px -6% 0px" }).observe(root);
+  });
 })();
 </script>
 </body>
