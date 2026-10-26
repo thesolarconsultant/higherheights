@@ -1365,8 +1365,55 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
   .hero__aside{ position:absolute; left:var(--pad); right:var(--pad); bottom:calc(clamp(1.6rem,3.4vh,3.2rem) + 1rem); width:auto; pointer-events:none; }
   .hero__aside .hero__tc{ margin-left:auto; margin-right:1.8rem; }
 }
+
+.foot__legal{ display:block; margin-top:.75rem; max-width:var(--measure-wide);
+  font-size:var(--fs-micro); line-height:1.7; color:var(--muted);
+  letter-spacing:.12em; text-transform:none; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "name": "Higher Heights Films",
+ "legalName": "Higher Heights (London) Limited",
+ "identifier": {
+  "@type": "PropertyValue",
+  "name": "Company number",
+  "value": "17461146"
+ },
+ "foundingDate": "2026-09-15",
+ "url": "https://higher-heights.vercel.app/",
+ "image": "https://higher-heights.vercel.app/assets/img/icon-512.png",
+ "logo": "https://higher-heights.vercel.app/assets/img/hh-mono.svg",
+ "description": "UK video production company. Corporate video, brand films, product, events and aerial — directed, shot and edited by one person.",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "16 The Drive",
+  "addressLocality": "Loughton",
+  "postalCode": "IG10 1HB",
+  "addressRegion": "Essex",
+  "addressCountry": "GB"
+ },
+ "areaServed": [
+  {
+   "@type": "City",
+   "name": "London"
+  },
+  {
+   "@type": "Country",
+   "name": "United Kingdom"
+  }
+ ],
+ "knowsAbout": [
+  "Corporate video production",
+  "Event videography",
+  "Aerial and drone filming",
+  "Brand films",
+  "Product photography"
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -2058,6 +2105,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
           <span>© <span id="year">2026</span> Higher Heights Films</span>
           <span>Film · Aerial · Photography</span>
           <span>Est. 2024</span>
+          <span class="foot__legal">Higher Heights (London) Limited · Registered in England &amp; Wales no.&nbsp;17461146 · 16 The Drive, Loughton, IG10 1HB</span>
         </div>
       </footer>
     </div>
