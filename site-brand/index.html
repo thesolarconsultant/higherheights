@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Video Production UK | Corporate Video &amp; Videographer — Higher Heights Films</title>
 <meta name="description" content="UK video production company. Corporate video, brand films, product, events and aerial — directed, shot and edited by one person. Based in the UK, filming worldwide." />
 <meta name="theme-color" content="#070D0B" />
@@ -1418,6 +1418,14 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
   .hhload__bar::after{ animation:none; transform:scaleX(1); }
 }
 #enquiry{ scroll-margin-top:clamp(96px,10vw,124px); }
+
+/* phones: the bar owns the strip behind the status bar, so no page shows above it */
+@media (max-width:860px){
+  .nav{ padding-top:env(safe-area-inset-top,0px); }
+  .nav::before{ content:""; position:absolute; inset:0; z-index:0; background:rgb(5,16,13); opacity:0; transition:opacity .4s; pointer-events:none; }
+  .nav.is-stuck::before,.nav.is-open::before{ opacity:1; }
+  .nav.nav--light::before{ background:rgb(233,229,219); opacity:1; }
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
 <script type="application/ld+json">
