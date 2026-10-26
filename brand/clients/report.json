@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "whoop",
+    "label": "WHOOP",
+    "w": 866,
+    "h": 458,
+    "aspect": 1.89,
+    "coverage": 0.114
+  },
+  {
+    "slug": "aduna",
+    "label": "Aduna Superfoods",
+    "w": 900,
+    "h": 794,
+    "aspect": 1.13,
+    "coverage": 0.178
+  },
+  {
+    "slug": "cleanco",
+    "label": "Clean Co",
+    "w": 393,
+    "h": 322,
+    "aspect": 1.22,
+    "coverage": 0.558
+  },
+  {
+    "slug": "watchtrader",
+    "label": "WatchTrader & Co",
+    "w": 363,
+    "h": 158,
+    "aspect": 2.3,
+    "coverage": 0.112
+  },
+  {
+    "slug": "real",
+    "label": "The REAL Drinks Co",
+    "w": 1186,
+    "h": 306,
+    "aspect": 3.88,
+    "coverage": 0.478
+  },
+  {
+    "slug": "crowdcube",
+    "label": "Crowdcube",
+    "w": 1001,
+    "h": 285,
+    "aspect": 3.51,
+    "coverage": 0.635
+  },
+  {
+    "slug": "tecrec",
+    "label": "TecRec",
+    "w": 1273,
+    "h": 353,
+    "aspect": 3.61,
+    "coverage": 0.282
+  },
+  {
+    "slug": "hybrid",
+    "label": "Hybrid Fitness",
+    "w": 2335,
+    "h": 371,
+    "aspect": 6.29,
+    "coverage": 0.219
+  },
+  {
+    "slug": "everyones",
+    "label": "Everyone's Energy",
+    "w": 476,
+    "h": 180,
+    "aspect": 2.64,
+    "coverage": 0.433
+  },
+  {
+    "slug": "dayswork",
+    "label": "Days Work",
+    "w": 318,
+    "h": 203,
+    "aspect": 1.57,
+    "coverage": 0.406
+  },
+  {
+    "slug": "jimjam",
+    "label": "JimJam The Label",
+    "w": 4958,
+    "h": 1435,
+    "aspect": 3.46,
+    "coverage": 0.21
+  },
+  {
+    "slug": "piemash",
+    "label": "Tony's Pie & Mash",
+    "w": 2535,
+    "h": 1530,
+    "aspect": 1.66,
+    "coverage": 0.261
+  },
+  {
+    "slug": "tj",
+    "label": "TJ",
+    "w": 96,
+    "h": 96,
+    "aspect": 1.0,
+    "coverage": 0.661
+  },
+  {
+    "slug": "be",
+    "label": "Be",
+    "w": 635,
+    "h": 638,
+    "aspect": 1.0,
+    "coverage": 0.186
+  }
+]

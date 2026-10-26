@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ink",
+    "name": "Ink & Bone",
+    "bg": "#0A0A0B",
+    "bg2": "#141416",
+    "ink": "#F7F4EF",
+    "dim": "rgba(247,244,239,.58)",
+    "accent": "#E78223",
+    "line": "rgba(247,244,239,.16)",
+    "light": false,
+    "note": "Near-black, bone white, ember. The film carries every colour."
+  },
+  {
+    "id": "midnight",
+    "name": "Midnight Cinema",
+    "bg": "#050936",
+    "bg2": "#121D42",
+    "ink": "#FFFFFF",
+    "dim": "rgba(255,255,255,.62)",
+    "accent": "#E78223",
+    "line": "rgba(255,255,255,.18)",
+    "light": false,
+    "note": "His theme 01, pure white type. Navy reads as a brand, not a ground."
+  },
+  {
+    "id": "deepsea",
+    "name": "Deep Sea & Brass",
+    "bg": "#0B1620",
+    "bg2": "#13212E",
+    "ink": "#F2EFE9",
+    "dim": "rgba(242,239,233,.60)",
+    "accent": "#B98A4B",
+    "line": "rgba(185,138,75,.30)",
+    "light": false,
+    "note": "Ink blue-black with brass. Maritime without saying navy."
+  },
+  {
+    "id": "bone",
+    "name": "Bone & Ink",
+    "bg": "#F4F1EA",
+    "bg2": "#E9E5DC",
+    "ink": "#111113",
+    "dim": "rgba(17,17,19,.62)",
+    "accent": "#C2410C",
+    "line": "rgba(17,17,19,.16)",
+    "light": true,
+    "note": "Light. A gallery, not a cinema. Almost nobody in film does this."
+  },
+  {
+    "id": "carbon",
+    "name": "Carbon & Steel",
+    "bg": "#121214",
+    "bg2": "#1C1C20",
+    "ink": "#E8EAED",
+    "dim": "rgba(232,234,237,.55)",
+    "accent": "#9AA3AE",
+    "line": "rgba(232,234,237,.14)",
+    "light": false,
+    "note": "No colour at all. The most automotive of the five."
+  }
+]

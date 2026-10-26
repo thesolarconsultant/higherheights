@@ -1,0 +1,51 @@
+# ── Secrets and deploy state ─────────────────────────────────────
+.env
+.env.*
+.vercel/
+*.pem
+
+# ── Dependencies and virtualenvs ─────────────────────────────────
+node_modules/
+.venv/
+.tools/
+__pycache__/
+*.pyc
+
+# ── Source media: RAW photography and camera originals ───────────
+# 2.3 GB of DNG/JPG originals. Masters live off-repo.
+higher-heights/raw/
+*.DNG
+*.dng
+*.ARW
+*.CR2
+
+# ── QA and scratch artefacts ─────────────────────────────────────
+qa/
+*.log
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# ── Superseded builds and reference material ─────────────────────
+_history/
+_lib/
+refs/
+refs2/
+site-v2/
+site-v3/
+site-v4/
+site-v5/
+site-v6/
+site-v7/
+site-v8/
+site-v9/
+
+# ── Uncompressed video masters (compressed variants are tracked) ─
+site-brand/assets/vid/commercial.mp4
+
+# Video: pushed separately, too slow for the initial clone
+site-brand/assets/vid/
+
+# Original zip extraction: 2.3GB of camera masters and raw media.
+# Superseded by site-brand/. Masters live off-repo.
+higher-heights/

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body{margin:0;background:#fff;font:13px/1.45 -apple-system,"Segoe UI",sans-serif;color:#111}
+  .row{display:grid;grid-template-columns:1fr 1fr}
+  .cell{padding:30px 36px;display:flex;flex-direction:column;gap:18px;align-items:flex-start;min-height:150px;justify-content:center}
+  .cream{background:#F4EFE6}.navy{background:#0B1A26}
+  .label{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.5}
+  .navy .label{color:#F4EFE6}
+  img{display:block}
+  .sizes{display:flex;gap:26px;align-items:flex-end}
+</style></head><body>
+<div class="row">
+  <div class="cell cream"><span class="label">A — wordmark / cream</span><img style="width:560px" src="svg/a-wordmark-navy.svg"></div>
+  <div class="cell navy"><span class="label">A — wordmark / navy</span><img style="width:560px" src="svg/a-wordmark-cream.svg"></div>
+</div>
+<div class="row">
+  <div class="cell cream"><span class="label">A — with step rule</span><img style="width:440px" src="svg/a-wordmark-rule-navy.svg"></div>
+  <div class="cell navy"><span class="label">A — stacked</span><img style="width:210px" src="svg/a-stacked-navy.svg"></div>
+</div>
+<div class="row">
+  <div class="cell cream"><span class="label">B — signature, horizontal</span><img style="width:330px" src="svg/b-signature-h-cream.svg"></div>
+  <div class="cell navy"><span class="label">B — signature, stacked</span><img style="width:250px" src="svg/b-signature-stack-navy.svg"></div>
+</div>
+<div class="row">
+  <div class="cell cream"><span class="label">C — title card / cream</span><img style="width:380px" src="svg/c-titlecard-cream.svg"></div>
+  <div class="cell navy"><span class="label">C — title card / navy</span><img style="width:380px" src="svg/c-titlecard-navy.svg"></div>
+</div>
+<div class="row">
+  <div class="cell cream"><span class="label">Mark + favicon + small-size test</span>
+    <div class="sizes"><img style="width:120px" src="svg/mark-navy.svg"><img style="width:44px" src="svg/mark-navy.svg"><img style="width:20px" src="svg/mark-navy.svg"><img style="width:64px" src="svg/favicon.svg"><img style="width:16px" src="svg/favicon.svg"></div>
+    <img style="width:150px" src="svg/a-wordmark-navy.svg">
+  </div>
+  <div class="cell navy"><span class="label">Mark on navy</span>
+    <div class="sizes"><img style="width:120px" src="svg/mark-gold.svg"><img style="width:44px" src="svg/mark-gold.svg"><img style="width:20px" src="svg/mark-gold.svg"><img style="width:16px" src="svg/mark-gold.svg"></div>
+    <img style="width:150px" src="svg/a-wordmark-cream.svg">
+  </div>
+</div>
+</body></html>

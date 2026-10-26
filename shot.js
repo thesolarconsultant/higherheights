@@ -1,0 +1,21 @@
+const puppeteer = require('C:/Users/Jordan/Projects/goodwork-command/node_modules/puppeteer-core');
+const path = require('path');
+const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+(async () => {
+  const file = process.argv[2];
+  const out = process.argv[3];
+  const w = parseInt(process.argv[4] || '1200', 10);
+  const full = process.argv[5] !== 'viewport';
+  const b = await puppeteer.launch({ executablePath: CHROME, headless: 'new', userDataDir: path.resolve(__dirname, '.pptr'), args: ['--no-first-run', '--hide-scrollbars', '--force-device-scale-factor=1'] });
+  const p = await b.newPage();
+  const errs = [];
+  p.on('pageerror', e => errs.push(e.message));
+  p.on('requestfailed', r => errs.push('404? ' + r.url()));
+  await p.setViewport({ width: w, height: parseInt(process.argv[4] || '900', 10), deviceScaleFactor: 1 });
+  await p.goto('file:///' + file.replace(/\\/g, '/'), { waitUntil: 'networkidle0', timeout: 60000 });
+  await sleep(1200);
+  await p.screenshot({ path: out, fullPage: full });
+  console.log(JSON.stringify({ out, errs }));
+  await b.close();
+})().catch(e => { console.error('FATAL', e.message); process.exit(1); });

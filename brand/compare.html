@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>Two logos, recoloured</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#0B1A26; --cream:#F4EFE6; --gold:#C9AE7C;
+         --line:rgba(201,174,124,.22); --soft:rgba(244,239,230,.12);
+         --muted:rgba(244,239,230,.64); --muted2:rgba(244,239,230,.42);
+         --serif:"Instrument Serif",Georgia,serif; --sans:"Instrument Sans",system-ui,sans-serif; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--navy); color:var(--cream); font-family:var(--sans); font-size:14px; line-height:1.6;
+        -webkit-font-smoothing:antialiased; padding:0 clamp(20px,4vw,52px) 60px; }
+  .micro{ font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
+  .dim{ color:var(--muted2); }
+  h1{ font-family:var(--serif); font-weight:400; font-size:clamp(34px,4.4vw,54px); line-height:1; letter-spacing:-.02em; }
+  h2{ font-family:var(--serif); font-weight:400; font-size:clamp(22px,2.4vw,30px); letter-spacing:-.02em; }
+  p{ color:var(--muted); max-width:70ch; }
+  section{ border-top:1px solid var(--soft); padding:34px 0; }
+  .head{ display:flex; align-items:baseline; gap:14px; margin-bottom:22px; }
+  .rule{ width:40px; height:1px; background:var(--gold); opacity:.5; transform:translateY(-3px); }
+  .row2{ display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+  .cell{ padding:26px 30px; display:flex; flex-direction:column; gap:16px; justify-content:center; min-height:130px; }
+  .navy{ background:var(--navy); border:1px solid var(--soft); }
+  .cream{ background:var(--cream); color:var(--navy); border:1px solid var(--soft); }
+  .cream .micro{ color:rgba(11,26,38,.5); }
+  .cream p{ color:rgba(11,26,38,.7); }
+  img{ display:block; }
+  .sizes{ display:flex; gap:26px; align-items:center; flex-wrap:wrap; }
+  .note{ display:grid; grid-template-columns:16px 1fr; gap:12px; color:var(--muted); margin-top:10px; }
+  .dot{ width:10px; height:1px; background:var(--gold); margin-top:.72em; }
+  .shot{ border:1px solid var(--soft); }
+  .shot img{ width:100%; display:block; }
+  .cap{ font-size:11px; color:var(--muted2); margin-top:8px; letter-spacing:.04em; }
+  .top{ padding:40px 0 30px; display:flex; flex-direction:column; gap:14px; }
+  .k{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--soft); margin-top:14px; }
+  .k div{ background:var(--navy); padding:12px 14px; font-size:11.5px; color:var(--muted); }
+  .k b{ display:block; color:var(--cream); font-weight:500; font-size:12px; }
+</style></head><body>
+
+<div class="top">
+  <span class="micro">Higher Heights — logo trials</span>
+  <h1>Your two logos, in brand colour</h1>
+  <p>Both were supplied as dark-blue-on-black bitmaps. I rebuilt each one as a vector and split it into the
+  pieces a site actually needs — nav lockup, full lockup, badge, and a small mark — then recoloured to the
+  palette. Nothing here is a screenshot: these are path data, so they stay sharp at any size.</p>
+</div>
+
+<section>
+  <div class="head"><span class="micro">01</span><span class="rule"></span><span class="micro">The wordmark</span></div>
+  <div class="row2">
+    <div class="cell navy"><span class="micro dim">Gold on navy</span><img style="width:100%" src="logos/wm-full-gold.svg"></div>
+    <div class="cell cream"><span class="micro">Navy on cream</span><img style="width:100%" src="logos/wm-full-navy.svg"></div>
+  </div>
+  <div class="row2" style="margin-top:2px">
+    <div class="cell navy"><span class="micro dim">Size run — 620 / 300 / 210px</span>
+      <div class="sizes"><img style="width:620px" src="logos/wm-caps-gold.svg"></div>
+      <div class="sizes"><img style="width:300px" src="logos/wm-caps-gold.svg"><img style="width:210px" src="logos/wm-caps-gold.svg"></div>
+    </div>
+    <div class="cell cream"><span class="micro">With the descriptor at small size</span>
+      <div class="sizes"><img style="width:300px" src="logos/wm-full-navy.svg"><img style="width:210px" src="logos/wm-full-navy.svg"></div>
+      <p style="font-size:12.5px">Below ~300px the <em>FILMS</em> line stops resolving and reads as a smudge — so the
+      nav uses the caps line alone and the full lockup is held for footer, end cards and print.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="head"><span class="micro">02</span><span class="rule"></span><span class="micro">The seal</span></div>
+  <div class="row2">
+    <div class="cell navy" style="min-height:250px"><span class="micro dim">Gold on navy · 300 / 150 / 80px</span>
+      <div class="sizes"><img style="width:300px" src="logos/seal-gold.svg"><img style="width:150px" src="logos/seal-gold.svg"><img style="width:80px" src="logos/seal-gold.svg"></div>
+    </div>
+    <div class="cell cream" style="min-height:250px"><span class="micro">Navy on cream</span>
+      <div class="sizes"><img style="width:300px" src="logos/seal-navy.svg"><img style="width:150px" src="logos/seal-navy.svg"></div>
+    </div>
+  </div>
+  <div class="row2" style="margin-top:2px">
+    <div class="cell navy"><span class="micro dim">The HH lifted out of the seal — gold</span>
+      <div class="sizes"><img style="width:170px" src="logos/seal-mark-gold.svg"><img style="width:64px" src="logos/seal-mark-gold.svg"><img style="width:32px" src="logos/seal-mark-gold.svg"><img style="width:16px" src="logos/seal-mark-gold.svg"></div>
+    </div>
+    <div class="cell cream"><span class="micro">The same, navy</span>
+      <div class="sizes"><img style="width:170px" src="logos/seal-mark-navy.svg"><img style="width:64px" src="logos/seal-mark-navy.svg"><img style="width:32px" src="logos/seal-mark-navy.svg"><img style="width:16px" src="logos/seal-mark-navy.svg"></div>
+    </div>
+  </div>
+  <div class="note"><span class="dot"></span><span>The seal is beautiful at 150px and above and collapses below 80px — the arced
+  <em>HIGHER HEIGHTS · FILMS · EST 2026</em> becomes noise. That is why I lifted the monogram out: the HH alone
+  holds at 32px and is what a favicon or a social avatar should use.</span></div>
+</section>
+
+<section>
+  <div class="head"><span class="micro">03</span><span class="rule"></span><span class="micro">Tried on the site</span></div>
+  <div class="row2">
+    <div style="display:flex;flex-direction:column;justify-content:center"><div class="shot"><img src="../qa/v3-hero.png"></div><div class="cap">Nav — gold caps lockup at 21px cap height, 247px wide</div></div>
+    <div><div class="shot" style="display:flex;justify-content:center;background:#0B1A26"><img src="../qa/v3-mobile.png" style="height:560px;width:auto;object-fit:cover;object-position:top"></div><div class="cap">Mobile 390 — the lockup still clears the menu button</div></div>
+  </div>
+  <div style="margin-top:22px"><div class="shot"><img src="../qa/v3-footer.png"></div>
+    <div class="cap">Footer — full lockup with <em>FILMS</em>, and the seal as a stamp beside it</div></div>
+</section>
+
+<section>
+  <div class="head"><span class="micro">04</span><span class="rule"></span><span class="micro">What I'd flag before adopting either</span></div>
+  <div class="note"><span class="dot"></span><span><b style="color:#F4EFE6;font-weight:500">Two serifs, not one.</b> This wordmark is a sharp
+  didone-ish face; the site's display is Instrument Serif, which is softer and more calligraphic. Side by side in the
+  hero they don't rhyme. If this logo wins, the headline should move to a didone (Bodoni Moda is free and close) so the
+  page and the logo are cut from the same cloth.</span></div>
+  <div class="note"><span class="dot"></span><span><b style="color:#F4EFE6;font-weight:500">These are traces, not drawings.</b>
+  I recovered them from the supplied bitmaps, so the serifs carry a pixel of the image model's wobble. Perfectly fine on
+  screen at every size above; for print, signage or anything larger than a screen, the wordmark wants redrawing from the
+  same skeleton — a half-day job with the vector file attached.</span></div>
+  <div class="note"><span class="dot"></span><span><b style="color:#F4EFE6;font-weight:500">“EST — 2026” needs confirming.</b> The seal claims the
+  studio was established this year. If Morgan has been trading longer, that badge is wrong and shouldn't go on anything
+  printed.</span></div>
+  <div class="k">
+    <div><b>wm-full</b>wordmark + FILMS<br>1881 × 257</div>
+    <div><b>wm-caps</b>nav / letterhead<br>1881 × 160</div>
+    <div><b>seal</b>badge, end card<br>1090 × 1048</div>
+    <div><b>seal-mark</b>favicon, avatar<br>594 × 609</div>
+  </div>
+  <p style="margin-top:16px;font-size:12.5px" class="dim">Every asset exists in gold, cream and navy, as both SVG and
+  PNG master. Files: <span style="color:#C9AE7C">brand/logos/</span> — 24 files. Live trial: site-v3 on port 8097.</p>
+</section>
+
+</body></html>

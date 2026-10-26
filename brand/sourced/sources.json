@@ -1,0 +1,84 @@
+{
+  "nobl": {
+    "site": "https://noblclo.com/",
+    "saved": [
+      {
+        "file": "nobl-0.png",
+        "bytes": 3307,
+        "score": 1,
+        "url": "http://noblclo.com/cdn/shop/files/logo.png?v=1666605432&width=2000"
+      }
+    ],
+    "error": null,
+    "found": 1
+  },
+  "oakridge-uk": {
+    "site": "https://oakridgepropertygroup.co.uk/",
+    "saved": [
+      {
+        "file": "oakridge-uk-0.png",
+        "bytes": 18860,
+        "score": 10,
+        "url": "https://oakridgepropertygroup.co.uk/wp-content/uploads/2025/02/OPS-logo.png"
+      }
+    ],
+    "error": null,
+    "found": 1
+  },
+  "melissahemsley": {
+    "site": "https://www.melissahemsley.com/",
+    "saved": [],
+    "error": null,
+    "found": 0
+  },
+  "matchroom": {
+    "site": "https://www.matchroomboxing.com/",
+    "saved": [
+      {
+        "file": "matchroom-0.svg",
+        "bytes": 3604,
+        "score": 16,
+        "url": "https://www.matchroomboxing.com/app/uploads/2020/07/logo-dazn-1.svg"
+      },
+      {
+        "file": "matchroom-1.svg",
+        "bytes": 1561,
+        "score": 6,
+        "url": "https://www.matchroomboxing.com/app/uploads/2025/07/Favicon.svg"
+      },
+      {
+        "file": "matchroom-2.svg",
+        "bytes": 3896,
+        "score": 6,
+        "url": "https://www.matchroomboxing.com/app/uploads/2020/06/uk.svg"
+      }
+    ],
+    "error": null,
+    "found": 6
+  },
+  "watchtrader": {
+    "site": "https://www.watchtrader.co.uk/",
+    "saved": [
+      {
+        "file": "watchtrader-0.svg",
+        "bytes": 8840,
+        "score": 16,
+        "url": "https://www.watchtrader.co.uk/wp-content/uploads/2024/08/logo.svg"
+      },
+      {
+        "file": "watchtrader-1.png",
+        "bytes": 18137,
+        "score": 10,
+        "url": "https://www.watchtrader.co.uk/wp-content/uploads/2024/08/logo--1024x148.png"
+      },
+      {
+        "file": "watchtrader-2.png",
+        "bytes": 8513,
+        "score": 10,
+        "url": "https://www.watchtrader.co.uk/wp-content/uploads/2024/08/WT-logo-word.png"
+      }
+    ],
+    "error": null,
+    "found": 6
+  }
+}
