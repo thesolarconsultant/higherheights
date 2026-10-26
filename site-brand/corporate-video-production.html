@@ -1369,8 +1369,67 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
 .foot__legal{ display:block; margin-top:.75rem; max-width:var(--measure-wide);
   font-size:var(--fs-micro); line-height:1.7; color:var(--muted);
   letter-spacing:.12em; text-transform:none; }
+
+/* Service pages: the mark gets more room than it does on the homepage */
+.hh-wm--pg{ width:min(52%,620px); opacity:.07; }
+.hh-wm--pg.is-br{ right:-30px; bottom:-38px; }
+.hh-wm--pg.is-tl{ left:-30px;  top:-34px; }
+.hh-wm--pg.is-bl{ left:-30px;  bottom:-38px; }
+@media(max-width:860px){
+  .hh-wm--pg{ width:min(66%,320px); opacity:.06; }
+  .hh-wm--pg.is-br{ right:-16px; bottom:-20px; }
+  .hh-wm--pg.is-tl{ left:-16px;  top:-18px; }
+  .hh-wm--pg.is-bl{ left:-16px;  bottom:-20px; }
+}
+
+main > section{ position:relative; isolation:isolate; overflow:hidden; }
+main > section > .wrap{ position:relative; z-index:1; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "name": "Higher Heights Films",
+ "legalName": "Higher Heights (London) Limited",
+ "identifier": {
+  "@type": "PropertyValue",
+  "name": "Company number",
+  "value": "17461146"
+ },
+ "foundingDate": "2026-09-15",
+ "url": "https://higher-heights.vercel.app/",
+ "image": "https://higher-heights.vercel.app/assets/img/icon-512.png",
+ "logo": "https://higher-heights.vercel.app/assets/img/hh-mono.svg",
+ "description": "UK video production company. Corporate video, brand films, product, events and aerial — directed, shot and edited by one person.",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "16 The Drive",
+  "addressLocality": "Loughton",
+  "postalCode": "IG10 1HB",
+  "addressRegion": "Essex",
+  "addressCountry": "GB"
+ },
+ "areaServed": [
+  {
+   "@type": "City",
+   "name": "London"
+  },
+  {
+   "@type": "Country",
+   "name": "United Kingdom"
+  }
+ ],
+ "knowsAbout": [
+  "Corporate video production",
+  "Event videography",
+  "Aerial and drone filming",
+  "Brand films",
+  "Product photography"
+ ]
+}
+</script>
+
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -1397,7 +1456,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
   <div class="nav__inner">
     <nav class="nav__side nav__side--l" aria-label="Primary">
       <a href="/#">Work</a>
-      <a href="/#">Services</a>
+      <a href="/corporate-video-production">Services</a>
     </nav>
     <div class="nav__core">
       <a class="brand" href="/#" aria-label="Higher Heights — home">
@@ -1466,11 +1525,11 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
   <a href="/#">Meet Morgan</a>
   <a href="/#">Contact</a>
 </div>
-
 <main id="top">
 
   <section class="svc" aria-labelledby="pg-head">
-    <div class="wrap">
+          <div class="hh-wm hh-wm--pg is-br" aria-hidden="true"><img src="assets/img/hh-cream.svg" alt="" loading="lazy" decoding="async"></div>
+      <div class="wrap">
       <div class="eyebrow eyebrow--n reveal">
         <span class="eyebrow__line"></span><span class="mono">Corporate video production</span>
       </div>
@@ -1479,9 +1538,9 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
     </div>
   </section>
 
-  <section class="svc" aria-labelledby="l-870">
+  <section class="svc" aria-labelledby="l-5036">
     <div class="wrap">
-      <h2 class="svc__h" id="l-870" data-gw="letters">What companies commission most</h2>
+      <h2 class="svc__h" id="l-5036" data-gw="letters">What companies commission most</h2>
       <ol class="svc__grid">
         <li class="reveal"><span class="svc__name">Recruitment &amp; culture films</span></li>
         <li class="reveal"><span class="svc__name">Company and brand stories</span></li>
@@ -1493,10 +1552,10 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
     </div>
   </section>
 
-  <section class="band-cream" aria-labelledby="p-2105">
+  <section class="band-cream" aria-labelledby="p-3206">
     <div class="wrap statement">
       <div class="statement__grid">
-        <p class="statement__lead" id="p-2105">How it tends to go</p>
+        <p class="statement__lead" id="p-3206">How it tends to go</p>
         <div class="statement__body reveal">
           <p>Most corporate video fails for the same reason: it is written to say everything, so it says nothing. The fix is not a bigger crew or a longer film — it is deciding, before anyone picks up a camera, what one thing the film is for and who it is talking to.</p>
           <p>A typical job is one or two shoot days, a small crew, and a cut that respects how long anyone will actually watch. You get the main film plus the cutdowns the campaign needs, from the same shoot, rather than paying twice.</p>
@@ -1506,9 +1565,10 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
     </div>
   </section>
 
-  <section class="svc" aria-labelledby="l-4449">
-    <div class="wrap">
-      <h2 class="svc__h" id="l-4449" data-gw="letters">What you get</h2>
+  <section class="svc" aria-labelledby="l-7920">
+          <div class="hh-wm hh-wm--pg is-tl" aria-hidden="true"><img src="assets/img/hh-cream.svg" alt="" loading="lazy" decoding="async"></div>
+      <div class="wrap">
+      <h2 class="svc__h" id="l-7920" data-gw="letters">What you get</h2>
       <ol class="svc__grid">
         <li class="reveal"><span class="svc__name">A director who shoots and edits</span></li>
         <li class="reveal"><span class="svc__name">One or two days, not a fortnight</span></li>
@@ -1538,7 +1598,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
     </div>
   </section>
 
-      <footer class="foot">
+<footer class="foot">
         <div class="foot__top">
           <div class="foot__brand">
             <img src="assets/img/wordmark-cream.svg" width="1600" height="357"
@@ -2121,3 +2181,4 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
 })();
 </script>
 </body>
+</html>

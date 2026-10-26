@@ -27,10 +27,26 @@ lines = src.split("\n")
 def block(a, b):                       # 1-indexed, inclusive
     return "\n".join(lines[a-1:b])
 
-HEAD_OPEN = block(1, 1369)             # doctype .. </style>  (everything but </head>)
-NAV       = block(1376, 1450)          # <header> + the #drawer that its JS wires up
-FOOTER    = block(2026, 2055)          # <footer> .. </footer>
-SCRIPTS   = block(2082, 2886)          # all three <script> blocks + </body>
+def between(open_tag, close_tag, after=0):
+    """Locate a block by its markup, not by line number.
+
+    This used to slice fixed line ranges out of index.html. Every edit to the
+    homepage shifted those offsets, and the nav silently started being cut
+    mid-element -- producing pages with an unclosed <nav> that rendered at
+    zero height. Markers survive edits; line numbers do not.
+    """
+    a = src.index(open_tag, after)
+    b = src.index(close_tag, a) + len(close_tag)
+    return src[a:b], b
+
+
+_head_end = src.index("</head>")
+HEAD_OPEN = src[:_head_end]                                   # doctype .. before </head>
+_nav, _after_nav = between('<header class="nav"', "</header>")
+_drawer, _ = between('<div class="nav__drawer"', "</div>", _after_nav)
+NAV = _nav + "\n" + _drawer                                   # header + the drawer its JS wires
+FOOTER, _after_foot = between('<footer class="foot"', "</footer>")
+SCRIPTS = src[src.index("<script>", _after_foot):]            # all script blocks + </body></html>
 
 # strip the page-specific meta out of the shared head; each page sets its own
 def absolutise_nav(markup):
