@@ -1,0 +1,39 @@
+{
+  "name": "Higher Heights",
+  "legalName": "Higher Heights Films",
+  "email": "hello@higherheights.studio",
+  "founder": "Morgan",
+  "established": 2024,
+  "tagline": "Film · Aerial · Photography",
+  "description": "Higher Heights is a film and photography studio working across fashion, luxury, automotive and sport, directed by Morgan. UK based, filming worldwide.",
+  "clients": [
+    { "name": "WHOOP", "file": "whoop.png", "w": 83, "h": 44, "tint": "#17C162" },
+    { "name": "Aduna Superfoods", "file": "aduna.png", "w": 50, "h": 44, "tint": "#EA8F81" },
+    { "name": "Clean Co", "file": "cleanco.png", "w": 54, "h": 44, "tint": "#F4EFE6" },
+    { "name": "WatchTrader & Co", "file": "watchtrader.png", "w": 101, "h": 44, "tint": "#C19A45" },
+    { "name": "The REAL Drinks Co", "file": "real.png", "w": 171, "h": 44, "tint": "#FF7738" },
+    { "name": "Crowdcube", "file": "crowdcube.png", "w": 151, "h": 43, "tint": "#8296FF" },
+    { "name": "TecRec", "file": "tecrec.png", "w": 159, "h": 44, "tint": "#F48588" },
+    { "name": "Hybrid Fitness", "file": "hybrid.png", "w": 189, "h": 30, "tint": "#F3B112" },
+    { "name": "Everyone's Energy", "file": "everyones.png", "w": 116, "h": 44, "tint": "#8CC63F" },
+    { "name": "Days Work", "file": "dayswork.png", "w": 69, "h": 44, "tint": "#CBB576" },
+    { "name": "JimJam The Label", "file": "jimjam.png", "w": 152, "h": 44, "tint": "#1CBBCC" },
+    { "name": "Tony's Pie & Mash", "file": "piemash.png", "w": 73, "h": 44, "tint": "#F4EFE6" },
+    { "name": "TJ", "file": "tj.png", "w": 44, "h": 44, "tint": "#F4EFE6" },
+    { "name": "Be", "file": "be.png", "w": 44, "h": 44, "tint": "#F4EFE6" }
+  ],
+  "clientNames": ["NOBL", "Aduna Superfoods", "Clean Co", "WatchTrader & Co", "Matchroom Boxing", "LADbible Group", "WHOOP", "Oakridge Property Group", "Nexus", "Spens Motors", "Richard Mille", "Melissa Hemsley"],
+  "expertise": [
+    { "id": "brand-films", "name": "Brand films & commercials", "line": "Story-led films for brands, agencies and the occasional very particular private client." },
+    { "id": "aerial", "name": "Aerial", "line": "Drone and ground units shooting in tandem — one continuous move from the air to eye level." },
+    { "id": "product", "name": "Product & stills", "line": "Movement, up close. Macro and studio work for objects that deserve to be looked at." },
+    { "id": "events", "name": "Events & coverage", "line": "Ringside, backstage, after dark. Coverage that keeps the room's atmosphere intact." },
+    { "id": "social", "name": "Social cutdowns", "line": "Every ratio and cutdown the campaign actually needs, delivered with the master." }
+  ],
+  "process": [
+    { "n": "01", "name": "Brief & references", "text": "A conversation, a deck, a mood film — whatever exists. We agree what the film has to do before anyone talks about lenses." },
+    { "n": "02", "name": "Pre-production", "text": "Treatment, shot list, schedule, locations, permissions. The unglamorous part that decides whether the shoot day runs." },
+    { "n": "03", "name": "Shoot", "text": "Lean crew, deliberately. Enough hands to move fast, few enough that the room stays quiet and the subject stays comfortable." },
+    { "n": "04", "name": "Post & delivery", "text": "Edit, grade, sound, captions. Master plus every ratio and cutdown the campaign actually needs." }
+  ]
+}

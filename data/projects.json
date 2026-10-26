@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "heritage", "title": "Heritage", "client": "Spens Motors", "sector": "Automotive", "year": 2025,
+    "poster": "poster-roller.jpg", "video": "roller.mp4", "width": 1400, "height": 788,
+    "alt": "A classic Rolls-Royce parked among bare winter trees",
+    "services": [], "credits": [], "brief": "", "gallery": []
+  },
+  {
+    "slug": "styled-by-you", "title": "Styled By You", "client": "NOBL", "sector": "Brand film", "year": 2026,
+    "poster": "poster-nobl.jpg", "video": "nobl.mp4", "width": 1080, "height": 1920,
+    "alt": "Guests at a NOBL menswear event in a warm-lit private club",
+    "services": [], "credits": [], "brief": "", "gallery": []
+  },
+  {
+    "slug": "in-the-case", "title": "In the Case", "client": "WatchTrader & Co", "sector": "Luxury", "year": 2025,
+    "poster": "poster-wtc.jpg", "video": "wtc.mp4", "width": 1080, "height": 1920,
+    "alt": "WatchTrader and Co shopfront and a gold watch being handled in gloves",
+    "services": [], "credits": [], "brief": "", "gallery": []
+  },
+  {
+    "slug": "rm-69", "title": "RM 69", "client": "Richard Mille", "sector": "Product", "year": 2025,
+    "poster": "poster-rm69.jpg", "video": "rm69.mp4", "width": 1080, "height": 1920,
+    "alt": "Richard Mille RM 69 watch photographed on a dark graphic surface",
+    "services": [], "credits": [], "brief": "",
+    "gallery": [
+      { "src": "rm-1.jpg", "alt": "RM 69 watch, case back showing the movement", "width": 1300, "height": 1950 },
+      { "src": "rm-2.jpg", "alt": "RM 69 watch face detail under directional light", "width": 1300, "height": 1950 },
+      { "src": "rm-3.jpg", "alt": "RM 69 roller mechanism close-up", "width": 1300, "height": 1950 },
+      { "src": "rm-4.jpg", "alt": "RM 69 pink strap and curved case profile", "width": 1300, "height": 1950 },
+      { "src": "rm-5.jpg", "alt": "RM 69 dial and crown detail", "width": 1300, "height": 1950 },
+      { "src": "rm-6.jpg", "alt": "RM 69 full watch on dark graphic backdrop", "width": 1300, "height": 1950 }
+    ]
+  },
+  {
+    "slug": "walking", "title": "Walking", "client": "Clean Co", "sector": "Beverage", "year": 2025,
+    "poster": "poster-cleanco.jpg", "video": "cleanco.mp4", "width": 1080, "height": 1920,
+    "alt": "A woman in a striped dress walking through a summer field with a can of Clean Co",
+    "services": [], "credits": [], "brief": "", "gallery": []
+  },
+  {
+    "slug": "highland-road", "title": "Highland Road", "client": "", "sector": "Automotive", "year": 2025, "tag": "Aerial",
+    "poster": "poster-highland.jpg", "video": "hero.mp4", "width": 1400, "height": 788,
+    "alt": "Aerial view of a red car on a winding highland road beside a loch",
+    "services": ["Aerial"], "credits": [], "brief": "", "gallery": []
+  },
+  {
+    "slug": "face-of-aging", "title": "Face of Aging", "client": "WHOOP × Spencer Matthews", "sector": "Sport", "year": 2025,
+    "poster": "poster-whoop.jpg", "video": "whoop.mp4", "width": 1080, "height": 1920,
+    "alt": "Spencer Matthews running through a park with WHOOP performance data overlaid",
+    "services": [], "credits": [], "brief": "", "gallery": []
+  },
+  {
+    "slug": "morning-ritual", "title": "Morning Ritual", "client": "Aduna × Melissa Hemsley", "sector": "Event", "year": 2025,
+    "poster": "poster-aduna.jpg", "video": "aduna.mp4", "width": 1080, "height": 1920,
+    "alt": "Guests sampling Aduna superfoods at a daylight brand event",
+    "services": [], "credits": [], "brief": "", "gallery": []
+  }
+]

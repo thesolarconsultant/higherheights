@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Higher Heights Films — Superyachts, Classic Cars, Supercars</title>
+<meta name="description" content="Higher Heights Films makes story-led films about superyachts, classic cars and supercars — and the people who build them, restore them and run them. UK based, filming worldwide." />
+<meta name="theme-color" content="#0B1A26" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Higher Heights — Film, Aerial &amp; Photography" />
+<meta property="og:description" content="Higher Heights Films makes story-led films about superyachts, classic cars and supercars — and the people who build them, restore them and run them. UK based, filming worldwide." />
+<meta property="og:image" content="assets/img/poster-hero.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600&family=Geist+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="assets/img/hh-gold.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/img/icon-180.png" />
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   HIGHER HEIGHTS — design tokens
+   Palette sampled directly from the supplied brand logo files:
+   navy #0B1A26 · cream #F4EFE6 · gold #C9AE7C
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --navy:      #0B1A26;
+  --navy-2:    #0E2130;
+  --navy-3:    #102838;
+  --cream:     #F4EFE6;
+  --gold:      #C9AE7C;
+  --gold-deep: #7A6038;
+  --line:      rgba(201,174,124,.20);
+  --line-soft: rgba(244,239,230,.10);
+  --muted:     rgba(244,239,230,.56);
+  --muted-2:   rgba(244,239,230,.38);
+
+  --ink:       #0B1A26;
+  --ink-muted: rgba(11,26,38,.58);
+  --ink-line:  rgba(11,26,38,.14);
+
+  --gutter: clamp(1.1rem, 3vw, 2.4rem);
+  --pad:    clamp(1.25rem, 4.4vw, 5.5rem);
+  --sect:   clamp(5rem, 10vw, 10rem);
+  --max:    1680px;
+
+  --fs-hero:  clamp(3rem, 8.6vw, 9.2rem);
+  --fs-h2:    clamp(2.1rem, 4.6vw, 4.4rem);
+  --fs-state: clamp(1.55rem, 3.5vw, 3.15rem);
+  --fs-lead:  clamp(1rem, 1.35vw, 1.24rem);
+  --fs-body:  clamp(.94rem, 1.02vw, 1.03rem);
+  --fs-micro: clamp(.62rem, .72vw, .70rem);
+
+  --ease: cubic-bezier(.16,1,.3,1);
+  --ease-io: cubic-bezier(.65,.05,.36,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+body{
+  background:var(--navy);
+  color:var(--cream);
+  font-family:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:var(--fs-body);
+  font-weight:300;
+  line-height:1.62;
+  letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+body.is-locked{ overflow:hidden; }
+
+img,video{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+::selection{ background:var(--gold); color:var(--navy); }
+
+:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:4px;
+  border-radius:2px;
+}
+
+/* film grain */
+body::after{
+  content:""; position:fixed; inset:0; z-index:9000; pointer-events:none;
+  opacity:.028; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── atoms ─────────────────────────────────────────────── */
+.wrap{ max-width:var(--max); margin-inline:auto; padding-inline:var(--pad); }
+.mono{
+  font-family:"Geist Mono",ui-monospace,monospace;
+  font-size:var(--fs-micro);
+  font-weight:400;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.mono--dim{ color:var(--muted-2); }
+.serif{ font-family:"Instrument Serif",Georgia,serif; font-style:italic; font-weight:400; letter-spacing:-.01em; }
+.rule{ height:1px; background:var(--line); border:0; }
+.rule--ink{ background:var(--ink-line); }
+
+.eyebrow{ display:flex; align-items:baseline; gap:.85rem; }
+
+.eyebrow__line{ width:clamp(24px,4vw,64px); height:1px; background:var(--gold); opacity:.5; transform:translateY(-3px); }
+
+/* ── reveal ────────────────────────────────────────────── */
+.reveal{ opacity:0; transform:translate3d(0,26px,0); transition:opacity .85s var(--ease), transform .85s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+
+/* ── Rack focus. Mechanic from Goodwork Library v1.3.0 'softfocus',
+      restyled: no glass, no rounded corners, hairline frame only. ── */
+.rack{ position:relative; overflow:hidden; }
+.rack img{
+  filter:blur(14px); transform:scale(1.06); opacity:.55;
+  transition:filter 1.15s var(--ease), transform 1.4s var(--ease), opacity .9s var(--ease);
+  will-change:filter, transform;
+}
+.rack.in img{ filter:blur(0); transform:scale(1); opacity:1; }
+.rack__vf{ position:absolute; inset:0; pointer-events:none; z-index:2; opacity:0;
+  transition:opacity .5s var(--ease) .15s; }
+.rack.in .rack__vf{ opacity:1; }
+.rack__vf i{
+  position:absolute; width:17px; height:17px;
+  border:1px solid var(--gold); opacity:.72;
+  transition:inset .95s var(--ease), opacity .6s var(--ease) .9s;
+}
+.rack__vf i:nth-child(1){ inset:-10px auto auto -10px; border-right:0; border-bottom:0; }
+.rack__vf i:nth-child(2){ inset:-10px -10px auto auto; border-left:0; border-bottom:0; }
+.rack__vf i:nth-child(3){ inset:auto auto -10px -10px; border-right:0; border-top:0; }
+.rack__vf i:nth-child(4){ inset:auto -10px -10px auto; border-left:0; border-top:0; }
+.rack.in .rack__vf i:nth-child(1){ inset:11px auto auto 11px; opacity:0; }
+.rack.in .rack__vf i:nth-child(2){ inset:11px 11px auto auto; opacity:0; }
+.rack.in .rack__vf i:nth-child(3){ inset:auto auto 11px 11px; opacity:0; }
+.rack.in .rack__vf i:nth-child(4){ inset:auto 11px 11px auto; opacity:0; }
+
+/* ── Masked line rise. Mechanic from 'herotype', restyled. ── */
+.rise{ display:block; overflow:hidden; }
+.rise > span{
+  display:block; transform:translateY(105%);
+  transition:transform 1.05s cubic-bezier(.16,1,.3,1);
+}
+.hero__title.is-up .rise:nth-child(1) > span{ transform:none; transition-delay:.08s; }
+.hero__title.is-up .rise:nth-child(2) > span{ transform:none; transition-delay:.22s; }
+
+@media (prefers-reduced-motion:reduce){
+  .rack img{ filter:none; transform:none; opacity:1; transition:none }
+  .rack__vf{ display:none }
+  .rise > span{ transform:none; transition:none }
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   NAV
+   ══════════════════════════════════════════════════════════ */
+.nav{
+  position:fixed; inset:0 0 auto 0; z-index:600;
+  transition:background .5s var(--ease), border-color .5s var(--ease), backdrop-filter .5s;
+  border-bottom:1px solid transparent;
+}
+.nav.is-stuck{
+  background:rgba(11,26,38,.82);
+  backdrop-filter:blur(18px) saturate(1.2);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  border-bottom-color:var(--line-soft);
+}
+.nav__inner{
+  max-width:var(--max); margin-inline:auto;
+  padding:0 var(--pad);
+  height:clamp(64px,7.2vw,88px);
+  display:flex; align-items:center; justify-content:space-between; gap:2rem;
+}
+.brand{ display:flex; align-items:center; flex-shrink:0; }
+.brand__wm{ width:clamp(132px,13.5vw,186px); height:auto; display:block;
+  transition:opacity .5s var(--ease); }
+.brand:hover .brand__wm{ opacity:.78; }
+@media(max-width:700px){ .brand__wm{ width:116px } }
+.brand__mark{ width:clamp(26px,2.4vw,34px); height:auto; transition:transform .6s var(--ease); }
+.brand:hover .brand__mark{ transform:translateY(-2px); }
+.brand__text{
+  font-size:clamp(.72rem,.86vw,.82rem);
+  font-weight:500; letter-spacing:.30em; text-transform:uppercase;
+  white-space:nowrap;
+}
+.nav__links{ display:flex; align-items:center; gap:clamp(1.4rem,2.6vw,2.6rem); }
+.nav a, .nav__links a{ text-shadow:0 1px 14px rgba(11,26,38,.9); }
+.nav__links a{
+  font-family:"Geist Mono",monospace;
+  font-size:var(--fs-micro); letter-spacing:.15em; text-transform:uppercase;
+  color:var(--muted); position:relative; padding-block:.4rem;
+  transition:color .35s var(--ease);
+}
+.nav__links a::after{
+  content:""; position:absolute; left:0; bottom:0; height:1px; width:100%;
+  background:var(--gold); transform:scaleX(0); transform-origin:left;
+  transition:transform .5s var(--ease);
+}
+.nav__links a:hover{ color:var(--cream); }
+.nav__links a:hover::after{ transform:scaleX(1); }
+.nav__cta{
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.15em; text-transform:uppercase;
+  border:1px solid var(--line); padding:.72em 1.5em;
+  transition:background .45s var(--ease), color .45s var(--ease), border-color .45s var(--ease);
+}
+.nav__cta:hover{ background:var(--gold); border-color:var(--gold); color:var(--navy); }
+.nav__progress{ height:1px; background:transparent; }
+.nav__progress span{ display:block; height:100%; width:100%; background:var(--gold); transform:scaleX(0); transform-origin:left; opacity:.85; }
+.nav__burger{ display:none; }
+.nav__drawer{ display:none; }
+
+@media (max-width:860px){
+  .nav__links,.nav__cta{ display:none; }
+  .nav__burger{ display:flex; flex-direction:column; gap:5px; padding:.6rem 0 .6rem .8rem; }
+  .nav__burger i{ display:block; width:24px; height:1px; background:var(--cream); transition:transform .4s var(--ease), opacity .3s; }
+  .nav.is-open .nav__burger i:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav.is-open .nav__burger i:nth-child(2){ opacity:0; }
+  .nav.is-open .nav__burger i:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+  .nav__drawer{
+    display:flex;
+    position:fixed; inset:0; z-index:590; background:var(--navy);
+    flex-direction:column; justify-content:center; gap:.2rem;
+    padding:6rem var(--pad) 4rem; opacity:0; pointer-events:none;
+    transform:translate3d(0,-8px,0); transition:opacity .45s var(--ease), transform .45s var(--ease);
+  }
+  .nav.is-open + .nav__drawer{ opacity:1; pointer-events:auto; transform:none; }
+  .nav__drawer a{
+    font-size:clamp(2rem,9vw,3.2rem); font-weight:300; letter-spacing:-.03em;
+    padding-block:.28em; border-bottom:1px solid var(--line-soft);
+  }
+  .nav__drawer a span{ font-family:"Geist Mono",monospace; font-size:.62rem; letter-spacing:.2em; color:var(--gold); vertical-align:super; margin-right:.9rem; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════════════════ */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:grid;
+  grid-template-rows:1fr auto;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero__media{ position:absolute; inset:0; z-index:-2; }
+
+/* ── Print: grain, gate scratch and flicker over the hero footage.
+      Mechanic adapted from Goodwork Library v1.3.0 'filmgrain'.
+      Its light leak and wrapper are deliberately not used. ── */
+.print{ position:absolute; inset:0; z-index:-1; pointer-events:none; overflow:hidden; }
+.print__grain{
+  position:absolute; inset:-60%;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNDAnIGhlaWdodD0nMjQwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nLjknIG51bU9jdGF2ZXM9JzMnIHN0aXRjaFRpbGVzPSdzdGl0Y2gnLz48ZmVDb2xvck1hdHJpeCB0eXBlPSdtYXRyaXgnIHZhbHVlcz0nMi4xIDAgMCAwIC0uNTUgMi4xIDAgMCAwIC0uNTUgMi4xIDAgMCAwIC0uNTUgMCAwIDAgMCAxJy8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9JzEwMCUnIGhlaWdodD0nMTAwJScgZmlsdGVyPSd1cmwoI24pJy8+PC9zdmc+");
+  background-size:240px 240px;
+  mix-blend-mode:overlay; opacity:.185;
+  animation:print-grain 1.1s steps(6) infinite;
+}
+.print__flick{
+  position:absolute; inset:0; background:#fff;
+  mix-blend-mode:overlay; opacity:0;
+  animation:print-flick 6.2s ease-in-out infinite;
+}
+.print__scratch{
+  position:absolute; top:0; bottom:0; width:1px; left:var(--x);
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.55) 18%,rgba(255,255,255,.35) 72%,transparent);
+  opacity:0; animation:print-scratch 5s steps(1) var(--d) infinite;
+}
+@keyframes print-grain{
+  0%{transform:translate(0,0)}      10%{transform:translate(-4%,-7%)}
+  20%{transform:translate(-10%,5%)} 30%{transform:translate(6%,-11%)}
+  40%{transform:translate(-3%,13%)} 50%{transform:translate(-12%,-4%)}
+  60%{transform:translate(10%,0)}   70%{transform:translate(0,11%)}
+  80%{transform:translate(-8%,7%)}  90%{transform:translate(8%,-6%)}
+  100%{transform:translate(0,0)}
+}
+@keyframes print-flick{
+  0%{opacity:0} 6%{opacity:.055} 9%{opacity:0} 31%{opacity:.028}
+  33%{opacity:.066} 35%{opacity:0} 60%{opacity:.044} 62%{opacity:0}
+  84%{opacity:.06} 86%{opacity:.022} 88%{opacity:0}
+}
+@keyframes print-scratch{ 0%,100%{opacity:0} 40%{opacity:.6} 41.6%{opacity:0} }
+@media (prefers-reduced-motion:reduce){
+  .print__grain,.print__flick,.print__scratch{ animation:none!important }
+  .print__flick,.print__scratch{ display:none }
+  .print__grain{ opacity:.2 }
+}
+
+.hero__media video,
+.hero__media img{
+  width:100%; height:100%; object-fit:cover; object-position:50% 46%;
+  filter:saturate(1) brightness(.94) contrast(1.02);
+  transform:scale(1.06);
+  animation:heroDrift 26s var(--ease-io) forwards;
+}
+@keyframes heroDrift{ to{ transform:scale(1); } }
+@media (prefers-reduced-motion: reduce){ .hero__media video,.hero__media img{ animation:none; transform:none; } }
+
+.hero__scrim{
+  position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(to top, rgba(11,26,38,.94) 0%, rgba(11,26,38,.72) 14%, rgba(11,26,38,.26) 38%, rgba(11,26,38,.04) 60%, transparent 78%),
+    linear-gradient(to bottom, rgba(11,26,38,.78) 0%, rgba(11,26,38,.42) 9%, transparent 19%),
+    radial-gradient(95% 70% at 12% 102%, rgba(11,26,38,.80) 0%, transparent 62%);
+}
+
+.hero__inner{
+  grid-row:1 / -1;
+  position:relative;
+  max-width:var(--max); margin-inline:auto; width:100%;
+  padding:clamp(6rem,12vh,9rem) var(--pad) clamp(2rem,4vh,3.2rem);
+  display:flex; flex-direction:column; justify-content:space-between;
+  gap:3rem;
+}
+.hero__top{ display:flex; justify-content:space-between; align-items:center; gap:2rem; }
+.hero__top .mono, .hero__status{ text-shadow:0 1px 16px rgba(11,26,38,.95), 0 0 3px rgba(11,26,38,.8); }
+.hero__top .mono{ color:var(--gold); }
+
+/* the disciplines: a light passes along them, slowly */
+.hero__disc{ display:inline-flex; align-items:center; gap:.62em; }
+.hero__disc i{ font-style:normal; opacity:.55; animation:disc-pass 9s linear infinite; }
+.hero__disc i:nth-of-type(2){ animation-delay:.5s; }
+.hero__disc i:nth-of-type(3){ animation-delay:1s; }
+.hero__disc b{ font-weight:400; opacity:.3; }
+@keyframes disc-pass{ 0%,22%{opacity:.55} 7%{opacity:1} }
+
+/* a live state, and somewhere to click */
+.hero__status{
+  display:inline-flex; align-items:center; gap:.75em;
+  text-decoration:none; color:var(--gold);
+  transition:color .4s var(--ease);
+}
+.hero__status:hover{ color:var(--cream); }
+.hero__status:focus-visible{ outline:1px solid var(--gold); outline-offset:4px; }
+.hero__clock{ font-variant-numeric:tabular-nums; opacity:.62; }
+.hero__sep{ opacity:.3; }
+.hero__avail{ display:inline-flex; align-items:center; gap:.6em; }
+.hero__avail i{
+  position:relative; width:5px; height:5px; flex:none;
+  background:var(--gold); border-radius:50%;
+}
+.hero__avail i::after{
+  content:""; position:absolute; inset:0; border-radius:inherit;
+  background:inherit; animation:avail-breathe 3.4s var(--ease) infinite;
+}
+@keyframes avail-breathe{ 0%{transform:scale(1);opacity:.65} 70%,100%{transform:scale(3.2);opacity:0} }
+@media(max-width:700px){ .hero__clock,.hero__sep{ display:none } }
+@media (prefers-reduced-motion:reduce){
+  .hero__disc i{ animation:none; opacity:.85 }
+  .hero__avail i::after{ animation:none; display:none }
+}
+
+.hero__foot{ display:grid; grid-template-columns:1fr auto; align-items:end; gap:clamp(1.5rem,4vw,4rem); }
+h1.hero__title{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(3.4rem,9.4vw,10rem);
+  font-weight:400;
+  line-height:.92;
+  letter-spacing:-.022em;
+  text-wrap:balance;
+}
+h1.hero__title em{
+  font-style:normal;
+  display:block;
+}
+h1.hero__title em + em{ padding-left:.09em; }
+h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
+.hero__sub{
+  max-width:34ch;
+  font-size:var(--fs-lead);
+  font-weight:300;
+  line-height:1.5;
+  color:rgba(244,239,230,.82);
+  letter-spacing:-.01em;
+  margin-top:clamp(1.4rem,2.6vw,2.2rem);
+}
+.hero__aside{ display:flex; flex-direction:column; align-items:flex-end; gap:1.1rem; text-align:right; padding-bottom:.4rem; }
+.hero__scroll{
+  display:flex; flex-direction:column; align-items:center; gap:.75rem;
+  font-family:"Geist Mono",monospace; font-size:.58rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--muted-2);
+  writing-mode:vertical-rl;
+}
+.hero__scroll::after{
+  content:""; width:1px; height:clamp(40px,7vh,72px);
+  background:linear-gradient(to bottom,var(--gold),transparent);
+  animation:scrollPulse 2.6s var(--ease-io) infinite;
+}
+@keyframes scrollPulse{ 0%{ transform:scaleY(.25); transform-origin:top; opacity:.4 } 50%{ transform:scaleY(1); transform-origin:top; opacity:1 } 100%{ transform:scaleY(.25); transform-origin:bottom; opacity:.4 } }
+@media (prefers-reduced-motion: reduce){ .hero__scroll::after{ animation:none; } }
+
+@media (max-width:860px){
+  .hero__foot{ grid-template-columns:1fr; }
+  .hero__aside{ align-items:flex-start; text-align:left; flex-direction:row; justify-content:space-between; width:100%; }
+  .hero__scroll{ writing-mode:horizontal-tb; flex-direction:row; }
+  .hero__scroll::after{ width:44px; height:1px; background:linear-gradient(to right,var(--gold),transparent); }
+}
+@media (max-width:620px){
+  .hero__top{ flex-direction:column; gap:.55rem; }
+  .hero__inner{ padding-top:clamp(5.5rem,14vh,7rem); }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CREAM BAND — statement
+   ══════════════════════════════════════════════════════════ */
+.band-cream{ background:var(--cream); color:var(--ink); position:relative; }
+.hh-wm{ position:absolute; z-index:0; pointer-events:none; user-select:none; }
+.hh-wm img{ display:block; width:100%; height:auto; }
+.hh-wm--studio{ right:-6%; bottom:-14%; width:min(42%,460px); opacity:.055; }
+.hh-wm--contact{ left:-7%; top:-10%; width:min(38%,420px); opacity:.07; }
+.studio .wrap, .contact .wrap{ position:relative; z-index:1; }
+@media(max-width:860px){
+  .hh-wm--studio{ right:-16%; bottom:-6%; width:min(62%,300px); opacity:.05; }
+  .hh-wm--contact{ left:-18%; top:-4%; width:min(58%,280px); opacity:.06; }
+}
+.band-cream .mono{ color:var(--gold-deep); }
+.band-cream 
+.band-cream .eyebrow__line{ background:var(--gold-deep); opacity:.55; }
+
+.statement{ padding-block:var(--sect) clamp(2.5rem,5vw,4.5rem); }
+.statement__grid{
+  display:grid; grid-template-columns:1.15fr .85fr;
+  gap:clamp(2rem,6vw,7rem); align-items:start;
+  margin-top:clamp(2.2rem,4.5vw,3.6rem);
+}
+.statement__lead{
+  font-family:"Instrument Serif",Georgia,serif; font-style:italic;
+  font-size:var(--fs-state); line-height:1.14; letter-spacing:-.022em;
+  text-wrap:balance;
+}
+.statement__lead span{ color:var(--gold-deep); }
+.statement__body{ display:flex; flex-direction:column; gap:1.15rem; padding-top:.5rem; }
+.statement__body p{ color:var(--ink-muted); font-size:var(--fs-body); line-height:1.72; }
+.statement__body p strong{ color:var(--ink); font-weight:500; }
+@media (max-width:860px){ .statement__grid{ grid-template-columns:1fr; gap:2rem; } }
+
+/* clients marquee */
+.clients{ border-top:1px solid var(--ink-line); padding-block:1.5rem 1.55rem; overflow:hidden; }
+.clients__label{ margin-bottom:1.1rem; }
+.marquee{ display:flex; gap:0; overflow:hidden; mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent); }
+.marquee__track{ display:flex; flex-shrink:0; gap:0; animation:marquee 46s linear infinite; will-change:transform; }
+.marquee:hover .marquee__track{ animation-play-state:paused; }
+.marquee__track span{
+  font-size:clamp(.78rem,1.1vw,.95rem); font-weight:400;
+  letter-spacing:.16em; text-transform:uppercase; white-space:nowrap;
+  padding-inline:clamp(1.1rem,2.2vw,2rem);
+  display:flex; align-items:center; gap:clamp(1.1rem,2.2vw,2rem);
+  color:rgba(11,26,38,.72);
+}
+.marquee__track span::after{ content:"·"; color:var(--gold-deep); font-size:1.1em; }
+@keyframes marquee{ to{ transform:translate3d(-50%,0,0); } }
+@media (prefers-reduced-motion: reduce){
+  .marquee{ mask-image:none; }
+  .marquee__track{ animation:none; flex-wrap:wrap; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   WORK
+   ══════════════════════════════════════════════════════════ */
+.work{ padding:var(--sect) 0 calc(var(--sect) * .7); position:relative; }
+.sect-head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:2rem; flex-wrap:wrap;
+  padding-bottom:clamp(1.4rem,2.6vw,2.2rem);
+  border-bottom:1px solid var(--line); margin-bottom:clamp(2.4rem,5vw,4.5rem);
+}
+.sect-head h2{ font-size:var(--fs-h2); font-weight:200; line-height:1; letter-spacing:-.04em; margin-top:.7rem; }
+.sect-head__meta{ text-align:right; display:flex; flex-direction:column; gap:.45rem; }
+@media (max-width:700px){ .sect-head__meta{ text-align:left; } }
+
+.films{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:var(--gutter) var(--gutter);
+  align-items:start;
+}
+.film{
+  position:relative;
+  display:block;
+  width:100%;
+  text-align:left;
+  background:var(--navy-2);
+  overflow:hidden;
+  cursor:pointer;
+  isolation:isolate;
+}
+.film__frame{ position:relative; width:100%; height:100%; overflow:hidden; }
+.film--v .film__frame{ aspect-ratio:5/6; }
+.film--w .film__frame{ aspect-ratio:16/9; }
+
+.film__poster,.film__video{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 38%;
+  transition:opacity .7s var(--ease), transform 1.2s var(--ease);
+}
+.film__video{ opacity:0; z-index:1; }
+.film.is-playing .film__video{ opacity:1; }
+.film__poster{ z-index:0; }
+.film:hover .film__poster,
+.film.is-playing .film__poster{ transform:scale(1.045); }
+
+.film__scrim{
+  position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:linear-gradient(to top, rgba(11,26,38,.92) 0%, rgba(11,26,38,.5) 26%, rgba(11,26,38,0) 58%);
+  opacity:.9; transition:opacity .6s var(--ease);
+}
+.film:hover .film__scrim{ opacity:1; }
+
+.film__body{
+  position:absolute; left:0; right:0; bottom:0; z-index:3;
+  padding:clamp(1rem,1.8vw,1.6rem);
+  display:flex; flex-direction:column; gap:.5rem;
+}
+.film__idx{
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.16em; color:var(--gold);
+}
+.film__title{
+  font-size:clamp(1.05rem,1.55vw,1.5rem); font-weight:400;
+  letter-spacing:-.025em; line-height:1.14;
+  transition:transform .6s var(--ease);
+}
+.film__meta{
+  display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.11em; text-transform:uppercase; color:var(--muted);
+  opacity:0; transform:translateY(7px);
+  transition:opacity .55s var(--ease), transform .55s var(--ease);
+  margin-top:.15rem;
+}
+.film__meta i{ width:2px; height:2px; background:var(--gold); border-radius:50%; display:block; }
+.film:hover .film__meta,
+.film:focus-visible .film__meta{ opacity:1; transform:none; }
+
+.film__play{
+  position:absolute; z-index:4; right:clamp(1rem,1.8vw,1.6rem); top:clamp(1rem,1.8vw,1.6rem);
+  width:clamp(38px,3.4vw,50px); aspect-ratio:1; border-radius:50%;
+  border:1px solid rgba(244,239,230,.34);
+  display:grid; place-items:center;
+  opacity:0; transform:scale(.82);
+  transition:opacity .5s var(--ease), transform .5s var(--ease), background .4s, border-color .4s;
+  backdrop-filter:blur(6px);
+}
+.film__play svg{ width:11px; height:11px; fill:var(--cream); margin-left:1px; }
+.film:hover .film__play,
+.film:focus-visible .film__play{ opacity:1; transform:none; }
+.film__play:hover{ background:var(--gold); border-color:var(--gold); }
+.film__play:hover svg{ fill:var(--navy); }
+
+/* per-tile placement — packed mosaic, mixed 16:9 and 5:6 at matched heights */
+.f1{ grid-column:span 8; }
+.f2{ grid-column:span 4; }
+.f3{ grid-column:span 4; }
+.f4{ grid-column:span 4; }
+.f5{ grid-column:span 4; }
+.f6{ grid-column:span 8; }
+.f7{ grid-column:span 4; }
+.f8{ grid-column:span 4; }
+.films__tail{
+  grid-column:span 8; align-self:stretch;
+  display:flex; flex-direction:column; justify-content:center; align-items:flex-start;
+  gap:1.1rem; padding:clamp(1.4rem,3vw,3rem) 0 clamp(1.4rem,3vw,3rem) clamp(1.2rem,3vw,3rem);
+  border-left:1px solid var(--line);
+}
+.films__tail p{ color:var(--muted); max-width:40ch; font-size:var(--fs-lead); line-height:1.5; }
+.films__tail .link-arrow{ margin-top:.4rem; }
+.link-arrow{
+  display:inline-flex; align-items:center; gap:.8rem;
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
+  padding:.9rem 0; border-bottom:1px solid var(--line);
+  transition:border-color .4s var(--ease), gap .4s var(--ease);
+}
+.link-arrow:hover{ border-color:var(--gold); gap:1.15rem; }
+.link-arrow svg{ width:14px; height:10px; fill:none; stroke:currentColor; stroke-width:1.2; }
+
+@media (max-width:1024px){
+  .f1,.f6{ grid-column:span 12; }
+  .f2,.f3,.f4,.f5,.f7,.f8{ grid-column:span 6; margin-top:0; }
+  .films__tail{ grid-column:span 12; }
+}
+@media (max-width:640px){
+  .f2,.f3,.f4,.f5,.f7,.f8{ grid-column:span 12; }
+  .film--v .film__frame{ aspect-ratio:3/4; }
+  .film__meta{ opacity:1; transform:none; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   AERIAL
+   ══════════════════════════════════════════════════════════ */
+.aerial{ position:relative; padding:var(--sect) 0; background:var(--navy-2); overflow:hidden; }
+.aerial::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(90% 60% at 80% 0%, rgba(201,174,124,.07), transparent 70%);
+}
+.aerial__grid{
+  display:grid; grid-template-columns:.85fr 1.15fr;
+  gap:clamp(2rem,6vw,6rem); align-items:start;
+  margin-top:clamp(2.4rem,4vw,3.4rem);
+}
+.aerial__copy{ position:sticky; top:calc(clamp(64px,7.2vw,88px) + 3rem); display:flex; flex-direction:column; gap:1.4rem; }
+.aerial__copy h2{ font-size:var(--fs-h2); font-weight:200; line-height:1; letter-spacing:-.04em; }
+.aerial__copy p{ color:var(--muted); max-width:38ch; }
+.aerial__specs{ display:flex; flex-direction:column; margin-top:.6rem; }
+.aerial__specs div{
+  display:flex; justify-content:space-between; gap:1rem;
+  padding:.8rem 0; border-top:1px solid var(--line-soft);
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.12em; text-transform:uppercase;
+}
+.aerial__specs div span:first-child{ color:var(--muted-2); }
+.aerial__specs div span:last-child{ color:var(--cream); text-align:right; }
+
+.aerial__shots{
+  display:grid;
+  grid-template-columns:1.22fr .78fr;
+  grid-template-rows:1fr 1fr;
+  gap:clamp(.7rem,1.3vw,1.2rem);
+  height:clamp(460px, 70vh, 820px);
+}
+.shot{
+  position:relative; overflow:hidden; background:var(--navy-3);
+  height:100%; width:100%;
+}
+.shot:first-child{ grid-row:1 / span 2; }
+.shot img{
+  width:100%; height:114%; object-fit:cover; will-change:transform;
+  transform:translate3d(0,calc(var(--p,0) * -1px),0);
+}
+.shot::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(to top, rgba(11,26,38,.72) 0%, rgba(11,26,38,.12) 34%, transparent 60%);
+}
+.shot figcaption{
+  position:absolute; z-index:2; left:clamp(.85rem,1.5vw,1.3rem); bottom:clamp(.8rem,1.3vw,1.15rem);
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.14em; text-transform:uppercase; color:rgba(244,239,230,.86);
+}
+@media (max-width:900px){
+  .aerial__grid{ grid-template-columns:1fr; gap:2.4rem; }
+  .aerial__copy{ position:static; }
+  .aerial__shots{ grid-template-columns:1fr 1fr; grid-template-rows:auto auto; height:auto; }
+  .shot{ aspect-ratio:3/4; height:auto; }
+  .shot:first-child{ grid-row:auto; grid-column:1 / -1; aspect-ratio:4/5; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PRODUCT STRIP
+   ══════════════════════════════════════════════════════════ */
+.product{ padding:var(--sect) 0; }
+.product__head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:clamp(1.8rem,3.4vw,2.8rem); }
+.product__head h2{ font-size:var(--fs-h2); font-weight:200; letter-spacing:-.04em; line-height:1.02; margin-top:.7rem; }
+.carousel{ position:relative; }
+.strip{
+  display:flex; gap:clamp(.8rem,1.4vw,1.3rem);
+  overflow-x:auto; scroll-snap-type:x proximity;
+  padding-bottom:1.2rem;
+  scrollbar-width:none; cursor:grab;
+  touch-action:pan-y;                 /* page still scrolls vertically */
+  -webkit-user-select:none; user-select:none;
+  overscroll-behavior-x:contain;
+}
+.strip::-webkit-scrollbar{ display:none; }
+.carousel.is-dragging .strip{ cursor:grabbing; scroll-snap-type:none; }
+.strip img{ -webkit-user-drag:none; user-drag:none; }
+
+.carousel__foot{
+  display:flex; align-items:center; gap:clamp(.9rem,2vw,1.6rem);
+  margin-top:clamp(.9rem,1.8vw,1.4rem);
+}
+.carousel__arrow{
+  flex:0 0 auto; width:34px; height:34px; display:grid; place-items:center;
+  background:none; border:1px solid var(--line); color:var(--cream);
+  cursor:pointer; transition:border-color .3s var(--ease), opacity .3s, color .3s;
+}
+.carousel__arrow svg{ width:13px; height:10px; fill:none; stroke:currentColor; stroke-width:1.2; }
+.carousel__arrow:hover:not(:disabled){ border-color:var(--gold); color:var(--gold); }
+.carousel__arrow:disabled{ opacity:.28; cursor:default; }
+.carousel__arrow:focus-visible{ outline:1px solid var(--gold); outline-offset:3px; }
+.carousel__prog{ flex:1 1 auto; height:1px; background:var(--line-soft); position:relative; }
+.carousel__bar{
+  position:absolute; left:0; top:-1px; height:3px; background:var(--gold);
+  width:100%; transform-origin:left center; transform:scaleX(0);
+  transition:transform .18s linear;
+}
+@media (prefers-reduced-motion:reduce){ .carousel__bar{ transition:none } }
+.strip::-webkit-scrollbar{ height:3px; }
+.strip::-webkit-scrollbar-track{ background:rgba(244,239,230,.06); }
+.strip::-webkit-scrollbar-thumb{ background:var(--line); }
+.strip figure{
+  flex:0 0 auto; width:clamp(190px,20vw,300px); scroll-snap-align:start;
+  position:relative; overflow:hidden; background:var(--navy-3); aspect-ratio:2/3;
+}
+.strip figure img{ width:100%; height:100%; object-fit:cover; pointer-events:none; transition:transform 1s var(--ease), opacity .6s; }
+.strip figure:hover img{ transform:scale(1.04); }
+.strip figure:nth-child(even){ margin-top:clamp(14px,2.4vw,38px); }
+.product__note{ margin-top:1.6rem; color:var(--muted-2); max-width:56ch; }
+
+/* ══════════════════════════════════════════════════════════
+   STUDIO (cream)
+   ══════════════════════════════════════════════════════════ */
+.studio{ padding:var(--sect) 0; background:var(--cream); color:var(--ink); position:relative; overflow:hidden; }
+.studio .mono{ color:var(--gold-deep); }
+.studio 
+.studio .eyebrow__line{ background:var(--gold-deep); opacity:.55; }
+.studio__grid{
+  display:grid; grid-template-columns:.85fr 1.15fr;
+  gap:clamp(2rem,6vw,7rem); align-items:start;
+  margin-top:clamp(2.2rem,4vw,3.4rem);
+}
+.studio__figures{ display:flex; flex-direction:column; gap:clamp(1rem,2vw,1.5rem); }
+.studio__figure{ position:relative; }
+.studio__band{ margin-top:clamp(2.4rem,5vw,4.5rem); }
+.studio__band .studio__bandFrame{ position:relative; overflow:hidden; aspect-ratio:12/5; background:#0B1A26; }
+.studio__band img{ width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+.studio__band figcaption{
+  margin-top:.9rem; display:flex; justify-content:space-between; gap:1rem;
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.13em; text-transform:uppercase; color:rgba(11,26,38,.5);
+}
+@media (max-width:700px){
+  .studio__band .studio__bandFrame{ aspect-ratio:16/10; }
+  .studio__band img{ object-position:50% 34%; }
+}
+.studio__figure img{ width:100%; height:auto; filter:contrast(1.03) saturate(.96); }
+.studio__figure figcaption{
+  margin-top:.95rem; display:flex; justify-content:space-between; gap:1rem;
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.13em; text-transform:uppercase; color:rgba(11,26,38,.5);
+}
+.studio__copy h2{ font-size:var(--fs-h2); font-weight:200; letter-spacing:-.04em; line-height:1.02; margin-bottom:1.4rem; }
+.studio__copy p{ color:var(--ink-muted); margin-bottom:1.1rem; max-width:54ch; line-height:1.72; }
+.studio__copy p strong{ color:var(--ink); font-weight:500; }
+.pull{
+  font-family:"Instrument Serif",Georgia,serif; font-style:italic;
+  font-size:clamp(1.35rem,2.2vw,1.95rem); line-height:1.22; letter-spacing:-.02em;
+  color:var(--ink); border-left:1px solid var(--gold-deep);
+  padding-left:clamp(1rem,1.8vw,1.6rem); margin:1.9rem 0;
+  max-width:30ch;
+}
+.studio__services{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.6rem; }
+.chip{
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.13em; text-transform:uppercase;
+  border:1px solid rgba(11,26,38,.18); border-radius:999px;
+  padding:.62em 1.15em; color:rgba(11,26,38,.72);
+  transition:background .4s var(--ease), color .4s var(--ease), border-color .4s;
+}
+.chip:hover{ background:var(--ink); color:var(--cream); border-color:var(--ink); }
+
+.process{ margin-top:clamp(3.4rem,7vw,6rem); border-top:1px solid var(--ink-line); }
+.process__row{
+  display:grid; grid-template-columns:auto 1fr 1.3fr; gap:clamp(1.2rem,4vw,4rem);
+  padding:clamp(1.3rem,2.4vw,2rem) 0; border-bottom:1px solid var(--ink-line);
+  align-items:baseline;
+}
+.process__n{ font-family:"Geist Mono",monospace; font-size:var(--fs-micro); letter-spacing:.14em; color:var(--gold-deep); }
+.process__t{ font-size:clamp(1.05rem,1.6vw,1.35rem); font-weight:400; letter-spacing:-.02em; }
+.process__d{ color:var(--ink-muted); font-size:var(--fs-body); max-width:52ch; }
+@media (max-width:860px){
+  .studio__grid{ grid-template-columns:1fr; gap:2.4rem; }
+  .process__row{ grid-template-columns:auto 1fr; gap:.6rem 1.2rem; }
+  .process__d{ grid-column:2; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CONTACT
+   ══════════════════════════════════════════════════════════ */
+.contact{ padding:var(--sect) 0 0; position:relative; overflow:hidden; }
+
+/* Layout from Goodwork Library v1.3.0 'footercta'. Its styling is not used:
+   no gradients, no pills, no glass, no rounded corners. */
+.contact__lede{
+  max-width:46ch; margin:clamp(1.1rem,2vw,1.6rem) 0 0;
+  font-size:var(--fs-lead); line-height:1.6; color:var(--muted);
+}
+.contact__actions{ display:flex; flex-wrap:wrap; align-items:center; gap:clamp(.7rem,1.4vw,1rem); margin-top:clamp(1.6rem,3vw,2.3rem); }
+.cbtn{
+  display:inline-flex; align-items:center; gap:.7rem; height:52px; padding:0 1.6rem;
+  border:1px solid var(--line); color:var(--cream); text-decoration:none;
+  font-size:var(--fs-body); letter-spacing:.01em;
+  transition:border-color .4s var(--ease), color .4s var(--ease), background .4s var(--ease);
+}
+.cbtn svg{ width:14px; height:10px; fill:none; stroke:currentColor; stroke-width:1.2; }
+.cbtn:hover{ border-color:var(--gold); color:var(--gold); }
+.cbtn--main{ background:var(--cream); color:var(--navy); border-color:var(--cream); }
+.cbtn--main:hover{ background:var(--gold); border-color:var(--gold); color:var(--navy); }
+.cbtn:focus-visible{ outline:1px solid var(--gold); outline-offset:3px; }
+.contact__open{ font-family:"Geist Mono",ui-monospace,monospace; font-size:var(--fs-micro);
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2); }
+
+
+
+
+/* ══ Contact band ═════════════════════════════════════════════════
+   Layout from Goodwork Library v1.3.0 'footercta'; none of its styling.
+   The ask sits beside the enquiry so the section works, not just talks. ══ */
+.band{ display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(2rem,5vw,5rem);
+  align-items:start; border-top:1px solid var(--line); padding-top:clamp(2.4rem,5vw,4rem); }
+.band__ask h2{ margin:0; }
+.band__lede{ max-width:40ch; margin:clamp(1.1rem,2vw,1.6rem) 0 0;
+  font-size:var(--fs-lead); line-height:1.6; color:var(--muted); }
+.band__mail{ display:inline-flex; align-items:center; gap:.7rem;
+  margin-top:clamp(1.6rem,3vw,2.4rem); padding-bottom:.5rem;
+  border-bottom:1px solid var(--line); color:var(--cream);
+  text-decoration:none; font-size:var(--fs-body);
+  transition:border-color .4s var(--ease), color .4s var(--ease); }
+.band__mail svg{ width:14px; height:10px; fill:none; stroke:currentColor; stroke-width:1.2; }
+.band__mail:hover{ color:var(--gold); border-color:var(--gold); }
+.band__facts{ display:grid; gap:0; margin:clamp(2rem,4vw,3rem) 0 0; }
+.band__facts > div{ display:flex; justify-content:space-between; gap:1.5rem;
+  padding:.85rem 0; border-top:1px solid var(--line-soft);
+  font-family:"Geist Mono",ui-monospace,monospace; font-size:var(--fs-micro);
+  letter-spacing:.14em; text-transform:uppercase; }
+.band__facts dt{ color:var(--muted-2); }
+.band__facts dd{ margin:0; color:var(--cream); }
+@media(max-width:900px){ .band{ grid-template-columns:1fr } }
+
+/* ══ Footer ═══════════════════════════════════════════════════════
+   Shape from 'footercta': a base carrying brand, nav and legal. ══ */
+.foot{ margin-top:clamp(4rem,8vw,7rem); border-top:1px solid var(--line);
+  padding:clamp(2.4rem,5vw,3.6rem) 0 clamp(2rem,4vw,3rem); }
+.foot__top{ display:grid; grid-template-columns:1.3fr 1fr 1fr;
+  gap:clamp(2rem,4vw,4rem); align-items:start; }
+.foot__brand img{ width:clamp(200px,20vw,280px); height:auto; }
+.foot__tag{ max-width:30ch; margin:clamp(1rem,2vw,1.5rem) 0 0;
+  color:var(--muted); font-size:var(--fs-body); line-height:1.6; }
+.foot__col h4{ margin:0 0 1.1rem; font-family:"Geist Mono",ui-monospace,monospace;
+  font-size:var(--fs-micro); font-weight:400; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--muted-2); }
+.foot__col a, .foot__col span{ display:block; padding:.34rem 0; color:var(--cream);
+  text-decoration:none; font-size:var(--fs-body);
+  transition:color .3s var(--ease); }
+.foot__col a:hover{ color:var(--gold); }
+.foot__base{ display:flex; flex-wrap:wrap; justify-content:space-between;
+  gap:1rem 2rem; margin-top:clamp(2.4rem,5vw,4rem); padding-top:clamp(1.4rem,2.6vw,2rem);
+  border-top:1px solid var(--line-soft);
+  font-family:"Geist Mono",ui-monospace,monospace; font-size:var(--fs-micro);
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2); }
+.foot__base a{ color:var(--muted-2); text-decoration:none; transition:color .3s; }
+.foot__base a:hover{ color:var(--cream); }
+@media(max-width:860px){ .foot__top{ grid-template-columns:1fr; gap:2.4rem } }
+
+/* ══ Sticky horizontal scroll ═════════════════════════════════════
+   Mechanic adapted from Goodwork Library v1.3.0 'storypinned', run on the
+   X axis: the section pins and the stills travel sideways. ══ */
+.pin{ position:relative; }
+.pin__stage{ position:sticky; top:0; height:100svh; min-height:520px;
+  overflow:hidden; display:flex; flex-direction:column; justify-content:center; }
+.pin:not(.pin--off) .strip{ overflow:visible; scroll-snap-type:none;
+  cursor:default; padding-bottom:0; }
+.pin:not(.pin--off) .carousel__foot{ display:none; }
+.pin__row{ will-change:transform; padding-inline:var(--pad); }
+.pin__row figure{ width:clamp(210px,23vw,340px); }
+.pin__meter{ position:absolute; left:var(--pad); right:var(--pad);
+  bottom:clamp(2.2rem,5vh,3.6rem); height:1px; background:var(--line-soft); }
+.pin__meter i{ position:absolute; left:0; top:-1px; height:3px; width:100%;
+  background:var(--gold); transform-origin:left center; transform:scaleX(0); }
+.pin__hint{ position:absolute; left:var(--pad); bottom:clamp(3.6rem,7.5vh,5.4rem);
+  font-family:"Geist Mono",ui-monospace,monospace; font-size:var(--fs-micro);
+  letter-spacing:.18em; text-transform:uppercase; color:var(--muted-2); }
+.pin--off .pin__stage{ position:static; height:auto; min-height:0; overflow:visible; }
+.pin--off .pin__meter,.pin--off .pin__hint{ display:none; }
+
+/* ══ Logo marquee ═════════════════════════════════════════════════ */
+.marq{ position:relative; overflow:hidden;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+          mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); }
+.marq__row{ display:flex; width:max-content; align-items:center;
+  gap:clamp(2.4rem,5vw,4.6rem); animation:marq 52s linear infinite; }
+.marq__row + .marq__row{ animation-duration:66s; animation-direction:reverse;
+  margin-top:clamp(1.8rem,3.2vw,2.8rem); }
+.marq:hover .marq__row{ animation-play-state:paused; }
+@keyframes marq{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@media (prefers-reduced-motion:reduce){
+  .marq__row{ animation:none }
+  .marq{ overflow-x:auto; -webkit-mask:none; mask:none }
+}
+
+/* ══ Client wall ══════════════════════════════════════════════════
+   Not the library's drifting rails: fourteen real marks, still and
+   optically balanced. One ink at rest, the real brand colour on hover. ══ */
+.clients{ padding:clamp(3.4rem,7vw,6rem) 0; border-top:1px solid var(--line-soft); }
+.clients__head{ display:flex; justify-content:space-between; align-items:baseline;
+  gap:2rem; flex-wrap:wrap; margin-bottom:clamp(2rem,4vw,3.2rem); }
+.clients__grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(144px,1fr));
+  gap:clamp(1.7rem,3.4vw,3rem) clamp(1.4rem,3vw,2.6rem); align-items:center; justify-items:center;
+}
+.client{ display:flex; align-items:center; justify-content:center; min-height:54px; }
+.client__mark{
+  display:block; background:var(--cream); opacity:.42;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-position:center; mask-position:center;
+  -webkit-mask-size:contain; mask-size:contain;
+  transition:background .45s var(--ease), opacity .45s var(--ease);
+}
+.client:hover .client__mark{ background:var(--tint); opacity:1; }
+@media (prefers-reduced-motion:reduce){ .client__mark{ transition:none } }
+
+/* ══ Enquiry ══════════════════════════════════════════════════════
+   Shape from Goodwork Library v1.3.0 'quizfocus', budget band logic from
+   'formbudget'. Styling is not theirs: no pills, no gradients, no glass,
+   no rounded corners. ══ */
+.enq{ margin-top:0; }
+.enq__rail{ display:flex; gap:6px; margin-bottom:clamp(1.8rem,3.4vw,2.6rem); }
+.enq__rail i{ flex:1; height:1px; background:var(--line-soft); transition:background .5s var(--ease); }
+.enq__rail i.is-done{ background:var(--gold); }
+.enq__screen{ display:none; }
+.enq__screen.is-on{ display:block; animation:enq-in .55s var(--ease) both; }
+@keyframes enq-in{ from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+.enq__q{ font-family:"Instrument Serif",Georgia,serif; font-weight:400;
+  font-size:clamp(1.6rem,3.2vw,2.8rem); line-height:1.08; letter-spacing:-.02em;
+  color:var(--cream); margin:0 0 clamp(1.2rem,2.4vw,1.9rem); max-width:22ch; }
+.enq__hint{ display:block; font-family:"Geist Mono",ui-monospace,monospace;
+  font-size:var(--fs-micro); letter-spacing:.16em; text-transform:uppercase;
+  color:var(--muted-2); margin-bottom:.9rem; }
+
+.enq__opts{ display:flex; flex-wrap:wrap; gap:.6rem; }
+.enq__opt{ position:relative; }
+.enq__opt input{ position:absolute; opacity:0; width:0; height:0; }
+.enq__opt span{ display:block; padding:.85rem 1.3rem; border:1px solid var(--line);
+  color:var(--cream); font-size:var(--fs-body); cursor:pointer;
+  transition:border-color .35s var(--ease), background .35s var(--ease), color .35s var(--ease); }
+.enq__opt span:hover{ border-color:var(--gold); }
+.enq__opt input:checked + span{ background:var(--cream); border-color:var(--cream); color:var(--navy); }
+.enq__opt input:focus-visible + span{ outline:1px solid var(--gold); outline-offset:3px; }
+
+.enq__field{ width:100%; max-width:30rem; background:none; border:0;
+  border-bottom:1px solid var(--line); color:var(--cream);
+  font-family:inherit; font-size:clamp(1.05rem,1.8vw,1.4rem); padding:.6rem 0;
+  transition:border-color .35s var(--ease); }
+.enq__field::placeholder{ color:var(--muted-2); }
+.enq__field:focus{ outline:none; border-color:var(--gold); }
+
+/* budget — the 'formbudget' idea, rebuilt */
+.enq__money{ font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(2rem,4.4vw,3.4rem); line-height:1; color:var(--gold); }
+.enq__range{ -webkit-appearance:none; appearance:none; width:100%; max-width:34rem;
+  height:1px; background:var(--line); margin:clamp(1.4rem,2.6vw,2rem) 0 1rem; cursor:pointer; }
+.enq__range::-webkit-slider-thumb{ -webkit-appearance:none; width:15px; height:15px;
+  background:var(--gold); cursor:grab; border:0; }
+.enq__range::-moz-range-thumb{ width:15px; height:15px; background:var(--gold);
+  border:0; cursor:grab; }
+.enq__range:focus-visible{ outline:1px solid var(--gold); outline-offset:8px; }
+.enq__band{ max-width:44ch; color:var(--muted); font-size:var(--fs-body); line-height:1.6; margin:0 0 1rem; }
+.enq__buys{ list-style:none; margin:0; padding:0; display:grid; gap:.5rem; max-width:44ch; }
+.enq__buys li{ display:flex; gap:.7rem; font-size:var(--fs-body); color:var(--cream); }
+.enq__buys li::before{ content:""; width:12px; height:1px; background:var(--gold);
+  flex:none; margin-top:.72em; }
+
+.enq__nav{ display:flex; align-items:center; gap:1rem; margin-top:clamp(1.8rem,3.4vw,2.6rem); }
+.enq__back{ background:none; border:0; color:var(--muted-2); cursor:pointer;
+  font-family:"Geist Mono",ui-monospace,monospace; font-size:var(--fs-micro);
+  letter-spacing:.16em; text-transform:uppercase; transition:color .3s; }
+.enq__back:hover{ color:var(--cream); }
+.enq__back[hidden]{ display:none; }
+.enq__done{ max-width:46ch; }
+.enq__done p{ color:var(--muted); margin:.9rem 0 0; line-height:1.6; }
+@media(max-width:700px){ .enq__opts{ flex-direction:column } .enq__opt span{ text-align:left } }
+@media (prefers-reduced-motion:reduce){ .enq__screen.is-on{ animation:none } }
+
+
+/* the exchange — correspondence, not chat bubbles */
+.letter{ border-top:1px solid var(--line); padding-top:clamp(1.2rem,2.2vw,1.7rem); margin-bottom:clamp(1.8rem,3.4vw,2.6rem); }
+.letter__q{
+  font-family:"Geist Mono",ui-monospace,monospace; font-size:var(--fs-micro);
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted-2);
+  line-height:1.8; max-width:34ch;
+}
+.letter__a{
+  margin:clamp(.9rem,1.6vw,1.2rem) 0 0;
+  font-family:"Instrument Serif",Georgia,serif; font-weight:400;
+  font-size:clamp(1.05rem,1.5vw,1.35rem); line-height:1.42; color:var(--cream);
+  max-width:38ch; text-wrap:pretty;
+}
+.letter__by{ display:flex; align-items:center; gap:.6rem; margin-top:clamp(.8rem,1.4vw,1.1rem); }
+.letter__by i{ width:18px; height:1px; background:var(--gold); flex:none; }
+.letter__by span{ font-family:"Geist Mono",ui-monospace,monospace; font-size:var(--fs-micro);
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+@media(max-width:860px){ .letter__q,.letter__a{ max-width:none } }
+.contact__inner{ display:grid; grid-template-columns:1.3fr .7fr; gap:clamp(2rem,6vw,6rem); align-items:end; }
+.contact h2{
+  font-size:clamp(2.4rem,6.4vw,6.2rem); font-weight:200;
+  line-height:.94; letter-spacing:-.045em; margin-top:1.2rem; text-wrap:balance;
+}
+.contact h2 em{ font-family:"Instrument Serif",Georgia,serif; font-style:italic; letter-spacing:-.02em; }
+.contact__mail{
+  display:inline-flex; align-items:center; gap:1rem;
+  margin-top:clamp(1.8rem,3vw,2.8rem);
+  font-size:clamp(1.05rem,2vw,1.7rem); font-weight:300; letter-spacing:-.02em;
+  border-bottom:1px solid var(--line); padding-bottom:.45rem;
+  transition:border-color .5s var(--ease), color .4s;
+}
+.contact__mail:hover{ border-color:var(--gold); color:var(--gold); }
+.contact__mail svg{ width:16px; height:12px; fill:none; stroke:currentColor; stroke-width:1.2; transition:transform .5s var(--ease); }
+.contact__mail:hover svg{ transform:translateX(5px); }
+.contact__side{ display:flex; flex-direction:column; gap:1.6rem; padding-bottom:.6rem; }
+.contact__side dl{ display:flex; flex-direction:column; }
+.contact__side dl div{ display:flex; justify-content:space-between; gap:1rem; padding:.85rem 0; border-top:1px solid var(--line-soft); font-family:"Geist Mono",monospace; font-size:var(--fs-micro); letter-spacing:.12em; text-transform:uppercase; }
+.contact__side dt{ color:var(--muted-2); }
+.contact__side dd{ color:var(--cream); text-align:right; }
+@media (max-width:860px){ .contact__inner{ grid-template-columns:1fr; } }
+
+/* footer */
+.footer{ padding:clamp(3rem,6vw,5rem) 0 clamp(1.6rem,3vw,2.2rem); margin-top:clamp(3rem,7vw,6rem); border-top:1px solid var(--line-soft); }
+.footer__grid{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:2rem; }
+.footer__logo{ width:clamp(210px,24vw,320px); height:auto; opacity:.92; }
+.footer__mid{ display:flex; gap:clamp(1.2rem,2.4vw,2.2rem); justify-content:center; flex-wrap:wrap; }
+.footer__mid a{ font-family:"Geist Mono",monospace; font-size:var(--fs-micro); letter-spacing:.14em; text-transform:uppercase; color:var(--muted); transition:color .35s; }
+.footer__mid a:hover{ color:var(--gold); }
+.footer__meta{ text-align:right; font-family:"Geist Mono",monospace; font-size:var(--fs-micro); letter-spacing:.12em; text-transform:uppercase; color:var(--muted-2); line-height:1.9; }
+@media (max-width:860px){
+  .footer__grid{ grid-template-columns:1fr; justify-items:start; gap:1.6rem; }
+  .footer__mid{ justify-content:flex-start; }
+  .footer__meta{ text-align:left; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCREENING MODAL
+   ══════════════════════════════════════════════════════════ */
+.screen{
+  position:fixed; inset:0; z-index:1000;
+  background:rgba(6,13,20,.96);
+  backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px);
+  display:grid; grid-template-rows:auto 1fr auto;
+  opacity:0; pointer-events:none;
+  transition:opacity .48s var(--ease);
+}
+.screen.is-open{ opacity:1; pointer-events:auto; }
+.screen__bar{
+  display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
+  padding:clamp(1rem,2.2vw,1.8rem) var(--pad);
+  border-bottom:1px solid var(--line-soft);
+}
+.screen__count{ font-family:"Geist Mono",monospace; font-size:var(--fs-micro); letter-spacing:.16em; color:var(--gold); }
+.screen__nav{ display:flex; align-items:center; gap:.6rem; }
+.screen__btn{
+  width:40px; height:40px; border:1px solid var(--line);
+  display:grid; place-items:center; transition:background .35s, border-color .35s;
+}
+.screen__btn:hover{ background:rgba(201,174,124,.12); border-color:var(--gold); }
+.screen__btn svg{ width:13px; height:11px; fill:none; stroke:var(--cream); stroke-width:1.3; }
+.screen__btn:disabled{ opacity:.28; pointer-events:none; }
+.screen__close{ margin-left:.5rem; }
+.screen__close span{ font-family:"Geist Mono",monospace; font-size:var(--fs-micro); letter-spacing:.14em; text-transform:uppercase; }
+.screen__close svg{ stroke:var(--cream); }
+.screen__stage{
+  display:flex; align-items:center; justify-content:center;
+  padding:clamp(1rem,2.4vw,2rem) var(--pad);
+  min-height:0; overflow:hidden;
+}
+.screen__stage video{
+  width:auto; height:auto;
+  max-width:100%; max-height:min(100%, calc(100svh - 250px));
+  background:#000; box-shadow:0 40px 90px -30px rgba(0,0,0,.9);
+  transform:scale(.985); opacity:0; transition:opacity .5s var(--ease), transform .5s var(--ease);
+}
+.screen.is-ready .screen__stage video{ opacity:1; transform:none; }
+.screen__stage video.is-vertical{ max-width:min(100%, 58vh); }
+.screen__stage video.is-wide{ width:min(100%, 1400px); }
+.screen__foot{
+  display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:end;
+  padding:clamp(1rem,2.2vw,1.8rem) var(--pad) clamp(1.4rem,2.6vw,2.2rem);
+  border-top:1px solid var(--line-soft);
+}
+.screen__title{ font-size:clamp(1.2rem,2.4vw,2rem); font-weight:300; letter-spacing:-.03em; line-height:1.1; }
+.screen__blurb{ color:var(--muted); max-width:64ch; margin-top:.55rem; font-size:var(--fs-body); }
+.screen__tags{ display:flex; gap:.5rem; flex-wrap:wrap; justify-content:flex-end; }
+.screen__tags span{
+  font-family:"Geist Mono",monospace; font-size:var(--fs-micro);
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  border:1px solid var(--line-soft); padding:.5em 1em; white-space:nowrap;
+}
+@media (max-width:760px){
+  .screen__foot{ grid-template-columns:1fr; gap:1rem; }
+  .screen__tags{ justify-content:flex-start; }
+  .screen__stage video.is-vertical{ height:min(100%, calc(100svh - 300px)); }
+}
+
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:9999;
+  background:var(--gold); color:var(--navy); padding:.8rem 1.2rem;
+  font-family:"Geist Mono",monospace; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+}
+.skip:focus{ left:1rem; top:1rem; }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#work">Skip to work</a>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="Higher Heights — home">
+      <img class="brand__wm" src="assets/img/wordmark-cream.svg"
+           alt="Higher Heights Films" width="1600" height="357" />
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#aerial">Aerial</a>
+      <a href="#product">Product</a>
+      <a href="#studio">Studio</a>
+    </nav>
+    <a class="nav__cta" href="#contact">Start a project</a>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+  <div class="nav__progress" aria-hidden="true"><span id="navProgress"></span></div>
+</header>
+<div class="nav__drawer" id="drawer">
+  <a href="#work"><span>01</span>Work</a>
+  <a href="#aerial"><span>02</span>Aerial</a>
+  <a href="#product"><span>03</span>Product</a>
+  <a href="#studio"><span>04</span>Studio</a>
+  <a href="#contact"><span>05</span>Contact</a>
+</div>
+
+<main id="top">
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero__media">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto"
+             poster="assets/img/poster-commercial.jpg" aria-hidden="true" tabindex="-1">
+        <source src="assets/vid/commercial.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="print" aria-hidden="true">
+      <div class="print__grain"></div>
+      <div class="print__flick"></div>
+      <div class="print__scratch" style="--x:23%;--d:0s"></div>
+      <div class="print__scratch" style="--x:61%;--d:2.4s"></div>
+      <div class="print__scratch" style="--x:84%;--d:3.7s"></div>
+    </div>
+
+    <div class="hero__inner">
+      <div class="hero__top">
+        <span class="mono hero__disc" aria-label="Film, aerial and photography">
+          <i>Film</i><b aria-hidden="true">·</b><i>Aerial</i><b aria-hidden="true">·</b><i>Photography</i>
+        </span>
+        <a class="mono hero__status" href="#contact">
+          <span class="hero__clock" id="ukClock" aria-label="Current time in London">--:--</span>
+          <span class="hero__sep" aria-hidden="true">·</span>
+          <span class="hero__avail"><i aria-hidden="true"></i>Available for commission</span>
+        </a>
+      </div>
+
+      <div class="hero__foot">
+        <div>
+          <h1 class="hero__title"><em class="rise"><span>Higher</span></em><em class="rise"><span>Heights</span></em></h1>
+          <p class="hero__sub">
+            Superyachts, classic cars and the machines people give
+            their lives to — filmed through the people who keep them alive.
+          </p>
+        </div>
+        <div class="hero__aside">
+          <span class="mono mono--dim">London · Worldwide</span>
+          <span class="hero__scroll">Scroll</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ STATEMENT / CLIENTS ══════════ -->
+  <section class="band-cream" aria-labelledby="statement-head">
+    <div class="wrap statement">
+      <div class="eyebrow reveal">
+        <span class="eyebrow__line"></span>
+        <span class="mono" id="statement-head">The studio</span>
+      </div>
+
+      <div class="statement__grid">
+        <p class="statement__lead reveal">
+          The difference between footage and a film is the decision
+          behind <span>every single frame</span>.
+        </p>
+        <div class="statement__body reveal">
+          <p>
+            Higher Heights is a film and photography studio working across fashion,
+            luxury, automotive and sport — on set with brands, agencies and the
+            occasional very particular private client.
+          </p>
+          <p>
+            Every project starts the same way: find the frame that actually says
+            something, then build the story around it. <strong>Everything else is
+            logistics.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap clients reveal">
+      <div class="mono clients__label">Selected clients</div>
+      <div class="marquee" aria-label="Client list">
+        <div class="marquee__track" id="marqueeTrack">
+          <span>NOBL</span><span>Aduna Superfoods</span><span>Clean Co</span>
+          <span>WatchTrader &amp; Co</span><span>Matchroom Boxing</span><span>LADbible Group</span>
+          <span>WHOOP</span><span>Oakridge Property Group</span><span>Nexus</span>
+          <span>Spens Motors</span><span>Richard Mille</span><span>Melissa Hemsley</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ WORK ══════════ -->
+  <section class="work" id="work" aria-labelledby="work-head">
+    <div class="wrap">
+      <div class="sect-head">
+        <div>
+          <div class="eyebrow">
+        <span class="eyebrow__line"></span><span class="mono">Selected work</span></div>
+          <h2 id="work-head">Eight films,<br />five disciplines.</h2>
+        </div>
+        <div class="sect-head__meta">
+          <span class="mono mono--dim">2024 — 2026</span>
+          <span class="mono mono--dim">Click any frame to screen</span>
+        </div>
+      </div>
+
+      <div class="films">
+        <!-- 01 -->
+        <button class="film film--w f1 reveal" data-film="roller" aria-label="Screen Heritage, automotive film for Spens Motors">
+          <div class="film__frame">
+            <img class="film__poster" src="assets/img/poster-roller.jpg" alt="A classic Rolls-Royce parked among bare winter trees" loading="lazy" width="1400" height="788" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/roller.mp4" aria-hidden="true"></video>
+            <div class="film__scrim"></div>
+            <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+            <div class="film__body">
+              <span class="film__idx">01</span>
+              <span class="film__title">Heritage</span>
+              <span class="film__meta">Spens Motors <i></i> Automotive <i></i> 2025</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 02 -->
+        <button class="film film--v f2 reveal" data-film="nobl" aria-label="Screen Styled By You, brand film for NOBL">
+          <div class="film__frame">
+            <img class="film__poster" src="assets/img/poster-nobl.jpg" alt="Guests at a NOBL menswear event in a warm-lit private club" loading="lazy" width="1080" height="1920" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/nobl.mp4" aria-hidden="true"></video>
+            <div class="film__scrim"></div>
+            <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+            <div class="film__body">
+              <span class="film__idx">02</span>
+              <span class="film__title">Styled By You</span>
+              <span class="film__meta">NOBL <i></i> Brand film <i></i> 2026</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 03 -->
+        <button class="film film--v f3 reveal" data-film="wtc" aria-label="Screen In the Case, film for WatchTrader and Co">
+          <div class="film__frame">
+            <img class="film__poster" src="assets/img/poster-wtc.jpg" alt="WatchTrader and Co shopfront and a gold watch being handled in gloves" loading="lazy" width="1080" height="1920" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/wtc.mp4" aria-hidden="true"></video>
+            <div class="film__scrim"></div>
+            <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+            <div class="film__body">
+              <span class="film__idx">03</span>
+              <span class="film__title">In the Case</span>
+              <span class="film__meta">WatchTrader &amp; Co <i></i> Luxury <i></i> 2025</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 04 -->
+        <button class="film film--v f4 reveal" data-film="rm69" aria-label="Screen RM 69, product film for Richard Mille">
+          <div class="film__frame">
+            <img class="film__poster" src="assets/img/poster-rm69.jpg" alt="Richard Mille RM 69 watch photographed on a dark graphic surface" loading="lazy" width="1080" height="1920" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/rm69.mp4" aria-hidden="true"></video>
+            <div class="film__scrim"></div>
+            <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+            <div class="film__body">
+              <span class="film__idx">04</span>
+              <span class="film__title">RM 69</span>
+              <span class="film__meta">Richard Mille <i></i> Product <i></i> 2025</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 05 -->
+        <button class="film film--v f5 reveal" data-film="cleanco" aria-label="Screen Walking, brand film for Clean Co">
+          <div class="film__frame">
+            <img class="film__poster" src="assets/img/poster-cleanco.jpg" alt="A woman in a striped dress walking through a summer field with a can of Clean Co" loading="lazy" width="1080" height="1920" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/cleanco.mp4" aria-hidden="true"></video>
+            <div class="film__scrim"></div>
+            <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+            <div class="film__body">
+              <span class="film__idx">05</span>
+              <span class="film__title">Walking</span>
+              <span class="film__meta">Clean Co <i></i> Beverage <i></i> 2025</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 06 -->
+        <button class="film film--w f6 reveal" data-film="highland" aria-label="Screen Highland Road, aerial automotive film">
+          <div class="film__frame">
+            <img class="film__poster" src="assets/img/poster-highland.jpg" alt="Aerial view of a red car on a winding highland road beside a loch" loading="lazy" width="1400" height="788" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/hero.mp4" aria-hidden="true"></video>
+            <div class="film__scrim"></div>
+            <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+            <div class="film__body">
+              <span class="film__idx">06</span>
+              <span class="film__title">Highland Road</span>
+              <span class="film__meta">Aerial <i></i> Automotive <i></i> 2025</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 07 -->
+        <button class="film film--v f7 reveal" data-film="whoop" aria-label="Screen the WHOOP film with Spencer Matthews">
+          <div class="film__frame">
+            <img class="film__poster" src="assets/img/poster-whoop.jpg" alt="Spencer Matthews running through a park with WHOOP performance data overlaid" loading="lazy" width="1080" height="1920" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/whoop.mp4" aria-hidden="true"></video>
+            <div class="film__scrim"></div>
+            <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+            <div class="film__body">
+              <span class="film__idx">07</span>
+              <span class="film__title">Face of Aging</span>
+              <span class="film__meta">WHOOP × Spencer Matthews <i></i> Sport <i></i> 2025</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 08 -->
+        <button class="film film--v f8 reveal" data-film="aduna" aria-label="Screen the Aduna and Melissa Hemsley event film">
+          <div class="film__frame">
+            <img class="film__poster" src="assets/img/poster-aduna.jpg" alt="Guests sampling Aduna superfoods at a daylight brand event" loading="lazy" width="1080" height="1920" />
+            <video class="film__video" muted loop playsinline preload="none" data-src="assets/vid/aduna.mp4" aria-hidden="true"></video>
+            <div class="film__scrim"></div>
+            <span class="film__play" aria-hidden="true"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+            <div class="film__body">
+              <span class="film__idx">08</span>
+              <span class="film__title">Morning Ritual</span>
+              <span class="film__meta">Aduna × Melissa Hemsley <i></i> Event <i></i> 2025</span>
+            </div>
+          </div>
+        </button>
+
+        <div class="films__tail reveal">
+          <span class="mono mono--dim">End of selection</span>
+          <p>
+            Eight films from a wider reel — longer cuts, campaign variants and
+            references for any sector are available on request.
+          </p>
+          <a class="link-arrow" href="#contact">
+            Request the full reel
+            <svg viewBox="0 0 14 10"><path d="M0 5h12M8 1l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ AERIAL ══════════ -->
+  <section class="aerial" id="aerial" aria-labelledby="aerial-head">
+    <div class="wrap">
+      <div class="eyebrow reveal">
+        <span class="eyebrow__line"></span><span class="mono">Aerial unit</span></div>
+
+      <div class="aerial__grid">
+        <div class="aerial__copy">
+          <h2 id="aerial-head">Shot from<br />above.</h2>
+          <p>
+            Drone and ground units shooting in tandem — one continuous move from
+            the air to eye level, so the film never has to cut to prove the scale.
+          </p>
+          <p>
+            Used for architectural reveals, estate and venue coverage, automotive
+            and landscape work, and event films where the geography is the story.
+          </p>
+          <div class="aerial__specs">
+            <div><span>Formats</span><span>4K · 6K · Vertical</span></div>
+            <div><span>Deployment</span><span>UK · Europe · Worldwide</span></div>
+            <div><span>Pairing</span><span>Aerial + ground</span></div>
+            <div><span>Delivery</span><span>Graded · Captioned</span></div>
+          </div>
+        </div>
+
+        <div class="aerial__shots" id="aerialShots">
+          <figure class="shot">
+            <img src="assets/img/aerial-cypress.jpg" alt="Aerial view of a Mediterranean estate at golden hour with a long banquet table running between cypress trees" loading="lazy" width="1800" height="3200" data-parallax />
+            <figcaption>Estate · Golden hour</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/img/aerial-villa.jpg" alt="Top-down aerial of a villa estate with a cypress-lined approach drive" loading="lazy" width="1800" height="1012" data-parallax />
+            <figcaption>Venue · Approach</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/img/aerial-night.jpg" alt="Night aerial of a lit estate with an event set out along the front drive" loading="lazy" width="1800" height="3200" data-parallax />
+            <figcaption>Event · After dark</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PRODUCT / STILLS ══════════ -->
+  <section class="product" id="product" aria-labelledby="product-head">
+    <div class="wrap">
+      <div class="product__head">
+        <div>
+          <div class="eyebrow reveal">
+        <span class="eyebrow__line"></span><span class="mono">Product &amp; stills</span></div>
+          <h2 id="product-head">Movement,<br />up close.</h2>
+        </div>
+        <span class="mono mono--dim">Macro · Studio · Drag to explore</span>
+      </div>
+
+      </div>
+
+    <div class="pin" data-pin>
+      <div class="pin__stage">
+      <div class="carousel" data-carousel>
+      <div class="strip pin__row" id="strip" tabindex="0" role="group" aria-label="Richard Mille RM 69 stills gallery">
+        <figure><img src="assets/img/rm-1.jpg" alt="RM 69 watch, case back showing the movement" loading="lazy" width="1300" height="1950" /></figure>
+        <figure><img src="assets/img/rm-2.jpg" alt="RM 69 watch face detail under directional light" loading="lazy" width="1300" height="1950" /></figure>
+        <figure><img src="assets/img/rm-3.jpg" alt="RM 69 roller mechanism close-up" loading="lazy" width="1300" height="1950" /></figure>
+        <figure><img src="assets/img/rm-4.jpg" alt="RM 69 pink strap and curved case profile" loading="lazy" width="1300" height="1950" /></figure>
+        <figure><img src="assets/img/rm-5.jpg" alt="RM 69 dial and crown detail" loading="lazy" width="1300" height="1950" /></figure>
+        <figure><img src="assets/img/rm-6.jpg" alt="RM 69 full watch on dark graphic backdrop" loading="lazy" width="1300" height="1950" /></figure>
+      </div>
+      <div class="pin__meter" aria-hidden="true"><i></i></div>
+      <span class="pin__hint">Scroll</span>
+      <div class="carousel__foot">
+        <button class="carousel__arrow" type="button" data-dir="-1" aria-label="Previous stills"><svg viewBox="0 0 13 10" aria-hidden="true"><path d="M13 5H1M5 1L1 5l4 4"/></svg></button>
+        <div class="carousel__prog"><span class="carousel__bar"></span></div>
+        <button class="carousel__arrow" type="button" data-dir="1" aria-label="Next stills"><svg viewBox="0 0 13 10" aria-hidden="true"><path d="M0 5h12M8 1l4 4-4 4"/></svg></button>
+      </div>
+      </div>
+
+      </div>
+    </div>
+
+    <div class="wrap">
+      <p class="product__note mono mono--dim">
+        Stills and product film from the Richard Mille RM 69 shoot.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ STUDIO ══════════ -->
+  <section class="studio" id="studio" aria-labelledby="studio-head">
+    <div class="hh-wm hh-wm--studio" aria-hidden="true"><img src="assets/img/hh-navy.svg" alt=""></div>
+    <div class="wrap">
+      <div class="eyebrow reveal">
+        <span class="eyebrow__line"></span><span class="mono">Studio</span></div>
+
+      <div class="studio__grid">
+        <figure class="studio__figure reveal">
+          <img src="assets/img/portrait.jpg" alt="Morgan, founder of Higher Heights, photographed on a London street" loading="lazy" width="564" height="677" />
+          <figcaption><span>Morgan</span><span>Founder · Director</span></figcaption>
+        </figure>
+
+        <div class="studio__copy reveal">
+          <h2 id="studio-head">One pair of eyes<br />on the whole thing.</h2>
+          <p>
+            Higher Heights is run by <strong>Morgan</strong> — a filmmaker and
+            photographer who shoots, directs and edits the majority of the work
+            himself. That means the idea that gets signed off is the idea that
+            gets shot, and the person cutting it was in the room when it was
+            conceived.
+          </p>
+          <p>
+            The studio moves between brand films, commercials, product, aerial and
+            event coverage. What stays constant is a preference for restraint:
+            fewer setups, better chosen, and a cut that trusts the viewer.
+          </p>
+
+          <blockquote class="pull">
+            “If it doesn't earn its place in the cut, it doesn't go in.”
+          </blockquote>
+
+          <div class="studio__services" aria-label="Services">
+            <span class="chip">Brand films</span>
+            <span class="chip">Commercials</span>
+            <span class="chip">Aerial</span>
+            <span class="chip">Product</span>
+            <span class="chip">Events</span>
+            <span class="chip">Social cutdowns</span>
+            <span class="chip">Stills</span>
+          </div>
+        </div>
+      </div>
+
+      <figure class="studio__band reveal">
+        <div class="studio__bandFrame">
+          <img src="assets/img/matchroom-1.jpg" alt="Filming ringside at a Matchroom Boxing event" loading="lazy" width="1200" height="800" />
+        </div>
+        <figcaption><span>Matchroom Boxing</span><span>Ringside · Event coverage · 2025</span></figcaption>
+      </figure>
+
+      <div class="process reveal">
+        <div class="process__row">
+          <span class="process__n">01</span>
+          <span class="process__t">Brief &amp; references</span>
+          <span class="process__d">A conversation, a deck, a mood film — whatever exists. We agree what the film has to do before anyone talks about lenses.</span>
+        </div>
+        <div class="process__row">
+          <span class="process__n">02</span>
+          <span class="process__t">Pre-production</span>
+          <span class="process__d">Treatment, shot list, schedule, locations, permissions. The unglamorous part that decides whether the shoot day runs.</span>
+        </div>
+        <div class="process__row">
+          <span class="process__n">03</span>
+          <span class="process__t">Shoot</span>
+          <span class="process__d">Lean crew, deliberately. Enough hands to move fast, few enough that the room stays quiet and the subject stays comfortable.</span>
+        </div>
+        <div class="process__row">
+          <span class="process__n">04</span>
+          <span class="process__t">Post &amp; delivery</span>
+          <span class="process__d">Edit, grade, sound, captions. Master plus every ratio and cutdown the campaign actually needs.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+
+  <section class="clients" aria-labelledby="clients-head">
+    <div class="wrap">
+      <div class="clients__head">
+        <div class="eyebrow reveal">
+          <span class="eyebrow__line"></span><span class="mono">Trusted by</span></div>
+        <span class="mono mono--dim" id="clients-head">Selected clients</span>
+      </div>
+      <div class="marq reveal">
+        <div class="marq__row">
+  <div class="client" style="--tint:#F4EFE6">
+            <span class="client__mark" role="img" aria-label="WHOOP"
+              style="width:83px;height:44px;-webkit-mask-image:url(assets/img/clients/whoop.png);mask-image:url(assets/img/clients/whoop.png)"></span>
+          </div>
+  <div class="client" style="--tint:#EA8F81">
+            <span class="client__mark" role="img" aria-label="Aduna Superfoods"
+              style="width:50px;height:44px;-webkit-mask-image:url(assets/img/clients/aduna.png);mask-image:url(assets/img/clients/aduna.png)"></span>
+          </div>
+  <div class="client" style="--tint:#17C162">
+            <span class="client__mark" role="img" aria-label="Clean Co"
+              style="width:54px;height:44px;-webkit-mask-image:url(assets/img/clients/cleanco.png);mask-image:url(assets/img/clients/cleanco.png)"></span>
+          </div>
+  <div class="client" style="--tint:#C19A45">
+            <span class="client__mark" role="img" aria-label="WatchTrader & Co"
+              style="width:101px;height:44px;-webkit-mask-image:url(assets/img/clients/watchtrader.png);mask-image:url(assets/img/clients/watchtrader.png)"></span>
+          </div>
+  <div class="client" style="--tint:#F4EFE6">
+            <span class="client__mark" role="img" aria-label="The REAL Drinks Co"
+              style="width:171px;height:44px;-webkit-mask-image:url(assets/img/clients/real.png);mask-image:url(assets/img/clients/real.png)"></span>
+          </div>
+  <div class="client" style="--tint:#FF7738">
+            <span class="client__mark" role="img" aria-label="Crowdcube"
+              style="width:151px;height:43px;-webkit-mask-image:url(assets/img/clients/crowdcube.png);mask-image:url(assets/img/clients/crowdcube.png)"></span>
+          </div>
+  <div class="client" style="--tint:#8296FF">
+            <span class="client__mark" role="img" aria-label="TecRec"
+              style="width:159px;height:44px;-webkit-mask-image:url(assets/img/clients/tecrec.png);mask-image:url(assets/img/clients/tecrec.png)"></span>
+          </div>
+        </div>
+        <div class="marq__row">
+  <div class="client" style="--tint:#F48588">
+            <span class="client__mark" role="img" aria-label="Hybrid Fitness"
+              style="width:189px;height:30px;-webkit-mask-image:url(assets/img/clients/hybrid.png);mask-image:url(assets/img/clients/hybrid.png)"></span>
+          </div>
+  <div class="client" style="--tint:#F3B112">
+            <span class="client__mark" role="img" aria-label="Everyone's Energy"
+              style="width:116px;height:44px;-webkit-mask-image:url(assets/img/clients/everyones.png);mask-image:url(assets/img/clients/everyones.png)"></span>
+          </div>
+  <div class="client" style="--tint:#8CC63F">
+            <span class="client__mark" role="img" aria-label="Days Work"
+              style="width:69px;height:44px;-webkit-mask-image:url(assets/img/clients/dayswork.png);mask-image:url(assets/img/clients/dayswork.png)"></span>
+          </div>
+  <div class="client" style="--tint:#CBB576">
+            <span class="client__mark" role="img" aria-label="JimJam The Label"
+              style="width:152px;height:44px;-webkit-mask-image:url(assets/img/clients/jimjam.png);mask-image:url(assets/img/clients/jimjam.png)"></span>
+          </div>
+  <div class="client" style="--tint:#1CBBCC">
+            <span class="client__mark" role="img" aria-label="Tony's Pie & Mash"
+              style="width:73px;height:44px;-webkit-mask-image:url(assets/img/clients/piemash.png);mask-image:url(assets/img/clients/piemash.png)"></span>
+          </div>
+  <div class="client" style="--tint:#F4EFE6">
+            <span class="client__mark" role="img" aria-label="TJ"
+              style="width:44px;height:44px;-webkit-mask-image:url(assets/img/clients/tj.png);mask-image:url(assets/img/clients/tj.png)"></span>
+          </div>
+  <div class="client" style="--tint:#F4EFE6">
+            <span class="client__mark" role="img" aria-label="Be"
+              style="width:44px;height:44px;-webkit-mask-image:url(assets/img/clients/be.png);mask-image:url(assets/img/clients/be.png)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-head">
+    <div class="hh-wm hh-wm--contact" aria-hidden="true"><img src="assets/img/hh-cream.svg" alt=""></div>
+    <div class="wrap">
+      <div class="eyebrow reveal">
+        <span class="eyebrow__line"></span><span class="mono">Contact</span></div>
+
+      <div class="band">
+        <div class="band__ask">
+          <h2 id="contact-head" class="reveal">Have something<br />worth <em>filming?</em></h2>
+          <p class="band__lede reveal">A launch, a delivery, a restoration coming off the bench.
+          Tell me what it is and when it happens.</p>
+          <!-- PLACEHOLDER: confirm the studio contact address before going live -->
+          <a class="band__mail reveal" href="mailto:hello@higherheights.studio">
+            hello@higherheights.studio
+            <svg viewBox="0 0 14 10"><path d="M0 5h12M8 1l4 4-4 4"/></svg>
+          </a>
+          <dl class="band__facts reveal">
+            <div><dt>Based</dt><dd>London</dd></div>
+            <div><dt>Available</dt><dd>Worldwide</dd></div>
+            <div><dt>Booking</dt><dd>2026 — open</dd></div>
+            <div><dt>First reply</dt><dd>From Morgan, within a day</dd></div>
+          </dl>
+        </div>
+
+        <div class="band__form">
+
+
+        <div class="enq reveal" id="enquiry">
+        <div class="enq__rail" aria-hidden="true"><i class="is-done"></i><i></i><i></i><i></i></div>
+        <form id="enqForm" novalidate>
+
+          <section class="enq__screen is-on" data-step="0">
+            <span class="enq__hint">The machine</span>
+            <h3 class="enq__q">What are we filming?</h3>
+            <div class="enq__opts">
+              <label class="enq__opt"><input type="radio" name="subject" value="Yacht or boat" required><span>A yacht or boat</span></label>
+              <label class="enq__opt"><input type="radio" name="subject" value="Classic car"><span>A classic car</span></label>
+              <label class="enq__opt"><input type="radio" name="subject" value="Supercar"><span>A supercar</span></label>
+              <label class="enq__opt"><input type="radio" name="subject" value="Something else"><span>Something else</span></label>
+            </div>
+          </section>
+
+          <section class="enq__screen" data-step="1">
+            <span class="enq__hint">The moment</span>
+            <h3 class="enq__q">When does it happen?</h3>
+            <div class="enq__opts">
+              <label class="enq__opt"><input type="radio" name="timing" value="Within a month"><span>Within a month</span></label>
+              <label class="enq__opt"><input type="radio" name="timing" value="One to three months"><span>One to three months</span></label>
+              <label class="enq__opt"><input type="radio" name="timing" value="Later this year"><span>Later this year</span></label>
+              <label class="enq__opt"><input type="radio" name="timing" value="Still deciding"><span>Still deciding</span></label>
+            </div>
+          </section>
+
+          <section class="enq__screen" data-step="2">
+            <span class="enq__hint">The budget</span>
+            <h3 class="enq__q">Roughly what are you working with?</h3>
+            <div class="enq__money" id="enqMoney">£10,000</div>
+            <input class="enq__range" type="range" name="budget" min="5000" max="50000" step="2500" value="10000"
+                   aria-label="Approximate budget" />
+            <p class="enq__band" id="enqBand"></p>
+            <ul class="enq__buys" id="enqBuys"></ul>
+          </section>
+
+          <section class="enq__screen" data-step="3">
+            <span class="enq__hint">The reply</span>
+            <h3 class="enq__q">Where do I send it?</h3>
+            <input class="enq__field" type="email" name="email" placeholder="you@company.com"
+                   autocomplete="email" required />
+          </section>
+
+          <section class="enq__screen enq__done" data-step="4">
+            <h3 class="enq__q">Thank you.</h3>
+            <p id="enqSummary"></p>
+            <p>This opens your email so you can send it — and read it back before you do.
+            The reply comes from me, not an autoresponder.</p>
+          </section>
+
+          <div class="enq__nav">
+            <button class="cbtn cbtn--main" type="button" id="enqNext">
+              Continue <svg viewBox="0 0 14 10"><path d="M0 5h12M8 1l4 4-4 4"/></svg>
+            </button>
+            <button class="enq__back" type="button" id="enqBack" hidden>Back</button>
+          </div>
+        </form>
+      </div>
+
+        </div>
+      </div>
+
+      <footer class="foot">
+        <div class="foot__top">
+          <div class="foot__brand">
+            <img src="assets/img/wordmark-cream.svg" width="1600" height="357"
+                 alt="Higher Heights — Film, Aerial, Photography" loading="lazy" />
+            <p class="foot__tag">Story-led films about extraordinary machines on land and sea,
+            and the people who keep them alive.</p>
+          </div>
+          <nav class="foot__col" aria-label="Work">
+            <h4>Work</h4>
+            <a href="#work">Selected films</a>
+            <a href="#aerial">Aerial</a>
+            <a href="#product">Product &amp; stills</a>
+            <a href="#studio">Studio</a>
+          </nav>
+          <div class="foot__col">
+            <h4>Studio</h4>
+            <a href="#enquiry">Start a project</a>
+            <!-- PLACEHOLDER: confirm the studio contact address before going live -->
+            <a href="mailto:hello@higherheights.studio">hello@higherheights.studio</a>
+            <span>London · Worldwide</span>
+            <span>Booking 2026</span>
+          </div>
+        </div>
+        <div class="foot__base">
+          <span>© <span id="year">2026</span> Higher Heights Films</span>
+          <span>Film · Aerial · Photography</span>
+          <span>Est. 2024</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════ SCREENING MODAL ══════════ -->
+<div class="screen" id="screen" role="dialog" aria-modal="true" aria-label="Film screening" aria-hidden="true">
+  <div class="screen__bar">
+    <span class="screen__count" id="screenCount">01 / 08</span>
+    <div class="screen__nav">
+      <button class="screen__btn" id="prevBtn" aria-label="Previous film"><svg viewBox="0 0 13 11"><path d="M13 5.5H1M5 1.5l-4 4 4 4"/></svg></button>
+      <button class="screen__btn" id="nextBtn" aria-label="Next film"><svg viewBox="0 0 13 11"><path d="M0 5.5h12M8 1.5l4 4-4 4"/></svg></button>
+      <button class="screen__btn screen__close" id="closeBtn" aria-label="Close screening"><svg viewBox="0 0 12 12"><path d="M1 1l10 10M11 1L1 11"/></svg></button>
+    </div>
+  </div>
+
+  <div class="screen__stage" id="stage"></div>
+
+  <div class="screen__foot">
+    <div>
+      <div class="screen__title" id="screenTitle"></div>
+      <p class="screen__blurb" id="screenBlurb"></p>
+    </div>
+    <div class="screen__tags" id="screenTags"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ── film data ───────────────────────────────────────── */
+  const FILMS = {
+    roller: {
+      title: "Heritage", client: "Spens Motors", cat: "Automotive", year: "2025",
+      ratio: "wide", src: "assets/vid/roller.mp4", poster: "assets/img/poster-roller.jpg",
+      blurb: "A classic Rolls-Royce, shot in the dead of a British winter. No music cue, no voiceover — just glass, chrome and a very quiet engine doing the talking."
+    },
+    nobl: {
+      title: "Styled By You", client: "NOBL", cat: "Brand film", year: "2026",
+      ratio: "vertical", src: "assets/vid/nobl.mp4", poster: "assets/img/poster-nobl.jpg",
+      blurb: "A menswear brand, a private club and one long evening. Shot to feel like the night actually felt — warm, close and a little bit loose."
+    },
+    wtc: {
+      title: "In the Case", client: "WatchTrader & Co", cat: "Luxury", year: "2025",
+      ratio: "vertical", src: "assets/vid/wtc.mp4", poster: "assets/img/poster-wtc.jpg",
+      blurb: "Retail film for a watch dealer. Gloves, glass and macro detail — treating stock like it belongs in a museum rather than a window."
+    },
+    rm69: {
+      title: "RM 69", client: "Richard Mille", cat: "Product", year: "2025",
+      ratio: "vertical", src: "assets/vid/rm69.mp4", poster: "assets/img/poster-rm69.jpg",
+      blurb: "Product film for the RM 69. Every beat built around the movement — roller, gears and tourbillon — lit hard against black."
+    },
+    cleanco: {
+      title: "Walking", client: "Clean Co", cat: "Beverage", year: "2025",
+      ratio: "vertical", src: "assets/vid/cleanco.mp4", poster: "assets/img/poster-cleanco.jpg",
+      blurb: "Summer, one take, no dialogue. A brand film that sells a feeling rather than a list of ingredients."
+    },
+    highland: {
+      title: "Highland Road", client: "Aerial", cat: "Automotive", year: "2025",
+      ratio: "wide", src: "assets/vid/hero.mp4", poster: "assets/img/poster-highland.jpg",
+      blurb: "A single continuous aerial move following a car through the highlands — road, loch and mountain held in one unbroken frame."
+    },
+    whoop: {
+      title: "Face of Aging", client: "WHOOP × Spencer Matthews", cat: "Sport", year: "2025",
+      ratio: "vertical", src: "assets/vid/whoop.mp4", poster: "assets/img/poster-whoop.jpg",
+      blurb: "Performance film with data overlay. Training footage and live metrics cut together so the numbers read as part of the running, not an infographic."
+    },
+    aduna: {
+      title: "Morning Ritual", client: "Aduna × Melissa Hemsley", cat: "Event", year: "2025",
+      ratio: "vertical", src: "assets/vid/aduna.mp4", poster: "assets/img/poster-aduna.jpg",
+      blurb: "Brand event coverage for Aduna's breakfast with Melissa Hemsley — daylight, real guests, product in hand."
+    }
+  };
+  const ORDER = ["roller", "nobl", "wtc", "rm69", "cleanco", "highland", "whoop", "aduna"];
+
+  const $  = (s, c) => (c || document).querySelector(s);
+  const $$ = (s, c) => Array.prototype.slice.call((c || document).querySelectorAll(s));
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ── year ─────────────────────────────────────────────── */
+  const yr = $("#year"); if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ── nav: stuck + progress ───────────────────────────── */
+  const nav = $("#nav"), prog = $("#navProgress");
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      const y = window.scrollY;
+      nav.classList.toggle("is-stuck", y > 40);
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.transform = "scaleX(" + (h > 0 ? Math.min(1, y / h) : 0) + ")";
+      ticking = false;
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ── mobile drawer ───────────────────────────────────── */
+  const burger = $("#burger"), drawer = $("#drawer");
+  function setDrawer(open) {
+    nav.classList.toggle("is-open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("is-locked", open);
+  }
+  burger.addEventListener("click", () => setDrawer(!nav.classList.contains("is-open")));
+  drawer.addEventListener("click", (e) => { if (e.target.closest("a")) setDrawer(false); });
+
+  /* ── reveal on scroll ────────────────────────────────── */
+  /* rack focus on every framed image — mechanic from 'softfocus' */
+  document.querySelectorAll(".film__frame, .strip figure, .studio__figure, .studio__bandFrame")
+    .forEach(function (el) {
+      if (!el.querySelector("img") || el.classList.contains("rack")) return;
+      el.classList.add("rack", "reveal");
+      const vf = document.createElement("span");
+      vf.className = "rack__vf";
+      vf.setAttribute("aria-hidden", "true");
+      vf.innerHTML = "<i></i><i></i><i></i><i></i>";
+      el.appendChild(vf);
+    });
+
+  /* the hero lines rise once, on load — mechanic from 'herotype' */
+  (function () {
+    const t = document.querySelector(".hero__title");
+    if (!t) return;
+    if (reduced) { t.classList.add("is-up"); return; }
+    requestAnimationFrame(function () {
+      setTimeout(function () { t.classList.add("is-up"); }, 90);
+    });
+  })();
+
+  const reveals = $$(".reveal");
+  if ("IntersectionObserver" in window && !reduced) {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        const el = en.target;
+        const sibs = el.parentElement ? Array.prototype.slice.call(el.parentElement.children).filter(function (n) { return n.classList && n.classList.contains("reveal"); }) : [el];
+        const i = Math.max(0, sibs.indexOf(el));
+        el.style.transitionDelay = Math.min(i * 70, 350) + "ms";
+        el.classList.add("in");
+        io.unobserve(el);
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ── hover-to-play film tiles ────────────────────────── */
+  $$(".film").forEach(function (card) {
+    const vid = $("video", card);
+    if (!vid) return;
+    let primed = false;
+
+    function prime() {
+      if (primed) return;
+      primed = true;
+      vid.src = vid.dataset.src;
+      vid.addEventListener("loadeddata", function () {
+        if (card.dataset.hover === "1") { vid.play().catch(function () {}); card.classList.add("is-playing"); }
+      }, { once: true });
+      vid.load();
+    }
+    function enter() {
+      card.dataset.hover = "1";
+      if (reduced) return;
+      prime();
+      if (vid.readyState >= 2) { vid.play().catch(function () {}); card.classList.add("is-playing"); }
+    }
+    function leave() {
+      card.dataset.hover = "0";
+      card.classList.remove("is-playing");
+      try { vid.pause(); } catch (e) {}
+    }
+    card.addEventListener("mouseenter", enter);
+    card.addEventListener("mouseleave", leave);
+    card.addEventListener("focus", enter);
+    card.addEventListener("blur", leave);
+    card.addEventListener("click", function () { openFilm(card.dataset.film); });
+  });
+
+  /* ── screening modal ─────────────────────────────────── */
+  const screen  = $("#screen");
+  const stage   = $("#stage");
+  const sTitle  = $("#screenTitle");
+  const sBlurb  = $("#screenBlurb");
+  const sTags   = $("#screenTags");
+  const sCount  = $("#screenCount");
+  const prevBtn = $("#prevBtn");
+  const nextBtn = $("#nextBtn");
+  let current = -1, lastFocus = null, activeVideo = null;
+
+  function openFilm(key) {
+    const i = ORDER.indexOf(key);
+    if (i < 0) return;
+    lastFocus = document.activeElement;
+    screen.classList.add("is-open");
+    screen.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-locked");
+    render(i);
+    setTimeout(function () { $("#closeBtn").focus(); }, 60);
+  }
+
+  function render(i) {
+    current = i;
+    const key = ORDER[i], f = FILMS[key];
+    screen.classList.remove("is-ready");
+
+    if (activeVideo) { try { activeVideo.pause(); } catch (e) {} }
+    stage.innerHTML = "";
+
+    const v = document.createElement("video");
+    v.src = f.src;
+    v.poster = f.poster;
+    v.controls = true;
+    v.playsInline = true;
+    v.setAttribute("playsinline", "");
+    v.className = f.ratio === "vertical" ? "is-vertical" : "is-wide";
+    v.addEventListener("loadeddata", function () { screen.classList.add("is-ready"); });
+    v.addEventListener("error", function () { screen.classList.add("is-ready"); });
+    stage.appendChild(v);
+    activeVideo = v;
+    v.play().catch(function () {});
+
+    sTitle.textContent = f.title;
+    sBlurb.textContent = f.blurb;
+    sTags.innerHTML = "";
+    [f.client, f.cat, f.year].forEach(function (t) {
+      const s = document.createElement("span"); s.textContent = t; sTags.appendChild(s);
+    });
+    sCount.textContent = String(i + 1).padStart(2, "0") + " / " + String(ORDER.length).padStart(2, "0");
+    prevBtn.disabled = i === 0;
+    nextBtn.disabled = i === ORDER.length - 1;
+  }
+
+  function closeFilm() {
+    screen.classList.remove("is-open", "is-ready");
+    screen.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("is-locked");
+    if (activeVideo) { try { activeVideo.pause(); } catch (e) {} }
+    setTimeout(function () { stage.innerHTML = ""; activeVideo = null; }, 480);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  prevBtn.addEventListener("click", function () { if (current > 0) render(current - 1); });
+  nextBtn.addEventListener("click", function () { if (current < ORDER.length - 1) render(current + 1); });
+  $("#closeBtn").addEventListener("click", closeFilm);
+  screen.addEventListener("click", function (e) { if (e.target === screen || e.target.classList.contains("screen__stage")) closeFilm(); });
+
+  document.addEventListener("keydown", function (e) {
+    if (!screen.classList.contains("is-open")) return;
+    if (e.key === "Escape") { e.preventDefault(); closeFilm(); }
+    if (e.key === "ArrowLeft" && current > 0) { e.preventDefault(); render(current - 1); }
+    if (e.key === "ArrowRight" && current < ORDER.length - 1) { e.preventDefault(); render(current + 1); }
+    if (e.key === "Tab") {
+      const f = $$('button, [href], video', screen).filter(function (el) { return !el.disabled && el.offsetParent !== null; });
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* ── aerial parallax (transform only) ────────────────── */
+  const shots = $$("[data-parallax]");
+  if (shots.length && !reduced) {
+    let raf = null;
+    function parallax() {
+      const vh = window.innerHeight;
+      shots.forEach(function (img) {
+        const r = img.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        const p = (r.top + r.height / 2 - vh / 2) / vh;   // -0.5 .. 0.5
+        img.style.setProperty("--p", (p * 34).toFixed(2));
+      });
+      raf = null;
+    }
+    window.addEventListener("scroll", function () {
+      if (raf) return; raf = requestAnimationFrame(parallax);
+    }, { passive: true });
+    parallax();
+  }
+
+
+  /* ── Enquiry: 'quizfocus' shape + 'formbudget' bands ─────────── */
+  (function () {
+    const form = document.getElementById("enqForm");
+    if (!form) return;
+    const screens = [].slice.call(form.querySelectorAll(".enq__screen"));
+    const rail = document.querySelectorAll(".enq__rail i");
+    const next = document.getElementById("enqNext");
+    const back = document.getElementById("enqBack");
+    const nav  = form.querySelector(".enq__nav");
+    const rng  = form.elements.budget;
+    let at = 0;
+
+    // what each band actually buys — Morgan's ladder, brief §14
+    const BANDS = [
+      [10000, "A single film, shot in a day, cut for the site and for social.",
+        ["One shoot day", "A two to three minute film", "Three social cutdowns"]],
+      [20000, "Where most heritage and launch films land.",
+        ["Two shoot days", "Story built around the people, not just the machine", "Stills shot alongside"]],
+      [35000, "A fuller production: travel, a crew, and more than one chapter.",
+        ["Multiple days and locations", "A small crew, not a one-man band", "A film plus a set of cutdowns"]],
+      [1e9, "A season, or a series.",
+        ["Several shoots across the year", "A presenter-led episodic format", "A library you keep drawing on"]],
+    ];
+
+    function gbp(v) { return "£" + (+v).toLocaleString("en-GB") + (+v >= 50000 ? "+" : ""); }
+
+    function syncBudget() {
+      const v = +rng.value;
+      const b = BANDS.filter(function (x) { return v < x[0]; })[0] || BANDS[BANDS.length - 1];
+      document.getElementById("enqMoney").textContent = gbp(v);
+      document.getElementById("enqBand").textContent = b[1];
+      document.getElementById("enqBuys").innerHTML =
+        b[2].map(function (t) { return "<li>" + t + "</li>"; }).join("");
+    }
+    rng.addEventListener("input", syncBudget);
+    syncBudget();
+
+    function valid(i) {
+      if (i === 0) return !!form.querySelector('[name="subject"]:checked');
+      if (i === 1) return !!form.querySelector('[name="timing"]:checked');
+      if (i === 3) return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.elements.email.value.trim());
+      return true;
+    }
+
+    function show(i) {
+      at = i;
+      screens.forEach(function (s, n) { s.classList.toggle("is-on", n === i); });
+      rail.forEach(function (el, n) { el.classList.toggle("is-done", n <= i); });
+      back.hidden = i === 0 || i === screens.length - 1;
+      nav.hidden = i === screens.length - 1;
+      next.firstChild.textContent = i === 3 ? "Send it " : "Continue ";
+      const f = screens[i].querySelector("input:not([type=radio]), input[type=radio]");
+      if (f && i !== 2) { try { f.focus({ preventScroll: true }); } catch (e) {} }
+    }
+
+    function finish() {
+      const d = new FormData(form);
+      const line = [d.get("subject"), d.get("timing"), gbp(d.get("budget"))]
+        .filter(Boolean).join(" · ");
+      document.getElementById("enqSummary").textContent = line;
+      // PLACEHOLDER: swap for a real endpoint once the domain exists
+      const body = encodeURIComponent(
+        "Filming: " + d.get("subject") + "\nTiming: " + d.get("timing") +
+        "\nBudget: " + gbp(d.get("budget")) + "\nReply to: " + d.get("email"));
+      window.location.href =
+        "mailto:hello@higherheights.studio?subject=" +
+        encodeURIComponent("Enquiry — " + d.get("subject")) + "&body=" + body;
+      show(4);
+    }
+
+    next.addEventListener("click", function () {
+      if (!valid(at)) {
+        const bad = screens[at].querySelector(".enq__opts, .enq__field");
+        if (bad) { bad.animate(
+          [{ transform: "translateX(0)" }, { transform: "translateX(-5px)" },
+           { transform: "translateX(5px)" }, { transform: "translateX(0)" }],
+          { duration: 260 }); }
+        return;
+      }
+      if (at === 3) { finish(); return; }
+      show(at + 1);
+    });
+    back.addEventListener("click", function () { if (at > 0) show(at - 1); });
+
+    // choosing an option carries you on, and Enter works everywhere
+    form.addEventListener("change", function (e) {
+      if (e.target.type === "radio" && at < 2) setTimeout(function () { next.click(); }, 240);
+    });
+    form.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); next.click(); }
+    });
+  })();
+
+
+  /* -- sticky horizontal scroll -----------------------------------
+     Mechanic adapted from Goodwork Library v1.3.0 'storypinned',
+     driven on the X axis. -- */
+  document.querySelectorAll("[data-pin]").forEach(function (pin) {
+    const row = pin.querySelector(".pin__row");
+    const bar = pin.querySelector(".pin__meter i");
+    if (!row) return;
+
+    function travel() {
+      // offsetWidth, not scrollWidth: the row is overflow:visible inside the
+      // pin, so scrollWidth collapses to the padding box and reports 0.
+      const content = Math.max(row.offsetWidth, row.scrollWidth);
+      return Math.max(0, content - pin.clientWidth);
+    }
+
+    function draw() {
+      if (pin.classList.contains("pin--off")) return;
+      const span = pin.offsetHeight - window.innerHeight;
+      const p = span > 0
+        ? Math.min(1, Math.max(0, -pin.getBoundingClientRect().top / span)) : 0;
+      row.style.transform = "translate3d(" + (-p * travel()) + "px,0,0)";
+      if (bar) bar.style.transform = "scaleX(" + p.toFixed(4) + ")";
+    }
+
+    function size() {
+      // narrow screen or motion unwelcome: release the pin and let the
+      // existing drag carousel take over
+      if (reduced || window.innerWidth < 760) {
+        pin.classList.add("pin--off");
+        pin.style.height = "";
+        row.style.transform = "";
+        return;
+      }
+      pin.classList.remove("pin--off");
+      pin.style.height = (window.innerHeight + travel()) + "px";
+      draw();
+    }
+
+    window.addEventListener("scroll", draw, { passive: true });
+    window.addEventListener("resize", size);
+    window.addEventListener("load", size);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(size);
+    size();
+  });
+
+  /* -- marquee: duplicate each row so the loop is seamless -- */
+  document.querySelectorAll(".marq__row").forEach(function (row) {
+    if (row.dataset.doubled) return;
+    row.innerHTML += row.innerHTML;
+    row.dataset.doubled = "1";
+  });
+
+  /* ── live London clock in the hero strip ─────────────── */
+  (function () {
+    const el = document.getElementById("ukClock");
+    if (!el) return;
+    function tick() {
+      try {
+        el.textContent = new Intl.DateTimeFormat("en-GB", {
+          hour: "2-digit", minute: "2-digit", hour12: false,
+          timeZone: "Europe/London",
+        }).format(new Date()) + " London";
+      } catch (err) {
+        el.remove();                      // no Intl support: drop it silently
+        return;
+      }
+      setTimeout(tick, 15000);
+    }
+    tick();
+  })();
+
+  /* ── scroll carousel ──────────────────────────────────
+     Drag, inertia, snap, arrows and a progress bar.
+     No pointerleave handler: with setPointerCapture it fires mid-drag,
+     desyncs the dragging state and re-engages snap — that was the lock. */
+  document.querySelectorAll("[data-carousel]").forEach(function (root) {
+    const track = root.querySelector(".strip");
+    const bar   = root.querySelector(".carousel__bar");
+    const arrows = root.querySelectorAll(".carousel__arrow");
+    if (!track) return;
+
+    let down = false, pid = null, startX = 0, startLeft = 0, moved = 0;
+    let lastX = 0, lastT = 0, vx = 0, raf = 0;
+
+    const maxScroll = () => Math.max(1, track.scrollWidth - track.clientWidth);
+
+    function step() {
+      const card = track.querySelector("figure");
+      if (!card) return 260;
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function paint() {
+      const p = Math.min(1, Math.max(0, track.scrollLeft / maxScroll()));
+      if (bar) bar.style.transform = "scaleX(" + p.toFixed(4) + ")";
+      arrows.forEach(function (a) {
+        const dir = +a.dataset.dir;
+        a.disabled = dir < 0 ? track.scrollLeft < 2
+                             : track.scrollLeft > maxScroll() - 2;
+      });
+    }
+    track.addEventListener("scroll", paint, { passive: true });
+    window.addEventListener("resize", paint);
+    paint();
+
+    function snap() {
+      const w = step();
+      track.scrollTo({ left: Math.round(track.scrollLeft / w) * w,
+                       behavior: reduced ? "auto" : "smooth" });
+    }
+
+    function glide() {
+      vx *= 0.94;
+      track.scrollLeft -= vx * 16;
+      if (Math.abs(vx) > 0.02 && track.scrollLeft > 0 && track.scrollLeft < maxScroll()) {
+        raf = requestAnimationFrame(glide);
+      } else { snap(); }
+    }
+
+    track.addEventListener("pointerdown", function (e) {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      cancelAnimationFrame(raf);
+      down = true; pid = e.pointerId; moved = 0; vx = 0;
+      startX = lastX = e.clientX; startLeft = track.scrollLeft;
+      lastT = performance.now();
+      root.classList.add("is-dragging");
+      try { track.setPointerCapture(pid); } catch (err) {}
+    });
+
+    track.addEventListener("pointermove", function (e) {
+      if (!down || e.pointerId !== pid) return;
+      const dx = e.clientX - startX;
+      moved = Math.max(moved, Math.abs(dx));
+      if (moved <= 4) return;
+      e.preventDefault();                      // stop selection / image drag
+      track.scrollLeft = startLeft - dx;
+      const now = performance.now(), dt = now - lastT;
+      if (dt > 0) { vx = (e.clientX - lastX) / dt; lastX = e.clientX; lastT = now; }
+    });
+
+    function release(e) {
+      if (!down) return;
+      down = false;
+      try { if (pid !== null && track.hasPointerCapture(pid)) track.releasePointerCapture(pid); } catch (err) {}
+      pid = null;
+      root.classList.remove("is-dragging");
+      if (!reduced && Math.abs(vx) > 0.05) glide(); else snap();
+    }
+    track.addEventListener("pointerup", release);
+    track.addEventListener("pointercancel", release);
+
+    // a drag that ends on a card must not open it
+    track.addEventListener("click", function (e) {
+      if (moved > 4) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+
+    arrows.forEach(function (a) {
+      a.addEventListener("click", function () {
+        track.scrollBy({ left: (+a.dataset.dir) * step(),
+                         behavior: reduced ? "auto" : "smooth" });
+      });
+    });
+
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); track.scrollBy({ left: step(), behavior: reduced ? "auto" : "smooth" }); }
+      if (e.key === "ArrowLeft")  { e.preventDefault(); track.scrollBy({ left: -step(), behavior: reduced ? "auto" : "smooth" }); }
+    });
+
+    // trackpad horizontal only — never hijack the page's vertical scroll
+    track.addEventListener("wheel", function (e) {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault(); track.scrollLeft += e.deltaX;
+      }
+    }, { passive: false });
+  });
+
+  /* ── marquee: duplicate for a seamless loop ──────────── */
+  const track = $("#marqueeTrack");
+  if (track) track.innerHTML += track.innerHTML;
+
+  /* ── hero video: pause when off-screen, resume on return ─ */
+  const hero = $("#heroVideo");
+  if (hero) {
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (reduced) return;
+          if (en.isIntersecting) { hero.play().catch(function () {}); }
+          else { try { hero.pause(); } catch (e) {} }
+        });
+      }, { threshold: 0.12 }).observe(hero);
+    }
+    // graceful fallback: if the video can't play, the poster stands in
+    hero.addEventListener("error", function () { hero.style.display = "none"; });
+  }
+})();
+</script>
+</body>
+</html>
