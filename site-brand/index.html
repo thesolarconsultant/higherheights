@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Higher Heights Films — Film, Aerial &amp; Photography</title>
 <meta name="description" content="Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide." />
-<meta name="theme-color" content="#0C0D0C" />
+<meta name="theme-color" content="#070D0B" />
 <link rel="canonical" href="https://higher-heights.vercel.app/" />
 
 <meta property="og:type" content="website" />
@@ -35,9 +35,9 @@
    navy #0C0D0C · cream #E9E5DB · gold #8A9A86
    ══════════════════════════════════════════════════════════════ */
 :root{
-  --navy:      #0C0D0C;
-  --navy-2:    #151716;
-  --navy-3:    #1E201F;
+  --navy:      #070D0B;
+  --navy-2:    #0A1512;
+  --navy-3:    #0F1D19;
   --cream:     #E9E5DB;
   --gold:      #8A9A86;
   --gold-deep: #4F5E4C;
@@ -47,8 +47,8 @@
   --muted-2:   rgba(233,229,219,.38);
 
   --ink:       #0C0D0C;
-  --ink-muted: rgba(12,13,12,.58);
-  --ink-line:  rgba(12,13,12,.14);
+  --ink-muted: rgba(5,16,13,.58);
+  --ink-line:  rgba(5,16,13,.14);
 
   --measure-tight: 34ch;   /* lede, pull quotes */
   --measure:       46ch;   /* body copy */
@@ -185,7 +185,7 @@ body::after{
   border-bottom:1px solid transparent;
 }
 .nav.is-stuck{
-  background:rgba(12,13,12,.82);
+  background:rgba(5,16,13,.82);
   backdrop-filter:blur(18px) saturate(1.2);
   -webkit-backdrop-filter:blur(18px) saturate(1.2);
   border-bottom-color:var(--line-soft);
@@ -208,7 +208,7 @@ body::after{
   white-space:nowrap;
 }
 .nav__links{ display:flex; align-items:center; gap:clamp(1.4rem,2.6vw,2.6rem); }
-.nav a, .nav__links a{ text-shadow:0 1px 14px rgba(12,13,12,.9); }
+.nav a, .nav__links a{ text-shadow:0 1px 14px rgba(5,16,13,.9); }
 .nav__links a{
   font-family:var(--mono);
   font-size:var(--fs-micro); letter-spacing:.15em; text-transform:uppercase;
@@ -323,8 +323,8 @@ body::after{
 .hero__scrim{
   position:absolute; inset:0; z-index:-1;
   background:
-    linear-gradient(to top, rgba(12,13,12,.88) 0%, rgba(12,13,12,.45) 30%, rgba(12,13,12,0) 58%),
-    linear-gradient(to bottom, rgba(12,13,12,.55) 0%, rgba(12,13,12,0) 16%);
+    linear-gradient(to top, rgba(5,16,13,.88) 0%, rgba(5,16,13,.45) 30%, rgba(5,16,13,0) 58%),
+    linear-gradient(to bottom, rgba(5,16,13,.55) 0%, rgba(5,16,13,0) 16%);
 }
 
 .hero__inner{
@@ -476,7 +476,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   letter-spacing:.16em; text-transform:uppercase; white-space:nowrap;
   padding-inline:clamp(1.1rem,2.2vw,2rem);
   display:flex; align-items:center; gap:clamp(1.1rem,2.2vw,2rem);
-  color:rgba(12,13,12,.72);
+  color:rgba(5,16,13,.72);
 }
 .marquee__track span::after{ content:"·"; color:var(--gold-deep); font-size:1.1em; }
 
@@ -532,7 +532,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 
 .film__scrim{
   position:absolute; inset:0; z-index:2; pointer-events:none;
-  background:linear-gradient(to top, rgba(12,13,12,.92) 0%, rgba(12,13,12,.5) 26%, rgba(12,13,12,0) 58%);
+  background:linear-gradient(to top, rgba(5,16,13,.92) 0%, rgba(5,16,13,.5) 26%, rgba(5,16,13,0) 58%);
   opacity:.9; transition:opacity .6s var(--ease);
 }
 .film:hover .film__scrim{ opacity:1; }
@@ -657,7 +657,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 }
 .shot::after{
   content:""; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(to top, rgba(12,13,12,.72) 0%, rgba(12,13,12,.12) 34%, transparent 60%);
+  background:linear-gradient(to top, rgba(5,16,13,.72) 0%, rgba(5,16,13,.12) 34%, transparent 60%);
 }
 .shot figcaption{
   position:absolute; z-index:2; left:clamp(.85rem,1.5vw,1.3rem); bottom:clamp(.8rem,1.3vw,1.15rem);
@@ -744,7 +744,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .studio__band figcaption{
   margin-top:.9rem; display:flex; justify-content:space-between; gap:1rem;
   font-family:var(--mono); font-size:var(--fs-micro);
-  letter-spacing:.13em; text-transform:uppercase; color:rgba(12,13,12,.5);
+  letter-spacing:.13em; text-transform:uppercase; color:rgba(5,16,13,.5);
 }
 @media (max-width:700px){
   .studio__band .studio__bandFrame{ aspect-ratio:16/10; }
@@ -754,7 +754,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .studio__figure figcaption{
   margin-top:.95rem; display:flex; justify-content:space-between; gap:1rem;
   font-family:var(--mono); font-size:var(--fs-micro);
-  letter-spacing:.13em; text-transform:uppercase; color:rgba(12,13,12,.5);
+  letter-spacing:.13em; text-transform:uppercase; color:rgba(5,16,13,.5);
 }
 .studio__copy h2{ font-size:var(--fs-h2); font-weight:500; letter-spacing:-.045em; line-height:1.02; margin-bottom:1.4rem; }
 .studio__copy p{ color:var(--ink-muted); margin-bottom:1.1rem; max-width:54ch; line-height:1.72; }
@@ -770,8 +770,8 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .chip{
   font-family:var(--mono); font-size:var(--fs-micro);
   letter-spacing:.13em; text-transform:uppercase;
-  border:1px solid rgba(12,13,12,.18); border-radius:999px;
-  padding:.62em 1.15em; color:rgba(12,13,12,.72);
+  border:1px solid rgba(5,16,13,.18); border-radius:999px;
+  padding:.62em 1.15em; color:rgba(5,16,13,.72);
   transition:background .4s var(--ease), color .4s var(--ease), border-color .4s;
 }
 .chip:hover{ background:var(--ink); color:var(--cream); border-color:var(--ink); }
@@ -1149,9 +1149,7 @@ body{ counter-reset:sec; }
 /* eyebrows: number, rule, label — same tracked capitals as the logo's “FILMS” */
 .eyebrow{ align-items:center; gap:.95rem; }
 .eyebrow .mono{ letter-spacing:.24em; }
-.eyebrow--n::before{ content:counter(sec,decimal-leading-zero); counter-increment:sec;
-  font-family:var(--mono); font-size:var(--fs-micro); font-weight:500; letter-spacing:.24em; color:var(--gold); }
-.band-cream .eyebrow--n::before{ color:var(--gold-deep); }
+.eyebrow--n::before{ content:none; }
 .eyebrow__line{ width:clamp(28px,3.4vw,48px); opacity:.7; transform:none; transform-origin:left; }
 .gw-on .eyebrow.reveal .eyebrow__line{ transform:scaleX(0); }
 .gw-on .eyebrow.reveal.in .eyebrow__line{ transform:none; transition:transform .9s var(--gw-ease) .2s; }
@@ -1203,7 +1201,7 @@ body{ counter-reset:sec; }
   transition:flex-grow .8s var(--gw-ease), opacity .45s var(--gw-ease), transform .8s var(--gw-ease), visibility 0s; }
 .nav__side--l{ justify-content:flex-end; padding-right:clamp(1.6rem,4vw,4.4rem); }
 .nav__side--r{ justify-content:flex-start; padding-left:clamp(1.6rem,4vw,4.4rem); }
-.nav__side a{ font-family:var(--mono); font-size:var(--fs-micro); font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--cream); position:relative; padding-block:.5rem; text-shadow:0 1px 14px rgba(12,13,12,.9); transition:color .35s var(--ease); }
+.nav__side a{ font-family:var(--mono); font-size:var(--fs-micro); font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--cream); position:relative; padding-block:.5rem; text-shadow:0 1px 14px rgba(5,16,13,.9); transition:color .35s var(--ease); }
 .nav__side a::after{ content:""; position:absolute; left:0; right:0; bottom:.1rem; height:1px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .55s var(--gw-ease); }
 .nav__side a:hover,.nav__side a:focus-visible{ color:var(--gold); }
 .nav__side a:hover::after,.nav__side a:focus-visible::after{ transform:scaleX(1); }
@@ -1221,7 +1219,7 @@ body{ counter-reset:sec; }
 /* scrolled: the bar folds into the logo and a plus */
 @media (min-width:861px){
   .nav.is-compact .nav__inner{ max-width:288px; height:58px; margin-top:14px; padding:0 .5rem 0 1.4rem;
-    background:rgba(12,13,12,.82); -webkit-backdrop-filter:blur(18px) saturate(1.2); backdrop-filter:blur(18px) saturate(1.2); border-color:var(--line-soft); }
+    background:rgba(5,16,13,.82); -webkit-backdrop-filter:blur(18px) saturate(1.2); backdrop-filter:blur(18px) saturate(1.2); border-color:var(--line-soft); }
   .nav.is-compact .nav__side{ flex-grow:0; opacity:0; visibility:hidden; transform:scale(.96); padding:0; gap:0; transition:flex-grow .8s var(--gw-ease), opacity .3s var(--gw-ease), transform .8s var(--gw-ease), visibility 0s .8s; }
   .nav.is-compact .brand__wm{ width:130px; }
   .nav.is-compact .nav__plus{ width:44px; opacity:1; visibility:visible; margin-left:.9rem; transition:width .8s var(--gw-ease), opacity .5s var(--gw-ease) .25s, margin .8s var(--gw-ease), visibility 0s; }
@@ -1230,13 +1228,13 @@ body{ counter-reset:sec; }
 
 /* the drop-down */
 .mega{ position:absolute; z-index:1; left:0; right:0; top:0; max-height:100svh; overflow:auto;
-  padding-top:clamp(92px,9vw,112px); background:rgba(12,13,12,.97);
+  padding-top:clamp(92px,9vw,112px); background:rgba(5,16,13,.97);
   -webkit-backdrop-filter:blur(22px); backdrop-filter:blur(22px); border-bottom:1px solid var(--line-soft);
   clip-path:inset(0 0 100% 0); visibility:hidden; transition:clip-path .75s var(--gw-ease), visibility 0s .75s; }
 .nav.is-mega .mega{ clip-path:inset(0); visibility:visible; transition:clip-path .75s var(--gw-ease), visibility 0s; }
 .mega__in{ display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:clamp(2rem,5vw,6rem); align-items:center; padding-block:clamp(1.2rem,2.6vw,2.2rem); }
 .mega__list{ display:flex; flex-direction:column; border-top:1px solid var(--line-soft); }
-.mega__a{ display:grid; grid-template-columns:2.6rem minmax(0,1fr) auto; align-items:baseline; gap:1rem; padding:clamp(.75rem,1.4vw,1.1rem) 0; border-bottom:1px solid var(--line-soft); color:var(--cream); position:relative;
+.mega__a{ display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:baseline; gap:1rem; padding:clamp(.75rem,1.4vw,1.1rem) 0; border-bottom:1px solid var(--line-soft); color:var(--cream); position:relative;
   opacity:0; transform:translateY(14px); transition:opacity .6s var(--gw-ease), transform .6s var(--gw-ease), color .3s; }
 .nav.is-mega .mega__a{ opacity:1; transform:none; transition-delay:calc(var(--k,0) * 45ms + 180ms); }
 .mega__a::after{ content:""; position:absolute; left:0; bottom:-1px; height:1px; width:100%; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .6s var(--gw-ease); }
@@ -1245,7 +1243,7 @@ body{ counter-reset:sec; }
 .mega__t{ font-family:var(--display); font-size:clamp(1.25rem,2.3vw,2.1rem); letter-spacing:.08em; text-transform:uppercase; line-height:1.15; transition:transform .5s var(--gw-ease); }
 .mega__a:hover .mega__t,.mega__a:focus-visible .mega__t{ transform:translateX(.6rem); }
 .mega__m{ color:var(--muted); text-align:right; }
-.mega__a[aria-current="true"] .mega__n::after{ content:" ●"; font-size:.6em; }
+.mega__a[aria-current="true"] .mega__t::before{ content:""; display:inline-block; width:6px; height:6px; margin-right:.9rem; border-radius:50%; background:var(--gold); vertical-align:middle; }
 .mega__pic{ position:relative; margin:0; }
 .mega__stack{ position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--navy-3); }
 .mega__img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.04); filter:blur(6px); transition:opacity .7s var(--gw-ease), transform 1.1s var(--gw-ease), filter .7s var(--gw-ease); }
@@ -1298,6 +1296,38 @@ body{ counter-reset:sec; }
 .work .sect-head{ flex-direction:column; align-items:center; text-align:center; gap:1.2rem; }
 .work .sect-head__meta{ align-items:center; flex-direction:row; gap:1.6rem; }
 .clients__label{ text-align:center; }
+
+/* ══ Emerald through the blacks — the green from the hero film ═══════════ */
+:root{ --emerald-deep:#05261C; --emerald:#0E5A44; --emerald-lit:#17805F; }
+.hero__scrim{ background:
+  linear-gradient(to top, rgba(3,18,14,.92) 0%, rgba(5,34,26,.55) 30%, rgba(5,16,13,0) 62%),
+  linear-gradient(to bottom, rgba(5,16,13,.55) 0%, rgba(5,16,13,0) 16%),
+  radial-gradient(90% 55% at 50% 118%, rgba(23,128,95,.38), transparent 70%); }
+.svc{ background:
+  linear-gradient(180deg, var(--navy) 0%, rgba(7,13,11,0) 15%, rgba(7,13,11,0) 85%, var(--navy) 100%),
+  radial-gradient(70% 90% at 84% 18%, rgba(14,90,68,.46), transparent 66%),
+  radial-gradient(60% 80% at 6% 92%, rgba(7,60,46,.55), transparent 62%), var(--navy); }
+.work{ background:
+  linear-gradient(180deg, var(--navy) 0%, rgba(7,13,11,0) 15%, rgba(7,13,11,0) 85%, var(--navy) 100%),
+  radial-gradient(75% 45% at 10% 4%, rgba(23,128,95,.28), transparent 64%),
+  radial-gradient(60% 40% at 94% 62%, rgba(10,74,57,.5), transparent 62%),
+  radial-gradient(55% 35% at 20% 96%, rgba(7,60,46,.5), transparent 62%), var(--navy); }
+.aerial{ background:
+  linear-gradient(180deg, var(--navy) 0%, rgba(7,13,11,0) 15%, rgba(7,13,11,0) 85%, var(--navy) 100%),
+  radial-gradient(70% 70% at 92% 14%, rgba(23,128,95,.34), transparent 64%),
+  radial-gradient(65% 70% at 4% 96%, rgba(7,56,43,.6), transparent 62%), var(--navy); }
+.product{ background:
+  linear-gradient(180deg, var(--navy) 0%, rgba(7,13,11,0) 15%, rgba(7,13,11,0) 85%, var(--navy) 100%),
+  radial-gradient(70% 60% at 8% 12%, rgba(14,90,68,.45), transparent 64%),
+  radial-gradient(60% 60% at 96% 90%, rgba(8,64,49,.55), transparent 62%), var(--navy); }
+.contact{ background:
+  linear-gradient(180deg, var(--navy) 0%, rgba(7,13,11,0) 15%, rgba(7,13,11,0) 85%, var(--navy) 100%),
+  radial-gradient(90% 55% at 50% 0%, rgba(23,128,95,.36), transparent 66%),
+  radial-gradient(70% 60% at 100% 100%, rgba(10,74,57,.55), transparent 60%),
+  radial-gradient(60% 60% at 0% 80%, rgba(7,56,43,.55), transparent 62%), var(--navy); }
+.mega{ background:linear-gradient(180deg, rgba(4,20,16,.97), rgba(5,32,25,.97)); }
+.nav.is-compact .nav__inner{ background:rgba(5,28,22,.82); }
+.screen__count{ display:none; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
 </head>
@@ -1334,26 +1364,19 @@ body{ counter-reset:sec; }
   <div class="mega" id="mega" aria-hidden="true" inert>
     <div class="mega__in wrap">
       <nav class="mega__list" aria-label="Sections">
-          <a class="mega__a" href="#about" data-i="0" data-n="01" data-t="The studio">
-            <span class="mono mega__n">01</span><span class="mega__t">The studio</span><span class="mono mega__m">A film and photography studio</span>
+          <a class="mega__a" href="#about" data-i="0" data-n="01" data-t="The studio"><span class="mega__t">The studio</span><span class="mono mega__m">A film and photography studio</span>
           </a>
-          <a class="mega__a" href="#services" data-i="1" data-n="02" data-t="What we make">
-            <span class="mono mega__n">02</span><span class="mega__t">What we make</span><span class="mono mega__m">Adverts, brand films, product, events</span>
+          <a class="mega__a" href="#services" data-i="1" data-n="02" data-t="What we make"><span class="mega__t">What we make</span><span class="mono mega__m">Adverts, brand films, product, events</span>
           </a>
-          <a class="mega__a" href="#work" data-i="2" data-n="03" data-t="Selected work">
-            <span class="mono mega__n">03</span><span class="mega__t">Selected work</span><span class="mono mega__m">Eight films · 2024 — 2026</span>
+          <a class="mega__a" href="#work" data-i="2" data-n="03" data-t="Selected work"><span class="mega__t">Selected work</span><span class="mono mega__m">Eight films · 2024 — 2026</span>
           </a>
-          <a class="mega__a" href="#aerial" data-i="3" data-n="04" data-t="Aerial">
-            <span class="mono mega__n">04</span><span class="mega__t">Aerial</span><span class="mono mega__m">Drone and ground, in tandem</span>
+          <a class="mega__a" href="#aerial" data-i="3" data-n="04" data-t="Aerial"><span class="mega__t">Aerial</span><span class="mono mega__m">Drone and ground, in tandem</span>
           </a>
-          <a class="mega__a" href="#product" data-i="4" data-n="05" data-t="Product &amp; stills">
-            <span class="mono mega__n">05</span><span class="mega__t">Product &amp; stills</span><span class="mono mega__m">Movement, up close</span>
+          <a class="mega__a" href="#product" data-i="4" data-n="05" data-t="Product &amp; stills"><span class="mega__t">Product &amp; stills</span><span class="mono mega__m">Movement, up close</span>
           </a>
-          <a class="mega__a" href="#studio" data-i="5" data-n="06" data-t="Meet Morgan">
-            <span class="mono mega__n">06</span><span class="mega__t">Meet Morgan</span><span class="mono mega__m">One pair of eyes on the whole thing</span>
+          <a class="mega__a" href="#studio" data-i="5" data-n="06" data-t="Meet Morgan"><span class="mega__t">Meet Morgan</span><span class="mono mega__m">One pair of eyes on the whole thing</span>
           </a>
-          <a class="mega__a" href="#contact" data-i="6" data-n="07" data-t="Contact">
-            <span class="mono mega__n">07</span><span class="mega__t">Contact</span><span class="mono mega__m">First reply from Morgan, within a day</span>
+          <a class="mega__a" href="#contact" data-i="6" data-n="07" data-t="Contact"><span class="mega__t">Contact</span><span class="mono mega__m">First reply from Morgan, within a day</span>
           </a>
       </nav>
       <figure class="mega__pic" aria-hidden="true">
@@ -1367,25 +1390,25 @@ body{ counter-reset:sec; }
             <img class="mega__img" src="assets/img/matchroom-1.jpg" alt="Filming ringside at a Matchroom Boxing event" loading="lazy" decoding="async">
         </div>
         <i class="vf vf--tl"></i><i class="vf vf--tr"></i><i class="vf vf--bl"></i><i class="vf vf--br"></i>
-        <figcaption class="mono"><span id="megaCap">01 — The studio</span><span id="megaFrame">Frame 01 / 07</span></figcaption>
+        <figcaption class="mono"><span id="megaCap">The studio</span><span id="megaFrame">A film and photography studio</span></figcaption>
       </figure>
     </div>
     <div class="mega__foot wrap mono">
       <a href="mailto:hello@higherheights.studio">hello@higherheights.studio</a>
       <span class="nav__status"><i class="nav__dot" aria-hidden="true"></i>Available · <span id="ukClock">--:--</span></span>
-      <span class="nav__where" id="navWhere" aria-hidden="true">Now viewing <b id="navWhereN">00</b><span id="navWhereT">Showreel</span></span>
+      <span class="nav__where" id="navWhere" aria-hidden="true">Now viewing <span id="navWhereT">Showreel</span></span>
       <span>Booking 2026 — open</span>
     </div>
   </div>
 </header>
 <div class="nav__drawer" id="drawer">
-  <a href="#about"><span>01</span>The studio</a>
-  <a href="#services"><span>02</span>What we make</a>
-  <a href="#work"><span>03</span>Selected work</a>
-  <a href="#aerial"><span>04</span>Aerial</a>
-  <a href="#product"><span>05</span>Product &amp; stills</a>
-  <a href="#studio"><span>06</span>Meet Morgan</a>
-  <a href="#contact"><span>07</span>Contact</a>
+  <a href="#about">The studio</a>
+  <a href="#services">What we make</a>
+  <a href="#work">Selected work</a>
+  <a href="#aerial">Aerial</a>
+  <a href="#product">Product &amp; stills</a>
+  <a href="#studio">Meet Morgan</a>
+  <a href="#contact">Contact</a>
 </div>
 
 <main id="top">
@@ -1552,12 +1575,12 @@ body{ counter-reset:sec; }
       </div>
       <h2 class="svc__h" id="svc-head" data-gw="letters">For everyone who needs to be seen</h2>
       <ol class="svc__grid">
-        <li class="reveal"><span class="mono">01</span><span class="svc__name">Adverts &amp; commercials</span></li>
-        <li class="reveal"><span class="mono">02</span><span class="svc__name">Brand films</span></li>
-        <li class="reveal"><span class="mono">03</span><span class="svc__name">Product &amp; stills</span></li>
-        <li class="reveal"><span class="mono">04</span><span class="svc__name">Events &amp; coverage</span></li>
-        <li class="reveal"><span class="mono">05</span><span class="svc__name">Aerial</span></li>
-        <li class="reveal"><span class="mono">06</span><span class="svc__name">Social cutdowns</span></li>
+        <li class="reveal"><span class="svc__name">Adverts &amp; commercials</span></li>
+        <li class="reveal"><span class="svc__name">Brand films</span></li>
+        <li class="reveal"><span class="svc__name">Product &amp; stills</span></li>
+        <li class="reveal"><span class="svc__name">Events &amp; coverage</span></li>
+        <li class="reveal"><span class="svc__name">Aerial</span></li>
+        <li class="reveal"><span class="svc__name">Social cutdowns</span></li>
       </ol>
     </div>
   </section>
@@ -2711,7 +2734,7 @@ body{ counter-reset:sec; }
 })();
 </script>
 <script>
-/* Navigation: Menu drop-down, hover preview, “you are here” readout, M shortcut. */
+/* Navigation: Menu drop-down, hover preview, “now viewing” readout, M shortcut, fold on scroll. */
 (function () {
   const nav = document.getElementById("nav"), btn = document.getElementById("menuBtn"), mega = document.getElementById("mega");
   if (!nav || !btn || !mega) return;
@@ -2731,8 +2754,8 @@ body{ counter-reset:sec; }
   function show(i) {
     imgs.forEach(function (im, k) { im.classList.toggle("is-on", k === i); });
     const a = links[i]; if (!a) return;
-    cap.textContent = a.dataset.n + " — " + a.dataset.t.replace("&amp;", "&");
-    frame.textContent = "Frame " + a.dataset.n + " / " + String(links.length).padStart(2, "0");
+    cap.textContent = a.dataset.t;
+    frame.textContent = a.querySelector(".mega__m").textContent;
   }
   function setOpen(open, focusBtn) {
     nav.classList.toggle("is-mega", open);
@@ -2760,23 +2783,23 @@ body{ counter-reset:sec; }
   });
   window.addEventListener("resize", function () { if (nav.classList.contains("is-mega") && !btn.offsetParent) setOpen(false); });
 
-  /* “you are here”: which section is crossing the middle of the screen */
-  const where = document.getElementById("navWhere"), whereN = document.getElementById("navWhereN"), whereT = document.getElementById("navWhereT");
-  const map = links.map(function (a) { return { el: document.querySelector(a.getAttribute("href")), n: a.dataset.n, t: a.dataset.t.replace("&amp;", "&"), a: a }; });
+  /* “now viewing”: which section is crossing the middle of the screen */
+  const where = document.getElementById("navWhere"), whereT = document.getElementById("navWhereT");
+  const map = links.map(function (a) { const id = a.getAttribute("href").slice(1); return { el: document.getElementById(id), key: id, t: a.dataset.t }; });
   let current = "";
-  function mark(n, t) {
-    if (n === current) return; current = n;
-    links.forEach(function (a) { if (a.dataset.n === n) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+  function mark(key, t) {
+    if (key === current) return; current = key;
+    links.forEach(function (a) { if (a.getAttribute("href") === "#" + key) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
     where.classList.add("is-swap");
-    setTimeout(function () { whereN.textContent = n; whereT.textContent = t; where.classList.remove("is-swap"); }, 180);
+    setTimeout(function () { whereT.textContent = t; where.classList.remove("is-swap"); }, 180);
   }
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { const m = map.find(function (x) { return x.el === en.target; }); if (m) mark(m.n, m.t); } });
+      entries.forEach(function (en) { if (en.isIntersecting) { const m = map.find(function (x) { return x.el === en.target; }); if (m) mark(m.key, m.t); } });
     }, { rootMargin: "-45% 0px -50% 0px" });
     map.forEach(function (m) { if (m.el) io.observe(m.el); });
     const hero = document.querySelector(".hero");
-    if (hero) new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) mark("00", "Showreel"); }); }, { rootMargin: "-45% 0px -50% 0px" }).observe(hero);
+    if (hero) new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) mark("top", "Showreel"); }); }, { rootMargin: "-45% 0px -50% 0px" }).observe(hero);
   }
 })();
 </script>
