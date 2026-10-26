@@ -1384,6 +1384,47 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
 
 main > section{ position:relative; isolation:isolate; overflow:hidden; }
 main > section > .wrap{ position:relative; z-index:1; }
+
+/* ══ Loading screen ═══════════════════════════════════════════════
+   Shows on every load. Three independent dismissals so a JS failure
+   can never leave the site hidden. ══ */
+#hhload{
+  position:fixed; inset:0; z-index:9999;
+  display:grid; place-items:center;
+  background:var(--deep,#070D0B);
+  opacity:1; visibility:visible;
+  transition:opacity .72s var(--ease,cubic-bezier(.16,1,.3,1)), visibility 0s linear .72s;
+  /* fallback: dismiss at 3.5s even with no JS at all */
+  animation:hhload-auto 0s linear 3.5s forwards;
+}
+#hhload.is-done{ opacity:0; visibility:hidden; pointer-events:none; }
+@keyframes hhload-auto{ to{ opacity:0; visibility:hidden; pointer-events:none; } }
+
+.hhload__in{ display:flex; flex-direction:column; align-items:center; gap:clamp(1.6rem,3vw,2.4rem); }
+.hhload__mark{
+  width:clamp(170px,22vw,300px); height:auto; color:var(--cream,#E9E5DB);
+  opacity:0; transform:translateY(10px) scale(.985);
+  animation:hhload-mark .95s var(--ease,cubic-bezier(.16,1,.3,1)) .06s forwards;
+}
+.hhload__mark svg,.hhload__mark img{ display:block; width:100%; height:auto; }
+@keyframes hhload-mark{ to{ opacity:1; transform:none; } }
+
+/* a hairline that fills -- reads as a film leader, not a spinner */
+.hhload__bar{ position:relative; width:clamp(120px,16vw,210px); height:1px;
+  background:rgba(233,229,219,.16); overflow:hidden; }
+.hhload__bar::after{ content:""; position:absolute; inset:0;
+  background:var(--cream,#E9E5DB); transform:scaleX(0); transform-origin:left center;
+  animation:hhload-bar 2.6s var(--ease,cubic-bezier(.16,1,.3,1)) forwards; }
+@keyframes hhload-bar{ 0%{transform:scaleX(0)} 62%{transform:scaleX(.72)} 100%{transform:scaleX(1)} }
+
+.hhload__word{ font-family:var(--mono,ui-monospace); font-size:var(--fs-micro,.72rem);
+  letter-spacing:.22em; text-transform:uppercase; color:rgba(233,229,219,.42); }
+
+@media(prefers-reduced-motion:reduce){
+  #hhload{ transition:opacity .2s linear, visibility 0s linear .2s; animation-delay:1.2s; }
+  .hhload__mark{ opacity:1; transform:none; animation:none; }
+  .hhload__bar::after{ animation:none; transform:scaleX(1); }
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://higher-heights.vercel.app/#org", "name": "Higher Heights Films", "alternateName": "Higher Heights", "url": "https://higher-heights.vercel.app/", "logo": "https://higher-heights.vercel.app/assets/img/icon-512.png", "email": "hello@higherheights.studio", "description": "Higher Heights Films is a UK film, aerial and photography studio for businesses, brands and people. Adverts, brand films, product, events and aerial — story-led, filmed worldwide.", "areaServed": "Worldwide", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, {"@type": "WebSite", "@id": "https://higher-heights.vercel.app/#site", "name": "Higher Heights Films", "url": "https://higher-heights.vercel.app/", "publisher": {"@id": "https://higher-heights.vercel.app/#org"}}]}</script>
 <script type="application/ld+json">
@@ -1451,6 +1492,28 @@ main > section > .wrap{ position:relative; z-index:1; }
 </script>
 </head>
 <body>
+<div id="hhload" aria-hidden="true" role="presentation">
+  <div class="hhload__in">
+    <div class="hhload__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Higher Heights HH monogram</title>
+  <desc id="desc">A balanced serif monogram formed by two joined H shapes sharing a taller central upright.</desc>
+  <g fill="#F4EFE6">
+    <!-- Left upright -->
+    <path d="M145 278h164v12c-29 8-43 22-43 56v308c0 34 14 48 43 56v12H145v-12c29-8 43-22 43-56V346c0-34-14-48-43-56z"/>
+    <!-- Shared central upright: raised, but kept in proportion to the outer stems -->
+    <path d="M408 200h184v12c-37 9-52 27-52 69v438c0 42 15 60 52 69v12H408v-12c37-9 52-27 52-69V281c0-42-15-60-52-69z"/>
+    <!-- Right upright -->
+    <path d="M691 310h164v12c-29 8-43 22-43 56v308c0 34 14 48 43 56v12H691v-12c29-8 43-22 43-56V378c0-34-14-48-43-56z"/>
+    <!-- Offset bars make the shared-spine construction legible while keeping a deliberate rhythm -->
+    <path d="M230 455h270v34H230z"/>
+    <path d="M500 521h235v34H500z"/>
+  </g>
+</svg></div>
+    <div class="hhload__bar"></div>
+    <div class="hhload__word">Higher Heights</div>
+  </div>
+</div>
+
 <header class="nav" id="nav">
   <div class="nav__progress" aria-hidden="true"><span id="navProgress"></span></div>
   <div class="nav__inner">
@@ -2164,6 +2227,25 @@ main > section > .wrap{ position:relative; z-index:1; }
     const hero = document.querySelector(".hero");
     if (hero) new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) mark("top", "Showreel"); }); }, { rootMargin: "-45% 0px -50% 0px" }).observe(hero);
   }
+})();
+</script>
+<script>
+/* Loading screen: dismiss on load, with a hard timeout behind it. Runs on
+   every page load by design -- no session flag. */
+(function () {
+  var el = document.getElementById("hhload");
+  if (!el) return;
+  var gone = false;
+  function hide() {
+    if (gone) return;
+    gone = true;
+    el.classList.add("is-done");
+    setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 900);
+  }
+  if (document.readyState === "complete") setTimeout(hide, 420);
+  else window.addEventListener("load", function () { setTimeout(hide, 280); });
+  setTimeout(hide, 4000);                 /* never hold the page hostage */
+  window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
 })();
 </script>
 </body>
