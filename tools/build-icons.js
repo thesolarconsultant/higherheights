@@ -4,7 +4,7 @@ const BR=path.resolve(__dirname,'../brand');
 const OUT=path.resolve(__dirname,'../site-brand/assets/img');
 const rd=f=>fs.readFileSync(path.join(BR,f),'utf8');
 // size -> which weight-compensated cut survives it
-const LADDER=[[16,'hh-mono-16.svg'],[32,'hh-mono-24.svg'],[48,'hh-mono-32.svg'],
+const LADDER=[[16,'hh-mono-16.svg'],[32,'hh-mono-24.svg'],[48,'hh-mono.svg'],
               [180,'hh-mono.svg'],[512,'hh-mono.svg']];
 (async()=>{
  const b=await puppeteer.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',
