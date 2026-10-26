@@ -43,9 +43,10 @@ site-v9/
 # ── Uncompressed video masters (compressed variants are tracked) ─
 site-brand/assets/vid/commercial.mp4
 
-# Video: pushed separately, too slow for the initial clone
-site-brand/assets/vid/
 
 # Original zip extraction: 2.3GB of camera masters and raw media.
 # Superseded by site-brand/. Masters live off-repo.
 higher-heights/
+
+# Puppeteer browser profile: automation scratch, holds Chrome credential stores
+.pptr/
