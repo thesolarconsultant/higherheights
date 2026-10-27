@@ -1212,9 +1212,12 @@ body{ counter-reset:sec; }
 .nav--light .nav__side a{ color:var(--ink); }
 .nav--light .brand img,
 .nav--light .nav__inner img{ filter:invert(1) brightness(.18); }
-.nav--light .nav__plus,
-.nav--light .nav__plus::before,
-.nav--light .nav__plus::after{ background:var(--ink); border-color:var(--ink); }
+/* The plus is drawn by its <i> bars using currentColor, so the button needs
+   a colour, not a background. Painting the button filled it as a solid
+   44x44 ink square on every light section. */
+.nav--light .nav__plus{ background:transparent; color:var(--ink); }
+.nav--light .nav__plus i{ background:var(--ink); }
+.nav--light .nav__plus:hover{ background:rgba(5,16,13,.06); color:var(--ink); }
 
 /* Anchored sections must clear the fixed nav */
 section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product]{

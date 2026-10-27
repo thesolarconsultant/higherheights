@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Higher Heights HH monogram</title>
+  <desc id="desc">A balanced serif monogram formed by two joined H shapes sharing a taller central upright.</desc>
+  <g fill="#F4EFE6">
+    <!-- Left upright -->
+    <path d="M145 278h164v12c-29 8-43 22-43 56v308c0 34 14 48 43 56v12H145v-12c29-8 43-22 43-56V346c0-34-14-48-43-56z"/>
+    <!-- Shared central upright: raised, but kept in proportion to the outer stems -->
+    <path d="M408 200h184v12c-37 9-52 27-52 69v438c0 42 15 60 52 69v12H408v-12c37-9 52-27 52-69V281c0-42-15-60-52-69z"/>
+    <!-- Right upright -->
+    <path d="M691 310h164v12c-29 8-43 22-43 56v308c0 34 14 48 43 56v12H691v-12c29-8 43-22 43-56V378c0-34-14-48-43-56z"/>
+    <!-- Offset bars make the shared-spine construction legible while keeping a deliberate rhythm -->
+    <path d="M230 455h270v34H230z"/>
+    <path d="M500 521h235v34H500z"/>
+  </g>
+</svg>
