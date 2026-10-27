@@ -433,12 +433,12 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .hh-wm{ max-height:100%; max-width:min(72%,820px); }
 .hh-wm img{ object-fit:contain; max-height:100%; }
 
-.hh-wm--studio{ right:-26px; bottom:-32px; width:min(68%,780px); opacity:.055; }
-.hh-wm--contact{ left:-26px; top:-30px; width:min(62%,700px); opacity:.07; }
+.hh-wm--studio{ right:clamp(16px,3vw,54px); bottom:clamp(16px,3vw,48px); width:min(68%,780px); opacity:.055; }
+.hh-wm--contact{ left:clamp(16px,3vw,54px); top:clamp(16px,3vw,48px); width:min(62%,700px); opacity:.07; }
 .studio .wrap, .contact .wrap{ position:relative; z-index:1; }
 @media(max-width:860px){
-  .hh-wm--studio{ right:-14px; bottom:-18px; width:min(86%,440px); opacity:.05; }
-  .hh-wm--contact{ left:-14px; top:-16px; width:min(80%,420px); opacity:.06; }
+  .hh-wm--studio{ right:14px; bottom:16px; width:min(86%,440px); opacity:.05; }
+  .hh-wm--contact{ left:14px; top:16px; width:min(80%,420px); opacity:.06; }
 }
 .band-cream .mono{ color:var(--gold-deep); }
 .band-cream 
@@ -1375,14 +1375,14 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
 
 /* Service pages: the mark gets more room than it does on the homepage */
 .hh-wm--pg{ width:min(72%,980px); opacity:.07; }
-.hh-wm--pg.is-br{ right:-30px; bottom:-38px; }
-.hh-wm--pg.is-tl{ left:-30px;  top:-34px; }
-.hh-wm--pg.is-bl{ left:-30px;  bottom:-38px; }
+.hh-wm--pg.is-br{ right:clamp(16px,3vw,54px); bottom:clamp(16px,3vw,48px); }
+.hh-wm--pg.is-tl{ left:clamp(16px,3vw,54px); top:clamp(16px,3vw,48px); }
+.hh-wm--pg.is-bl{ left:clamp(16px,3vw,54px); bottom:clamp(16px,3vw,48px); }
 @media(max-width:860px){
   .hh-wm--pg{ width:min(88%,480px); opacity:.06; }
-  .hh-wm--pg.is-br{ right:-16px; bottom:-20px; }
-  .hh-wm--pg.is-tl{ left:-16px;  top:-18px; }
-  .hh-wm--pg.is-bl{ left:-16px;  bottom:-20px; }
+  .hh-wm--pg.is-br{ right:14px; bottom:16px; }
+  .hh-wm--pg.is-tl{ left:14px; top:16px; }
+  .hh-wm--pg.is-bl{ left:14px; bottom:16px; }
 }
 
 main > section{ position:relative; isolation:isolate; overflow:hidden; }
@@ -1505,21 +1505,10 @@ main > section > .wrap{ position:relative; z-index:1; }
 <body>
 <div id="hhload" aria-hidden="true" role="presentation">
   <div class="hhload__in">
-    <div class="hhload__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Higher Heights HH monogram</title>
-  <desc id="desc">A balanced serif monogram formed by two joined H shapes sharing a taller central upright.</desc>
-  <g fill="#F4EFE6">
-    <!-- Left upright -->
-    <path d="M145 278h164v12c-29 8-43 22-43 56v308c0 34 14 48 43 56v12H145v-12c29-8 43-22 43-56V346c0-34-14-48-43-56z"/>
-    <!-- Shared central upright: raised, but kept in proportion to the outer stems -->
-    <path d="M408 200h184v12c-37 9-52 27-52 69v438c0 42 15 60 52 69v12H408v-12c37-9 52-27 52-69V281c0-42-15-60-52-69z"/>
-    <!-- Right upright -->
-    <path d="M691 310h164v12c-29 8-43 22-43 56v308c0 34 14 48 43 56v12H691v-12c29-8 43-22 43-56V378c0-34-14-48-43-56z"/>
-    <!-- Offset bars make the shared-spine construction legible while keeping a deliberate rhythm -->
-    <path d="M230 455h270v34H230z"/>
-    <path d="M500 521h235v34H500z"/>
-  </g>
-</svg></div>
+    <div class="hhload__mark"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1254 1254"><defs><style>
+      
+      .cls-2{fill:#F4EFE6}
+    </style></defs><title>ChatGPT Image Oct 22, 2026, 09_17_22 PM-2.png</title><g id="Layer_1" data-name="Layer 1"><g id="Image_Trace" data-name="Image Trace"><path d="M478.886 22.52 L733.094 22.536 L733.079 26.528 C653.758 46.358 664.026 108.347 663.89 173.974 L663.037 587.053 C646.911 584.026 631.632 575.822 616.416 569.842 C591.554 560.073 565.242 551.602 538.935 546.909 C539.298 417.785 539.936 288.659 539.936 159.534 C539.936 104.342 546.243 43.645 478.886 26.524 Z" class="cls-2"/><path d="M36.524 753.118 C42.251 732.554 107.782 677.071 127.107 663.967 C132.11 660.574 168.423 636.581 169.255 634.388 C172.966 624.607 170.503 548.867 170.669 532.495 C171.275 472.442 171.635 412.406 171.635 352.35 C171.635 323.285 175.9 290.322 167.417 262.186 C161.442 242.371 144.578 226.997 126.313 218.57 C121.602 216.396 115.61 216.479 111.247 213.608 C109.041 212.156 108.98 209.025 108.587 206.671 L362.79 206.678 C362.393 209.034 362.33 212.163 360.119 213.613 C354.626 217.214 346.911 217.768 340.958 220.608 C321.082 230.09 307.063 249.633 301.839 270.79 C295.126 297.982 299.557 335.287 299.458 363.676 L298.739 570.846 C321.59 568.124 343.553 559.243 366.401 555.737 C431.508 545.747 500.352 550.539 563.753 567.687 C672.681 597.148 782.469 674.579 895.763 679.999 C973.846 683.735 1050.116 668.509 1120.946 635.229 C1142.938 624.897 1164.122 613.139 1184.644 600.276 C1195.376 593.549 1207.173 582.302 1219.478 579.005 C1214.951 586.191 1207.861 590.039 1201.89 595.616 C1149.771 644.31 1069.428 687.668 1001.314 709.222 L1002.049 938.411 C1002.155 971.561 997.366 1013.859 1004.945 1045.831 C1009.646 1065.665 1020.766 1083.24 1037.825 1094.464 C1046.912 1100.443 1067.519 1102.428 1069.366 1113.392 C1002.326 1113.658 935.266 1112.909 868.225 1112.657 C861.013 1112.63 804.236 1113.052 802.971 1111.361 C802.148 1110.261 802.994 1108.972 803.898 1108.263 C812.495 1101.516 825.891 1100.65 835.167 1094.143 C854.148 1080.826 865.51 1060.739 868.046 1037.535 C871.463 1006.267 868.421 972.943 868.527 941.472 L869.205 739.306 C887.04 734.92 905.846 735.46 923.25 728.785 C921.724 726.956 883.871 728.233 877.95 728.064 C837.686 726.914 798.209 717.001 759.692 706.188 C686.991 685.777 617.166 656.371 545.301 633.461 C503.631 620.177 461.749 607.645 417.88 604.147 C379.755 601.106 337.125 601.836 299.758 610.273 C280.978 614.513 263.343 622.271 244.739 627.004 L244.694 628.971 C262.801 626.262 280.13 622.339 298.507 621.027 C301.556 652.737 298.925 685.989 299.017 717.858 L299.586 916.021 C299.755 974.643 296.377 1025.164 364.793 1043.388 L364.76 1049.361 L168.099 1048.604 C160.956 1048.577 105.614 1049.01 104.379 1047.278 C103.821 1046.496 104.108 1045.506 104.737 1044.868 C110.289 1039.226 128.665 1035.846 136.873 1029.894 C156.31 1015.797 166.746 996.576 169.407 972.66 C173.511 935.762 169.897 889.487 170.019 851.576 C170.223 788.272 173.055 724.345 170.523 661.098 C137.617 677.551 105.481 698.142 76.356 720.525 C62.89 730.875 50.931 744.089 36.524 753.118 Z" class="cls-2"/><path d="M801.15 264.719 C865.219 263.384 929.288 263.718 993.37 263.718 C1015.454 263.718 1050.863 259.871 1071.341 264.711 L1071.371 268.693 C1042.789 276.274 1015.757 289.217 1005.482 319.297 C994.483 351.496 1000.313 398.773 1000.313 432.944 C1000.313 509.643 1000.955 586.347 1001.314 663.045 C957.568 673.981 913.072 670.843 869.205 663.002 L868.503 436.724 C868.399 403.407 873.598 353.521 864.589 322.459 C860.661 308.914 850.501 294.557 839.277 286.092 C831.184 279.987 803.117 271.715 801.15 264.719 Z" class="cls-2"/><path d="M538.931 649.512 C567.099 656.674 594.973 668.275 622.206 678.42 C635.384 683.329 649.253 686.536 662.033 692.454 L663.417 1010.786 L663.833 1106.374 C663.923 1127.048 662.059 1148.434 667.327 1168.573 C671.953 1186.26 684.913 1204.714 701.148 1213.506 C708.424 1217.446 731.293 1223.181 733.068 1229.406 C666.868 1233.305 599.818 1230.509 533.524 1230.509 C526.446 1230.509 470.044 1231.148 468.725 1229.494 C465.365 1225.278 484.438 1221.412 486.896 1220.39 C498.732 1215.468 507.906 1207.535 516.819 1198.58 C538.242 1177.054 535.968 1141.863 536.141 1114.068 C537.109 959.216 537.548 804.359 538.931 649.512 Z" class="cls-2"/><path d="M36.524 753.118 L36.524 755.12 L34.522 755.12 L34.522 753.118 Z" class="cls-2"/></g></g></svg></div>
     <div class="hhload__bar"></div>
     <div class="hhload__word">Higher Heights</div>
   </div>
