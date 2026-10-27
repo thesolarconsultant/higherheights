@@ -887,6 +887,21 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2); }
 .foot__base a{ color:var(--muted-2); text-decoration:none; transition:color .3s; }
 .foot__base a:hover{ color:var(--cream); }
+/* Goodwork's stamp: a quiet hairline badge that lights up on hover */
+.foot__stamp{ display:flex; justify-content:center; margin-top:clamp(1.8rem,3.6vw,2.8rem); }
+.foot__stamp a{ position:relative; display:inline-flex; align-items:center; gap:1.1rem; padding:.95rem 1.5rem .95rem 1.3rem;
+  border:1px solid var(--line-soft); border-radius:999px; text-decoration:none;
+  background:linear-gradient(180deg,rgba(233,229,219,.035),rgba(233,229,219,0));
+  transition:border-color .5s var(--gw-ease), box-shadow .5s var(--gw-ease), transform .5s var(--gw-ease), background-color .5s; }
+.foot__stamp a:hover,.foot__stamp a:focus-visible{ border-color:rgba(138,154,134,.55); transform:translateY(-2px);
+  box-shadow:0 16px 40px -22px rgba(23,128,95,.75), 0 0 0 1px rgba(138,154,134,.12) inset; }
+.foot__stamp__by{ font-family:var(--display); font-size:.85rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted-2); }
+.foot__stamp__logo{ display:block; width:clamp(118px,11vw,142px); height:auto; opacity:.92; transition:opacity .4s, filter .4s; }
+.foot__stamp a:hover .foot__stamp__logo{ opacity:1; filter:drop-shadow(0 6px 18px rgba(122,92,255,.35)); }
+.foot__stamp__sub{ padding-left:1.1rem; border-left:1px solid var(--line-soft); font-family:var(--mono); font-size:var(--fs-micro);
+  letter-spacing:.16em; text-transform:uppercase; color:var(--muted-2); transition:color .4s; }
+.foot__stamp a:hover .foot__stamp__sub{ color:var(--cream); }
+@media(max-width:700px){ .foot__stamp__sub{ display:none } .foot__stamp a{ padding:.85rem 1.25rem; gap:.9rem } }
 @media(max-width:860px){ .foot__top{ grid-template-columns:1fr; gap:2.4rem } }
 
 /* ══ Sticky horizontal scroll ═════════════════════════════════════
@@ -1682,6 +1697,11 @@ main > section > .wrap{ position:relative; z-index:1; }
           <span>Est. 2024</span>
           <span class="foot__legal">Higher Heights (London) Limited · Registered in England &amp; Wales no.&nbsp;17461146</span>
         </div>
+              <div class="foot__stamp"><a href="https://goodworkagency.uk" rel="noopener" aria-label="Website by Goodwork, creative agency and product studio">
+          <span class="foot__stamp__by">Website by</span>
+          <img class="foot__stamp__logo" src="/assets/img/goodwork-logo.svg" alt="Goodwork" width="142" height="28" decoding="async">
+          <span class="foot__stamp__sub">Creative agency &amp; product studio</span>
+        </a></div>
       </footer>
 </main>
 <script>
