@@ -887,6 +887,9 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2); }
 .foot__base a{ color:var(--muted-2); text-decoration:none; transition:color .3s; }
 .foot__base a:hover{ color:var(--cream); }
+.foot__credit{ display:inline-flex; align-items:center; gap:.7rem; }
+.foot__credit img{ display:block; height:15px; width:auto; opacity:.85; transition:opacity .3s; }
+.foot__credit:hover img{ opacity:1; }
 @media(max-width:860px){ .foot__top{ grid-template-columns:1fr; gap:2.4rem } }
 
 /* ══ Sticky horizontal scroll ═════════════════════════════════════
@@ -1681,6 +1684,7 @@ main > section > .wrap{ position:relative; z-index:1; }
           <span>Film · Aerial · Photography</span>
           <span>Est. 2024</span>
           <span class="foot__legal">Higher Heights (London) Limited · Registered in England &amp; Wales no.&nbsp;17461146</span>
+          <a class="foot__credit" href="https://goodworkagency.uk" title="Goodwork: creative agency and product studio" rel="noopener">Website by <img src="/assets/img/goodwork-wordmark.png" alt="Goodwork" width="82" height="15" loading="lazy" decoding="async"></a>
         </div>
       </footer>
 </main>
