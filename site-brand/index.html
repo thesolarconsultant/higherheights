@@ -1214,6 +1214,10 @@ body{ counter-reset:sec; }
 .nav--light .nav__inner img{ filter:invert(1) brightness(.18); }
 .nav--light .nav__plus{ background:none; color:var(--ink); }
 .nav--light .nav__plus i{ background:var(--ink); }
+/* The base hover turns the plus gold, which is 1.70:1 on cream -- below the
+   3:1 non-text minimum. Keep it ink on light ground and tint the hit area. */
+.nav--light .nav__plus:hover{ color:var(--ink); background:rgba(5,16,13,.07); }
+.nav--light .nav__plus:hover i{ background:var(--ink); }
 
 /* Anchored sections must clear the fixed nav */
 section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product]{
