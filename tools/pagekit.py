@@ -40,22 +40,53 @@ def between(open_tag, close_tag, after=0):
     return src[a:b], b
 
 
+def section(open_tag):
+    """Lift a whole <section>, matching its own </section>.
+
+    between() stops at the first closing tag, which is the wrong one for the
+    contact section: the enquiry form nests four <section class="enq__screen">
+    inside it. This counts depth instead.
+    """
+    a = src.index(open_tag)
+    depth = 0
+    for m in re.finditer(r"<section[\s>]|</section>", src[a:]):
+        depth += -1 if m.group(0) == "</section>" else 1
+        if depth == 0:
+            return src[a:a + m.end()]
+    raise ValueError("unbalanced <section> at " + open_tag)
+
+
 _head_end = src.index("</head>")
 HEAD_OPEN = src[:_head_end]                                   # doctype .. before </head>
 _nav, _after_nav = between('<header class="nav"', "</header>")
 _drawer, _ = between('<div class="nav__drawer"', "</div>", _after_nav)
 NAV = _nav + "\n" + _drawer                                   # header + the drawer its JS wires
 FOOTER, _after_foot = between('<footer class="foot"', "</footer>")
+LOADER = src[src.index('<div id="hhload"'):src.index('<a class="skip"')].rstrip()   # the loading screen, as on the homepage
 SCRIPTS = src[src.index("<script>", _after_foot):]            # all script blocks + </body></html>
 
 # strip the page-specific meta out of the shared head; each page sets its own
-def absolutise_nav(markup):
-    """Sub-pages: in-page anchors must point back at the homepage."""
-    import re as _re
-    return _re.sub(r'href="#([a-z]+)"', r'href="/#"', markup)
+def absolutise_nav(markup, keep=()):
+    """Sub-pages: in-page anchors must point back at the homepage.
+
+    "#contact" is its own page now, so it goes to /contact rather than to the
+    homepage's inline copy of the form. Anchors named in `keep` stay in-page
+    (the contact page keeps "#enquiry": the form is on it).
+
+    This used to rewrite every anchor to a bare "/#" and drop its name, so
+    each nav link landed at the top of the homepage. It is applied to the
+    footer as well as the nav, whose "#work" etc. were dead on these pages.
+    """
+    def fix(m):
+        name = m.group(1)
+        if name in keep:
+            return m.group(0)
+        return 'href="/contact"' if name == "contact" else f'href="/#{name}"'
+    return re.sub(r'href="#([a-z]+)"', fix, markup)
 
 
 def head_for(title, desc, slug, extra_ld=None):
+    slug = slug[:-5] if slug.endswith(".html") else slug         # vercel.json cleanUrls: /contact, not /contact.html
     h = HEAD_OPEN
     h = re.sub(r"<title>.*?</title>", f"<title>{title}</title>", h, count=1, flags=re.S)
     h = re.sub(r'<meta name="description" content="[^"]*"',
@@ -66,6 +97,8 @@ def head_for(title, desc, slug, extra_ld=None):
                f'<meta property="og:description" content="{desc}"', h, count=1)
     h = re.sub(r'<link rel="canonical" href="[^"]*"',
                f'<link rel="canonical" href="https://higher-heights.vercel.app/{slug}"', h, count=1)
+    h = re.sub(r'<meta property="og:url" content="[^"]*"',
+               f'<meta property="og:url" content="https://higher-heights.vercel.app/{slug}"', h, count=1)
     if extra_ld:
         h += "\n<script type=\"application/ld+json\">\n" + json.dumps(extra_ld, indent=1) + "\n</script>"
     return h
@@ -81,9 +114,11 @@ def service_ld(name, desc, slug):
       "url": f"https://higher-heights.vercel.app/{slug}",
     }
 
-def page(slug, title, desc, body, ld=None):
+def page(slug, title, desc, body, ld=None, keep=(), loader=False, footer=True):
     html = (head_for(title, desc, slug, ld) + "\n</head>\n<body>\n"
-            + absolutise_nav(NAV) + "\n<main id=\"top\">\n" + body + "\n" + FOOTER
+            + (LOADER + "\n" if loader else "")
+            + absolutise_nav(NAV, keep) +"\n<main id=\"top\">\n" + body + "\n"
+            + (absolutise_nav(FOOTER, keep) if footer else "")
             + "\n</main>\n" + trim_scripts(SCRIPTS)[0])
     out = os.path.join(SITE, slug)
     open(out, "w", encoding="utf-8").write(html)
@@ -118,7 +153,7 @@ def trim_scripts(js):
         js = js[:a] + js[b:]
     return js, len(cuts)
 
-__all__ = ["page", "service_ld", "SITE"]
+__all__ = ["page", "service_ld", "section", "between", "SITE"]
 
 if __name__ == "__main__":
     print(f"head   {len(HEAD_OPEN):,}")

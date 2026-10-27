@@ -847,7 +847,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
    The ask sits beside the enquiry so the section works, not just talks. ══ */
 .band{ display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(2rem,5vw,5rem);
   align-items:start; border-top:1px solid var(--line); padding-top:clamp(2.4rem,5vw,4rem); }
-.band__ask h2{ margin:0; }
+.band__ask h2, .band__ask h1{ margin:0; }
 .band__lede{ max-width:var(--measure-tight); margin:clamp(1.1rem,2vw,1.6rem) 0 0;
   font-size:var(--fs-lead); line-height:1.6; color:var(--muted); }
 .band__mail{ display:inline-flex; align-items:center; gap:.7rem;
@@ -1019,12 +1019,16 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .enq__buys li::before{ content:""; width:12px; height:1px; background:var(--gold);
   flex:none; margin-top:.72em; }
 
-.enq__nav{ display:flex; align-items:center; gap:1rem; margin-top:clamp(1.8rem,3.4vw,2.6rem); }
+.enq__nav{ display:flex; align-items:center; gap:1rem; margin-top:clamp(1.8rem,3.4vw,2.6rem); flex-wrap:wrap; }
+.enq__hint-err{ flex-basis:100%; margin:0; color:var(--gold); font-size:.7rem;
+  letter-spacing:.2em; text-transform:uppercase; }
+.enq__hint-err[hidden]{ display:none; }
 .enq__back{ background:none; border:0; color:var(--muted-2); cursor:pointer;
   font-family:var(--mono); font-size:var(--fs-micro);
   letter-spacing:.14em; text-transform:uppercase; transition:color .3s; }
 .enq__back:hover{ color:var(--cream); }
 .enq__back[hidden]{ display:none; }
+.enq__nav[hidden]{ display:none; }
 .enq__done{ max-width:var(--measure); }
 .enq__done p{ color:var(--muted); margin:.9rem 0 0; line-height:1.6; }
 @media(max-width:700px){ .enq__opts{ flex-direction:column } .enq__opt span{ text-align:left } }
@@ -1050,11 +1054,11 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
   letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
 @media(max-width:860px){ .letter__q,.letter__a{ max-width:none } }
 .contact__inner{ display:grid; grid-template-columns:1.3fr .7fr; gap:clamp(2rem,6vw,6rem); align-items:end; }
-.contact h2{
+.contact h2, .contact h1{
   font-size:clamp(2.4rem,7vw,6.8rem); font-weight:500;
   line-height:.92; letter-spacing:-.05em; margin-top:1.2rem; text-wrap:balance;
 }
-.contact h2 em{ font-family:var(--sans); font-style:normal; letter-spacing:-.02em; }
+.contact h2 em, .contact h1 em{ font-family:var(--sans); font-style:normal; letter-spacing:-.02em; }
 .contact__mail{
   display:inline-flex; align-items:center; gap:1rem;
   margin-top:clamp(1.8rem,3vw,2.8rem);
@@ -1160,11 +1164,11 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 body{ counter-reset:sec; }
 .statement__lead,.pull,.enq__q,.enq__money{ font-family:var(--display); font-weight:400; letter-spacing:0; }
 .statement__lead{ font-size:clamp(1.75rem,3.5vw,3.25rem); line-height:1.08; }
-.sect-head h2,.aerial__copy h2,.product__head h2,.studio__copy h2,.contact h2,.svc__h{
+.sect-head h2,.aerial__copy h2,.product__head h2,.studio__copy h2,.contact h2,.contact h1,.svc__h{
   font-family:var(--display); font-weight:400; text-transform:uppercase; letter-spacing:.08em;
   line-height:1.08; font-size:clamp(1.65rem,3.2vw,3rem); }
-.contact h2{ font-size:clamp(1.8rem,4.2vw,4rem); }
-.contact h2 em{ font-style:normal; color:var(--gold); }
+.contact h2, .contact h1{ font-size:clamp(1.8rem,4.2vw,4rem); }
+.contact h2 em, .contact h1 em{ font-style:normal; color:var(--gold); }
 .statement__lead span{ color:inherit; }
 .statement__lead .hl,.statement__lead .hl span{ color:var(--gold-deep); }
 .mono{ font-weight:500; letter-spacing:.22em; }
@@ -1538,7 +1542,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
     </div>
     <nav class="nav__side nav__side--r" aria-label="Primary, continued">
       <a href="#studio">Studio</a>
-      <a href="#contact">Contact</a>
+      <a href="/contact">Contact</a>
     </nav>
   </div>
   <div class="nav__scrim" aria-hidden="true"></div>
@@ -1557,7 +1561,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
           </a>
           <a class="mega__a" href="#studio" data-i="5" data-n="06" data-t="Meet Morgan"><span class="mega__t">Meet Morgan</span><span class="mono mega__m">One pair of eyes on the whole thing</span>
           </a>
-          <a class="mega__a" href="#contact" data-i="6" data-n="07" data-t="Contact"><span class="mega__t">Contact</span><span class="mono mega__m">First reply from Morgan, within a day</span>
+          <a class="mega__a" href="/contact" data-i="6" data-n="07" data-t="Contact"><span class="mega__t">Contact</span><span class="mono mega__m">First reply from Morgan, within a day</span>
           </a>
       </nav>
       <figure class="mega__pic" aria-hidden="true">
@@ -1589,7 +1593,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
   <a href="#aerial">Aerial</a>
   <a href="#product">Product &amp; stills</a>
   <a href="#studio">Meet Morgan</a>
-  <a href="#contact">Contact</a>
+  <a href="/contact">Contact</a>
 </div>
 
 <main id="top">
@@ -2160,6 +2164,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
               Continue <svg viewBox="0 0 14 10"><path d="M0 5h12M8 1l4 4-4 4"/></svg>
             </button>
             <button class="enq__back" type="button" id="enqBack" hidden>Back</button>
+            <p class="enq__hint-err mono" id="enqHint" role="alert" hidden></p>
           </div>
         </form>
       </div>
@@ -2548,12 +2553,14 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
       rail.forEach(function (el, n) { el.classList.toggle("is-done", n <= i); });
       back.hidden = i === 0 || i === screens.length - 1;
       nav.hidden = i === screens.length - 1;
+      if (hint) hint.hidden = true;
       next.firstChild.textContent = i === 3 ? "Send it " : "Continue ";
       const f = screens[i].querySelector("input:not([type=radio]):not([type=hidden]):not([name=website]), input[type=radio]");
       if (f && i !== 2) { try { f.focus({ preventScroll: true }); } catch (e) {} }
     }
 
     const err = document.getElementById("enqErr");
+    const hint = document.getElementById("enqHint");
     if (form.elements.t) form.elements.t.value = String(Date.now());
 
     function finish() {
@@ -2587,12 +2594,19 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
     next.addEventListener("click", function () {
       if (!valid(at)) {
         const bad = screens[at].querySelector(".enq__opts, .enq__field");
+        hint.textContent = at === 0 ? "Choose one to continue."
+          : at === 1 ? "Choose one to continue."
+          : "Add your name, a working email and a line or two.";
+        hint.hidden = false;
         if (bad) { bad.animate(
           [{ transform: "translateX(0)" }, { transform: "translateX(-5px)" },
            { transform: "translateX(5px)" }, { transform: "translateX(0)" }],
           { duration: 260 }); }
+        const first = screens[at].querySelector("input");
+        if (first) { try { first.focus({ preventScroll: true }); } catch (e) {} }
         return;
       }
+      hint.hidden = true;
       if (at === 3) { finish(); return; }
       show(at + 1);
     });
@@ -2600,11 +2614,33 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
 
     // choosing an option carries you on, and Enter works everywhere
     form.addEventListener("change", function (e) {
+      if (hint) hint.hidden = true;
       if (e.target.type === "radio" && at < 2) setTimeout(function () { next.click(); }, 240);
     });
     form.addEventListener("keydown", function (e) {
       if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") { e.preventDefault(); next.click(); }
     });
+
+    // Arriving from /api/enquiry's redirect (/contact?sent=1) or its failure (?error):
+    // go straight to the end state. No step animation is replayed.
+    (function () {
+      const q = new URLSearchParams(location.search);
+      const sent = q.get("sent"), failed = q.has("error");
+      if (!sent && !failed) return;
+      if (sent) {
+        show(4);
+        document.getElementById("enqSummary").hidden = true;   // nothing to summarise
+      } else {
+        show(3);
+        err.textContent = "That didn't send. Please email hello@higherheights.uk and we'll reply directly.";
+      }
+      screens[at].style.animation = "none";
+      const box = document.getElementById("enquiry");
+      window.addEventListener("load", function () {            // the form sits below the fold on phones
+        const r = box.getBoundingClientRect();
+        if (r.top > window.innerHeight * 0.6 || r.bottom > window.innerHeight) box.scrollIntoView({ block: "center" });
+      });
+    })();
   })();
 
 
@@ -3024,11 +3060,12 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
 
   /* “now viewing”: which section is crossing the middle of the screen */
   const where = document.getElementById("navWhere"), whereT = document.getElementById("navWhereT");
-  const map = links.map(function (a) { const id = a.getAttribute("href").slice(1); return { el: document.getElementById(id), key: id, t: a.dataset.t }; });
+  function idOf(a) { return a.getAttribute("href").replace(/^\/?#?/, ""); }   /* "#about" and "/contact" both -> an id */
+  const map = links.map(function (a) { const id = idOf(a); return { el: document.getElementById(id), key: id, t: a.dataset.t }; });
   let current = "";
   function mark(key, t) {
     if (key === current) return; current = key;
-    links.forEach(function (a) { if (a.getAttribute("href") === "#" + key) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+    links.forEach(function (a) { if (idOf(a) === key) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
     where.classList.add("is-swap");
     setTimeout(function () { whereT.textContent = t; where.classList.remove("is-swap"); }, 180);
   }
