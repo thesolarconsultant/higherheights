@@ -898,9 +898,8 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .foot__stamp a:hover,.foot__stamp a:focus-visible{ border-color:rgba(138,154,134,.55); transform:translateY(-2px);
   box-shadow:0 16px 40px -22px rgba(23,128,95,.75), 0 0 0 1px rgba(138,154,134,.12) inset; }
 .foot__stamp__by{ font-family:var(--display); font-size:.85rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted-2); }
-.foot__stamp__logo{ display:block; width:clamp(118px,11vw,142px); aspect-ratio:699/136; background:var(--sage-ink,#9AA896);
-  -webkit-mask:url(/assets/img/goodwork-mark.svg) center/contain no-repeat; mask:url(/assets/img/goodwork-mark.svg) center/contain no-repeat; transition:background-color .4s; }
-.foot__stamp a:hover .foot__stamp__logo{ background:var(--cream); }
+.foot__stamp__logo{ display:block; width:clamp(118px,11vw,142px); height:auto; opacity:.92; transition:opacity .4s, filter .4s; }
+.foot__stamp a:hover .foot__stamp__logo{ opacity:1; filter:drop-shadow(0 6px 18px rgba(122,92,255,.35)); }
 .foot__stamp__sub{ padding-left:1.1rem; border-left:1px solid var(--line-soft); font-family:var(--mono); font-size:var(--fs-micro);
   letter-spacing:.16em; text-transform:uppercase; color:var(--muted-2); transition:color .4s; }
 .foot__stamp a:hover .foot__stamp__sub{ color:var(--cream); }
@@ -2194,7 +2193,7 @@ section[id], [id^=work], [id^=studio], [id^=contact], [id^=aerial], [id^=product
         </div>
               <div class="foot__stamp"><a href="https://goodworkagency.uk" rel="noopener" aria-label="Website by Goodwork, creative agency and product studio">
           <span class="foot__stamp__by">Website by</span>
-          <span class="foot__stamp__logo" role="img" aria-label="Goodwork"></span>
+          <img class="foot__stamp__logo" src="/assets/img/goodwork-logo.svg" alt="Goodwork" width="142" height="28" decoding="async">
           <span class="foot__stamp__sub">Creative agency &amp; product studio</span>
         </a></div>
       </footer>
