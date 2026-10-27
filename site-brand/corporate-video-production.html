@@ -1398,7 +1398,7 @@ main > section > .wrap{ position:relative; z-index:1; }
   opacity:1; visibility:visible;
   transition:opacity .72s var(--ease,cubic-bezier(.16,1,.3,1)), visibility 0s linear .72s;
   /* fallback: dismiss at 3.5s even with no JS at all */
-  animation:hhload-auto 0s linear 3.5s forwards;
+  animation:hhload-auto 0s linear 4.2s forwards;
 }
 #hhload.is-done{ opacity:0; visibility:hidden; pointer-events:none; }
 @keyframes hhload-auto{ to{ opacity:0; visibility:hidden; pointer-events:none; } }
@@ -1424,7 +1424,7 @@ main > section > .wrap{ position:relative; z-index:1; }
   letter-spacing:.22em; text-transform:uppercase; color:rgba(233,229,219,.42); }
 
 @media(prefers-reduced-motion:reduce){
-  #hhload{ transition:opacity .2s linear, visibility 0s linear .2s; animation-delay:1.2s; }
+  #hhload{ transition:opacity .2s linear, visibility 0s linear .2s; animation-delay:1.9s; }
   .hhload__mark{ opacity:1; transform:none; animation:none; }
   .hhload__bar::after{ animation:none; transform:scaleX(1); }
 }
@@ -2256,9 +2256,19 @@ main > section > .wrap{ position:relative; z-index:1; }
     el.classList.add("is-done");
     setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 900);
   }
-  if (document.readyState === "complete") setTimeout(hide, 420);
-  else window.addEventListener("load", function () { setTimeout(hide, 280); });
-  setTimeout(hide, 4000);                 /* never hold the page hostage */
+  /* Hold for a minimum beat -- a loader that flashes reads as a glitch
+     rather than an intro. Dismisses on load, or when the minimum is up,
+     whichever is later. */
+  var t0 = Date.now(), MIN_MS = 1700;
+  function finish() {
+    setTimeout(hide, Math.max(0, MIN_MS - (Date.now() - t0)));
+  }
+  /* DOM-ready, not full load: waiting on 'load' means waiting on the hero
+     video, which pushed the beat to ~2.5s. The markup is painted by then and
+     the video streams behind its poster. */
+  if (document.readyState !== "loading") finish();
+  else document.addEventListener("DOMContentLoaded", finish);
+  setTimeout(hide, 4600);                 /* never hold the page hostage */
   window.addEventListener("pageshow", function (e) { if (e.persisted) hide(); });
 })();
 </script>
