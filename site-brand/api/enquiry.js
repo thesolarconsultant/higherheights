@@ -2,13 +2,13 @@
 //
 // Environment variables (Vercel → Settings → Environment Variables):
 //   RESEND_API_KEY       required. https://resend.com
-//   ENQUIRY_FROM         required for production, e.g. "Higher Heights <enquiries@higherheights.studio>"
+//   ENQUIRY_FROM         required for production, e.g. "Higher Heights <enquiries@higherheights.uk>"
 //                        (the sending domain must be verified in Resend). Falls back to Resend's onboarding sender.
-//   ENQUIRY_TO           optional, defaults to hello@higherheights.studio
+//   ENQUIRY_TO           optional, defaults to hello@higherheights.uk
 //   TURNSTILE_SECRET_KEY optional. When set, a valid Cloudflare Turnstile token is required.
 //   TURNSTILE_SITE_KEY   optional, used at build time to render the widget.
 
-const TO = process.env.ENQUIRY_TO || "hello@higherheights.studio";
+const TO = process.env.ENQUIRY_TO || "hello@higherheights.uk";
 const FROM = process.env.ENQUIRY_FROM || "Higher Heights <onboarding@resend.dev>";
 const MIN_FILL_MS = 2500;
 const MAX_PER_HOUR = 5;
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
   if (clean(body.website, 200) || tooFast) return ok();
 
   const ip = (req.headers["x-forwarded-for"] || "").split(",")[0].trim() || "unknown";
-  if (limited(ip)) return fail(429, "Too many enquiries from this connection. Please email hello@higherheights.studio.");
+  if (limited(ip)) return fail(429, "Too many enquiries from this connection. Please email hello@higherheights.uk.");
 
   const name = oneLine(body.name, 120);
   const email = oneLine(body.email, 200);
@@ -117,7 +117,7 @@ export default async function handler(req, res) {
 
   if (!process.env.RESEND_API_KEY) {
     console.error("enquiry: RESEND_API_KEY is not set");
-    return fail(503, "The form isn't connected yet. Please email hello@higherheights.studio and I'll reply directly.");
+    return fail(503, "The form isn't connected yet. Please email hello@higherheights.uk and I'll reply directly.");
   }
 
   const lines = [
@@ -148,7 +148,7 @@ export default async function handler(req, res) {
 
   if (!r || !r.ok) {
     console.error("enquiry: send failed", r && r.status, r && (await r.text().catch(() => "")));
-    return fail(502, "That didn't send. Please email hello@higherheights.studio and I'll reply directly.");
+    return fail(502, "That didn't send. Please email hello@higherheights.uk and I'll reply directly.");
   }
   return ok();
 }
