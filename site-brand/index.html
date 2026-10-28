@@ -901,7 +901,7 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .foot__stamp a:focus-visible{ outline:2px solid #6FBF9E; outline-offset:4px; }
 .foot__stamp__fill{ position:absolute; inset:0; background:linear-gradient(135deg,#0E5A44 0%,#17805F 55%,#5E8C77 100%);
   clip-path:polygon(0 0,0 0,-24px 100%,0 100%); transition:clip-path .7s var(--_e); }
-.foot__stamp__edge{ position:absolute; top:-6px; bottom:-6px; left:-12px; width:18px; margin-left:-9px; pointer-events:none;
+.foot__stamp__edge{ position:absolute; top:-6px; bottom:-6px; left:-40px; width:18px; margin-left:-9px; pointer-events:none;
   background:linear-gradient(90deg,transparent,rgba(233,229,219,.7),transparent); transform:skewX(-22deg); transition:left .7s var(--_e); }
 .foot__stamp__by,.foot__stamp__logo,.foot__stamp__sub,.foot__stamp__go{ position:relative; }
 .foot__stamp__by{ font-family:var(--display); font-size:.85rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted-2); transition:color .5s var(--_e); }
@@ -914,14 +914,24 @@ h1.hero__title .rise{ padding-bottom:.17em; margin-bottom:-.17em; }
 .foot__stamp a:hover,.foot__stamp a:focus-visible{ transform:translateY(-2px);
   box-shadow:0 24px 42px -22px rgba(23,128,95,.8), 0 10px 26px -14px rgba(138,154,134,.55); }
 .foot__stamp a:hover .foot__stamp__fill,.foot__stamp a:focus-visible .foot__stamp__fill{ clip-path:polygon(0 0,calc(100% + 24px) 0,100% 100%,0 100%); }
-.foot__stamp a:hover .foot__stamp__edge,.foot__stamp a:focus-visible .foot__stamp__edge{ left:calc(100% + 12px); }
+.foot__stamp a:hover .foot__stamp__edge,.foot__stamp a:focus-visible .foot__stamp__edge{ left:calc(100% + 40px); }
 .foot__stamp a:hover .foot__stamp__by,.foot__stamp a:focus-visible .foot__stamp__by,
 .foot__stamp a:hover .foot__stamp__sub,.foot__stamp a:focus-visible .foot__stamp__sub{ color:var(--cream); }
 .foot__stamp a:hover .foot__stamp__sub,.foot__stamp a:focus-visible .foot__stamp__sub{ border-color:rgba(233,229,219,.35); }
 .foot__stamp a:hover .foot__stamp__logo,.foot__stamp a:focus-visible .foot__stamp__logo{ filter:brightness(0) invert(.93); }
 .foot__stamp a:hover .foot__stamp__go,.foot__stamp a:focus-visible .foot__stamp__go{ color:#0A1512; background:var(--cream); }
 .foot__stamp a:hover .foot__stamp__go svg,.foot__stamp a:focus-visible .foot__stamp__go svg{ transform:translateX(3px); }
-@media(max-width:700px){ .foot__stamp__sub{ display:none } .foot__stamp a{ gap:.9rem; padding:0 8px 0 1.25rem; height:56px } }
+@media(max-width:700px){
+  .foot__stamp{ margin-inline:auto; width:min(100%,420px); }
+  .foot__stamp a{ display:grid; grid-template-columns:auto 1fr auto; grid-template-areas:"by logo go" "sub sub sub"; align-items:center;
+    column-gap:.9rem; row-gap:.55rem; height:auto; width:100%; padding:.75rem 9px .8rem 1.25rem; }
+  .foot__stamp__by{ grid-area:by; font-size:.8rem; letter-spacing:.2em; }
+  .foot__stamp__logo{ grid-area:logo; width:clamp(104px,30vw,126px); justify-self:start; }
+  .foot__stamp__go{ grid-area:go; margin-left:0; }
+  .foot__stamp__sub{ grid-area:sub; padding:.6rem 0 0; border-left:0; border-top:1px solid var(--line-soft); text-align:center;
+    font-size:.64rem; letter-spacing:.14em; margin-right:.9rem; }
+  .foot__stamp a:hover .foot__stamp__sub,.foot__stamp a:focus-visible .foot__stamp__sub{ border-color:rgba(233,229,219,.35); }
+}
 @media (prefers-reduced-motion:reduce){ .foot__stamp a, .foot__stamp a *{ transition:none !important; } }
 @media(max-width:860px){ .foot__top{ grid-template-columns:1fr; gap:2.4rem } }
 
