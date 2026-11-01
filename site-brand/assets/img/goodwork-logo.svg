@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 699.1960507757406 136" width="699" height="136" role="img" aria-label="GOOD WORK.">
   <title>GOOD WORK.</title>
-  <defs><linearGradient id="wg" x1="154" y1="0" x2="683.1960507757406" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3366FF"/><stop offset="0.32" stop-color="#7A5CFF"/><stop offset="0.68" stop-color="#FF2DB3"/><stop offset="1" stop-color="#FF6B5E"/></linearGradient></defs>
+  <defs><linearGradient id="wg" x1="154" y1="0" x2="683.1960507757406" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#17805F"/><stop offset="0.32" stop-color="#6FBF9E"/><stop offset="0.68" stop-color="#B9C9B4"/><stop offset="1" stop-color="#E9E5DB"/></linearGradient></defs>
   <g transform="translate(0 0) scale(1.2)">
   <defs>
-    <linearGradient id="ag" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3366FF"/><stop offset="0.32" stop-color="#7A5CFF"/><stop offset="0.68" stop-color="#FF2DB3"/><stop offset="1" stop-color="#FF6B5E"/></linearGradient>
+    <linearGradient id="ag" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#17805F"/><stop offset="0.32" stop-color="#6FBF9E"/><stop offset="0.68" stop-color="#B9C9B4"/><stop offset="1" stop-color="#E9E5DB"/></linearGradient>
     <mask id="am" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
       <rect width="100" height="100" fill="#fff"/>
       <path d="M22 58 L40 76 L66 45 L110 45" fill="none" stroke="#000" stroke-width="14" stroke-linecap="butt" stroke-linejoin="round"/>
