@@ -82,7 +82,7 @@ footer{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line-soft);
   <header class="hero">
     <span class="eyebrow">For Morgan</span>
     <h1>Your setup list</h1>
-    <p>Everything we need to switch on your back office, quotes and assistant. Tick things off as you go. Do them in any order, and start with the two marked slow, because they take days to approve.</p>
+    <p>Everything we need to switch on your back office, quotes and assistant. Tick things off as you go. Start at the top: the quick ones come first, and the ones that need paperwork come last.</p>
   </header>
 
   <div class="progress" aria-live="polite">
@@ -102,34 +102,32 @@ footer{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line-soft);
 (function(){
   var KEY="hh-setup-list-v1";
   var GROUPS=[
-    {id:"slow",title:"Start these first",lede:"Both need company paperwork and take a few days to be approved. Starting them now saves us waiting later.",items:[
-      {id:"stripe",title:"Open a Stripe account",slow:true,note:"This is how clients pay deposits and quotes. The money goes straight to your bank.",steps:["Sign up and choose United Kingdom","Business type: Company, Higher Heights (London) Limited, number 17461146","Add your business bank account and a photo ID when asked","Turn on two-step sign-in"],href:"https://dashboard.stripe.com/register",cta:"Open Stripe"},
-      {id:"meta",title:"Set up your Meta business account",slow:true,note:"For your Facebook Page, Instagram and later WhatsApp. Business verification is the slow part.",steps:["Create a Business account in Meta Business Suite","Add or claim your Facebook Page and link Instagram","Start business verification with the company details","Turn on two-step sign-in"],href:"https://business.facebook.com/",cta:"Open Meta Business"}
-    ]},
-    {id:"accounts",title:"Your accounts",lede:"Use the same email for all of them, and save each login in your password manager. Turn on two-step sign-in with your authenticator app as the first thing you do in each.",items:[
+    {id:"quick",title:"Quick ones first",lede:"Each takes a few minutes. Use the same email for all of them, and save every login in your password manager. Turn on two-step sign-in with your authenticator app as the first thing you do in each.",items:[
       {id:"authenticator",title:"Install Google Authenticator on your phone",note:"Used for two-step sign-in on every account below. Keep the recovery codes somewhere safe.",href:"https://support.google.com/accounts/answer/1066447",cta:"How to install"},
       {id:"passwords",title:"Choose a password manager",note:"Bitwarden or 1Password. Every login goes in here, and we share through it.",href:"https://bitwarden.com/",cta:"Bitwarden"},
       {id:"github",title:"Create your GitHub account",note:"Where the code for your site and back office lives. We will add ourselves to the code and move it across to you.",href:"https://github.com/signup",cta:"Open GitHub"},
       {id:"vercel",title:"Create your Vercel account (free plan)",note:"Where the website and back office run. Sign up with your GitHub account so the two are linked. The free plan is all you need to start.",href:"https://vercel.com/signup",cta:"Open Vercel"},
+      {id:"telegram",title:"Make your Telegram bot",note:"Message the BotFather, create a bot called Higher Heights, and save the token it gives you. Then send your new bot one message.",href:"https://t.me/BotFather",cta:"Open BotFather"},
+      {id:"gsc",title:"Add the site to Google Search Console",note:"Takes two minutes and helps your service pages get found.",href:"https://search.google.com/search-console",cta:"Open Search Console"},
+      {id:"ga",title:"Set up Google Analytics",note:"Create a GA4 property for www.higherheights.uk and send us the Measurement ID. Add us as an editor.",href:"https://analytics.google.com/",cta:"Open Analytics"}
+    ]},
+    {id:"next",title:"A little longer",lede:"A few more minutes each. These switch on the database, the emails and the assistant. You set the spending limits yourself, and usage is tiny at your volume.",items:[
       {id:"supabase",title:"Create your Supabase organisation",note:"Your private database. The free plan is fine to start. Invite us as a member.",href:"https://supabase.com/dashboard",cta:"Open Supabase"},
       {id:"resend",title:"Create a Resend account",note:"Sends the emails from your back office and quotes. Add higherheights.uk as the sending domain and we will add the records.",href:"https://resend.com/signup",cta:"Open Resend"},
-      {id:"telegram",title:"Make your Telegram bot",note:"Message the BotFather, create a bot called Higher Heights, and save the token it gives you. Then send your new bot one message.",href:"https://t.me/BotFather",cta:"Open BotFather"}
-    ]},
-    {id:"ai",title:"The assistant",lede:"These power the voice notes and chat. Usage is tiny at your volume, and you set the spending limits yourself.",items:[
       {id:"openai",title:"Open an OpenAI API account",note:"Turns your voice notes into text. Add billing, set a monthly spending limit of £10 to £20, and create an API key.",href:"https://platform.openai.com/",cta:"Open OpenAI"},
       {id:"deepseek",title:"Open a DeepSeek API account",note:"Powers the quick chat and quote drafting at very low cost. Top up a small amount and create an API key.",href:"https://platform.deepseek.com/",cta:"Open DeepSeek"}
-    ]},
-    {id:"web",title:"Your website",lede:"So we can see how the site is doing and help it get found.",items:[
-      {id:"ga",title:"Set up Google Analytics",note:"Create a GA4 property for www.higherheights.uk and send us the Measurement ID. Add us as an editor.",href:"https://analytics.google.com/",cta:"Open Analytics"},
-      {id:"gsc",title:"Add the site to Google Search Console",note:"Takes two minutes and helps your service pages get found.",href:"https://search.google.com/search-console",cta:"Open Search Console"}
     ]},
     {id:"business",title:"About the business",lede:"Short answers are fine. We turn them into your price list, terms and the assistant's knowledge.",items:[
       {id:"prices",title:"Send your price list",note:"Your packages, day rates, travel and expenses, usage rights, the deposit percentage and how long a quote stays valid. A rough list is fine to start."},
       {id:"vat",title:"Tell us your VAT status",note:"Whether Higher Heights (London) Limited is VAT registered, and the number if so."},
-      {id:"terms",title:"Approve your terms and privacy policy",note:"We draft them for you to read and approve. Stripe and the quote pages need both."},
       {id:"limits",title:"Set two limits for the assistant",note:"The highest quote it may create without checking with you, and whether it may email quotes to clients or only prepare them for you to send."},
       {id:"faq",title:"Your common questions and how you like to answer them",note:"The questions clients ask most, the areas you cover and how long things take. This is what the website chat will know."},
+      {id:"terms",title:"Approve your terms and privacy policy",note:"We draft them for you to read and approve. Stripe and the quote pages need both."},
       {id:"ico",title:"Check your ICO registration",note:"A UK company holding customer details usually pays a small data protection fee to the ICO.",href:"https://ico.org.uk/for-organisations/data-protection-fee/",cta:"Open the ICO"}
+    ]},
+    {id:"slow",title:"Needs paperwork",lede:"Both need company documents and take a few days to be approved. Start them when you have your company details and bank information to hand.",items:[
+      {id:"stripe",title:"Open a Stripe account",slow:true,note:"This is how clients pay deposits and quotes. The money goes straight to your bank.",steps:["Sign up and choose United Kingdom","Business type: Company, Higher Heights (London) Limited, number 17461146","Add your business bank account and a photo ID when asked","Turn on two-step sign-in"],href:"https://dashboard.stripe.com/register",cta:"Open Stripe"},
+      {id:"meta",title:"Set up your Meta business account",slow:true,note:"For your Facebook Page, Instagram and later WhatsApp. Business verification is the slow part.",steps:["Create a Business account in Meta Business Suite","Add or claim your Facebook Page and link Instagram","Start business verification with the company details","Turn on two-step sign-in"],href:"https://business.facebook.com/",cta:"Open Meta Business"}
     ]},
     {id:"morganjack",title:"Morgan Jack",lede:"The one thing we are patiently waiting on. No rush from us.",items:[
       {id:"headshots",title:"Send your headshots",note:"Whenever you have them ready."},
