@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Team list | Higher Heights Films</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#070D0B">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --navy:#070D0B; --navy-2:#0A1512; --navy-3:#0F1D19; --cream:#E9E5DB; --sage:#8A9A86; --sage-deep:#4F5E4C;
+  --emerald:#0E5A44; --emerald-lit:#17805F;
+  --line:rgba(138,154,134,.22); --line-soft:rgba(233,229,219,.1);
+  --muted:rgba(233,229,219,.66); --faint:rgba(233,229,219,.42);
+  --display:"Marcellus","Times New Roman",serif;
+  --sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--navy);color:var(--cream);font-family:var(--sans);font-weight:300;font-size:1.0625rem;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);min-height:100vh}
+a{color:inherit}
+.wrap{max-width:820px;margin:0 auto;padding-block:clamp(1.8rem,5vw,3.4rem) 5rem}
+.top{display:flex;justify-content:center}
+.top img{width:clamp(170px,26vw,230px);display:block}
+.hero{text-align:center;padding-block:clamp(2.6rem,7vw,4.6rem) clamp(1.6rem,4vw,2.6rem);display:flex;flex-direction:column;align-items:center;gap:1.3rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.9rem;font-weight:500;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sage)}
+.eyebrow::before{content:"";width:2.4rem;height:1px;background:currentColor;opacity:.6}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.04;text-transform:uppercase;letter-spacing:.01em}
+.hero p{max-width:46ch;color:var(--muted);margin:0}
+.glow{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(60% 40% at 86% 0%,rgba(14,90,68,.5),transparent 70%),radial-gradient(50% 36% at 4% 38%,rgba(7,60,46,.5),transparent 70%),radial-gradient(60% 34% at 70% 100%,rgba(14,90,68,.32),transparent 70%),var(--navy)}
+.progress{display:flex;flex-direction:column;gap:.7rem;margin-block:.4rem 2.4rem;padding:1.2rem 1.4rem;border:1px solid var(--line);background:rgba(15,29,25,.55)}
+.progress__row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.progress__count{font-family:var(--display);font-size:1.5rem}
+.progress__label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--sage)}
+.bar{height:3px;background:var(--line-soft);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--emerald),var(--emerald-lit),var(--sage));transition:width .7s var(--ease)}
+section.group{border-top:1px solid var(--line-soft);padding-block:2rem 1.4rem}
+.group__head{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.1rem}
+.group h2{font-size:clamp(1.5rem,3.4vw,2.1rem);text-transform:uppercase;letter-spacing:.03em;line-height:1.1}
+.group__lede{color:var(--muted);max-width:56ch;font-size:.98rem;margin:0}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:.4rem 1rem;padding:1.05rem 0;border-bottom:1px solid var(--line-soft)}
+.tick{appearance:none;-webkit-appearance:none;width:1.6rem;height:1.6rem;margin:.15rem 0 0;border:1px solid var(--sage);background:transparent;cursor:pointer;position:relative;transition:background .4s var(--ease),border-color .4s}
+.tick:hover{border-color:var(--cream)}
+.tick:focus-visible{outline:2px solid #6FBF9E;outline-offset:3px}
+.tick:checked{background:var(--emerald);border-color:var(--emerald-lit)}
+.tick:checked::after{content:"";position:absolute;left:.45rem;top:.15rem;width:.4rem;height:.8rem;border:solid var(--cream);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+.item__body{display:flex;flex-direction:column;gap:.35rem;min-width:0}
+.item__title{font-weight:500;font-size:1.05rem;line-height:1.35;transition:opacity .4s,color .4s}
+.item__note{color:var(--muted);font-size:.95rem;margin:0}
+.item__steps{margin:.3rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.92rem}
+.item__steps li{padding-block:.1rem}
+.item__why{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--faint)}
+.go{align-self:flex-start;display:inline-flex;align-items:center;gap:.6rem;margin-top:.5rem;height:40px;padding:0 1.1rem;border:1px solid rgba(138,154,134,.5);text-decoration:none;font-weight:500;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;transition:border-color .4s,background .4s}
+.go:hover,.go:focus-visible{border-color:var(--cream);background:rgba(233,229,219,.06);outline:none}
+.item.is-done .item__title{opacity:.5;text-decoration:line-through;text-decoration-color:rgba(138,154,134,.6)}
+.item.is-done .item__note,.item.is-done .item__steps{opacity:.5}
+.slow{display:inline-block;margin-left:.6rem;padding:.12rem .55rem;border:1px solid var(--line);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--sage);vertical-align:middle;text-decoration:none}
+.note{margin-top:2.4rem;padding:1.2rem 1.4rem;border:1px solid var(--line);background:rgba(15,29,25,.55);color:var(--muted);font-size:.95rem}
+.note b{color:var(--cream);font-weight:500}
+.reset{margin-top:1.4rem;background:none;border:0;color:var(--faint);font:inherit;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;cursor:pointer;padding:.4rem 0}
+.reset:hover{color:var(--cream)}
+footer{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line-soft);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--faint);line-height:1.9;text-align:center}
+@media(max-width:520px){.item{grid-template-columns:1.8rem minmax(0,1fr);gap:.4rem .8rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<main class="wrap">
+  <div class="top"><a href="/" aria-label="Higher Heights Films, home"><img src="assets/img/wordmark-cream.svg" alt="Higher Heights Films" width="230" height="33"></a></div>
+
+  <header class="hero">
+    <span class="eyebrow">For Jordan</span>
+    <h1>Team list</h1>
+    <p>The technical jobs that sit with you. Morgan has his own list. Ticks save on this device.</p>
+  </header>
+
+  <div class="progress" aria-live="polite">
+    <div class="progress__row"><span class="progress__label">Done so far</span><span class="progress__count"><span id="done">0</span> of <span id="total">0</span></span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar"><i></i></div>
+  </div>
+
+  <div id="groups"></div>
+
+  <p class="note"><b>Good to know.</b> This page is private and hidden from Google. Ticks save on this device only.</p>
+  <button class="reset" id="reset" type="button">Clear my ticks</button>
+
+  <footer>Higher Heights Films<br>Film, aerial and photography for businesses, brands and people.</footer>
+</main>
+
+<script>
+(function(){
+  var KEY="hh-team-list-v1";
+  var GROUPS=[
+    {id:"mine",title:"Your jobs",lede:"The technical set-up we agreed you would do for Morgan. Each one is in Morgan's name where it can be, so he owns it in the end.",items:[
+      {id:"github",title:"GitHub: set up Morgan's account and move the code across",note:"Create or have Morgan create his GitHub account, then move the website and back-office repositories to him and add yourself as a collaborator.",href:"https://github.com/signup",cta:"Open GitHub"},
+      {id:"vercel",title:"Vercel: decide where the sites run",note:"The free plan is for personal, non-commercial use and has no team members. Choose: keep both sites on your paid team for now, put Morgan on the Pro plan, or use a free host that allows commercial use.",href:"https://vercel.com/pricing",cta:"Vercel pricing"},
+      {id:"supabase",title:"Supabase: get Morgan's database",note:"Blocked on the two-project limit. Choose one: pause mycofield, upgrade the organisation (about $25 a month), or make an account in Morgan's name. Then ask Claude to create the project.",href:"https://supabase.com/dashboard",cta:"Open Supabase"},
+      {id:"resend",title:"Resend: set up email",note:"Create the account, add higherheights.uk as the sending domain, and add the records it gives you at Squarespace. Keep the existing Google mail records.",href:"https://resend.com/signup",cta:"Open Resend"},
+      {id:"gsc",title:"Google Search Console: add the site",note:"Add www.higherheights.uk, verify it, and submit the sitemap.",href:"https://search.google.com/search-console",cta:"Open Search Console"},
+      {id:"ga",title:"Google Analytics: set up GA4",note:"Create a GA4 property for www.higherheights.uk, add the Measurement ID to the site, and give Morgan access.",href:"https://analytics.google.com/",cta:"Open Analytics"}
+    ]}
+  ];
+  var state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){state={}}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+  var root=document.getElementById("groups"),total=0;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  GROUPS.forEach(function(g){
+    var sec=document.createElement("section");sec.className="group";
+    var html='<div class="group__head"><h2>'+esc(g.title)+'</h2><p class="group__lede">'+esc(g.lede)+'</p></div><ul class="list">';
+    g.items.forEach(function(it){
+      total++;
+      html+='<li class="item" data-id="'+it.id+'"><input class="tick" type="checkbox" id="t-'+it.id+'" aria-labelledby="l-'+it.id+'"><div class="item__body"><label class="item__title" id="l-'+it.id+'" for="t-'+it.id+'">'+esc(it.title)+(it.slow?'<span class="slow">Slow</span>':'')+'</label><p class="item__note">'+esc(it.note)+'</p>';
+      if(it.steps){html+='<ol class="item__steps">'+it.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join("")+'</ol>'}
+      if(it.href){html+='<a class="go" href="'+esc(it.href)+'" target="_blank" rel="noopener noreferrer">'+esc(it.cta||"Open")+'</a>'}
+      html+='</div></li>';
+    });
+    html+='</ul>';sec.innerHTML=html;root.appendChild(sec);
+  });
+  document.getElementById("total").textContent=total;
+  var ticks=[].slice.call(document.querySelectorAll(".tick"));
+  function paint(){
+    var n=0;
+    ticks.forEach(function(t){var id=t.closest(".item").getAttribute("data-id");var on=!!state[id];t.checked=on;t.closest(".item").classList.toggle("is-done",on);if(on)n++});
+    document.getElementById("done").textContent=n;
+    var pct=total?Math.round(n/total*100):0;
+    var bar=document.getElementById("bar");bar.setAttribute("aria-valuenow",pct);bar.firstElementChild.style.width=pct+"%";
+  }
+  ticks.forEach(function(t){t.addEventListener("change",function(){var id=t.closest(".item").getAttribute("data-id");state[id]=t.checked;save();paint()})});
+  document.getElementById("reset").addEventListener("click",function(){state={};save();paint()});
+  paint();
+})();
+</script>
+</body>
+</html>

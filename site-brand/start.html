@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Higher Heights Films">
 <meta property="og:title" content="Your setup list | Higher Heights Films">
-<meta property="og:description" content="Quick ones first. Tick things off as you go.">
+<meta property="og:description" content="Start with your first five. Tick things off as you go.">
 <meta property="og:url" content="https://www.higherheights.uk/start">
 <meta property="og:image" content="https://www.higherheights.uk/assets/img/og-start.png">
 <meta property="og:image:width" content="1200">
@@ -94,7 +94,7 @@ footer{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line-soft);
   <header class="hero">
     <span class="eyebrow">For Morgan</span>
     <h1>Your setup list</h1>
-    <p>Everything we need to switch on your back office, quotes and assistant. Tick things off as you go. Start at the top: the quick ones come first, and the ones that need paperwork come last.</p>
+    <p>Everything we need to switch on your back office, quotes and assistant. Tick things off as you go. Start with your first five at the top. We are handling the technical set-up for you, so the rest of this list is only what needs you.</p>
   </header>
 
   <div class="progress" aria-live="polite">
@@ -114,20 +114,15 @@ footer{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line-soft);
 (function(){
   var KEY="hh-setup-list-v1";
   var GROUPS=[
-    {id:"quick",title:"Quick ones first",lede:"Each takes a few minutes. Use the same email for all of them, and save every login in your password manager. Turn on two-step sign-in with your authenticator app as the first thing you do in each.",items:[
-      {id:"authenticator",title:"Install Google Authenticator on your phone",note:"Used for two-step sign-in on every account below. Keep the recovery codes somewhere safe.",href:"https://support.google.com/accounts/answer/1066447",cta:"How to install"},
-      {id:"passwords",title:"Choose a password manager",note:"Bitwarden or 1Password. Every login goes in here, and we share through it.",href:"https://bitwarden.com/",cta:"Bitwarden"},
-      {id:"github",title:"Create your GitHub account",note:"Where the code for your site and back office lives. We will add ourselves to the code and move it across to you.",href:"https://github.com/signup",cta:"Open GitHub"},
-      {id:"vercel",title:"Create your Vercel account (free plan)",note:"Where the website and back office run. Sign up with your GitHub account so the two are linked. The free plan is all you need to start.",href:"https://vercel.com/signup",cta:"Open Vercel"},
-      {id:"telegram",title:"Make your Telegram bot",note:"Message the BotFather, create a bot called Higher Heights, and save the token it gives you. Then send your new bot one message.",href:"https://t.me/BotFather",cta:"Open BotFather"},
-      {id:"gsc",title:"Add the site to Google Search Console",note:"Takes two minutes and helps your service pages get found.",href:"https://search.google.com/search-console",cta:"Open Search Console"},
-      {id:"ga",title:"Set up Google Analytics",note:"Create a GA4 property for www.higherheights.uk and send us the Measurement ID. Add us as an editor.",href:"https://analytics.google.com/",cta:"Open Analytics"}
+    {id:"first",title:"Your first five",lede:"About half an hour in total. Do them in this order. Where it says save it in Bitwarden, that means a login, key or code you never send in a message.",items:[
+      {id:"authenticator",title:"Install Google Authenticator on your phone",note:"This gives you the six-digit codes that protect every account below.",steps:["Open the App Store or Google Play and search for Google Authenticator, made by Google LLC","Install it and open it. You can sign in with your Google account so your codes are backed up","You will add a code to it later, each time a website shows a square QR code and asks for two-step sign-in","Always keep the recovery codes a site gives you in Bitwarden"],href:"https://support.google.com/accounts/answer/1066447",cta:"Google's guide"},
+      {id:"passwords",title:"Set up Bitwarden, your password manager",note:"One safe place for every login and key. Do this before the accounts below, so you can save things as you go.",steps:["Go to bitwarden.com and choose Get started","Sign up with your email and choose a long master password, for example four random words. Write it on paper and keep it somewhere safe. Nobody can reset it for you","Install the Bitwarden app on your phone and the extension in your browser","In Settings, turn on two-step login and choose the authenticator app, then scan the QR code with Google Authenticator","Save the recovery code it shows you somewhere safe"],href:"https://bitwarden.com/",cta:"Open Bitwarden"},
+      {id:"openai",title:"Open an OpenAI API account",note:"Turns your voice notes into text. This is the developer account, which is separate from ChatGPT.",steps:["Go to platform.openai.com and sign up with your email, then verify your phone number","In Settings, Billing, add a card and add about £10 of credit","Under Limits, set a monthly spending limit of £10 to £20 so it can never run away","Go to API keys and choose Create new secret key. Call it Higher Heights","Copy the key straight into Bitwarden as a new login. It is only shown once, and you never send it in a message","Menu names can change slightly, so if something is not where it says, tell us"],href:"https://platform.openai.com/",cta:"Open OpenAI"},
+      {id:"deepseek",title:"Open a DeepSeek API account",note:"Powers the quick chat and quote drafting at very low cost.",steps:["Go to platform.deepseek.com and sign up with your email","Under Top up, add a small amount, about £5","Go to API keys and choose Create new API key. Call it Higher Heights","Copy the key into Bitwarden as a new login. It is only shown once, and you never send it in a message"],href:"https://platform.deepseek.com/",cta:"Open DeepSeek"},
+      {id:"telegram",title:"Make your Telegram bot",note:"This is the assistant you will message to run your back office, send voice notes and prepare quotes.",steps:["Open Telegram and search for @BotFather. Check it has the blue tick, then open it","Send the message /newbot","When it asks for a name, send Higher Heights","When it asks for a username, it has to end in bot and be unique, for example HigherHeightsFilmsBot","BotFather replies with a long token that has a colon in it. Copy it into Bitwarden as a new login. Never send the token in a message","Open your new bot, press Start, and send it the word hello","Tell us the bot's username, the one starting with @. That is safe to share, the token is not"],href:"https://t.me/BotFather",cta:"Open BotFather"}
     ]},
-    {id:"next",title:"A little longer",lede:"A few more minutes each. These switch on the database, the emails and the assistant. You set the spending limits yourself, and usage is tiny at your volume.",items:[
-      {id:"supabase",title:"Create your Supabase organisation",note:"Your private database. The free plan is fine to start. Invite us as a member.",href:"https://supabase.com/dashboard",cta:"Open Supabase"},
-      {id:"resend",title:"Create a Resend account",note:"Sends the emails from your back office and quotes. Add higherheights.uk as the sending domain and we will add the records.",href:"https://resend.com/signup",cta:"Open Resend"},
-      {id:"openai",title:"Open an OpenAI API account",note:"Turns your voice notes into text. Add billing, set a monthly spending limit of £10 to £20, and create an API key.",href:"https://platform.openai.com/",cta:"Open OpenAI"},
-      {id:"deepseek",title:"Open a DeepSeek API account",note:"Powers the quick chat and quote drafting at very low cost. Top up a small amount and create an API key.",href:"https://platform.deepseek.com/",cta:"Open DeepSeek"}
+    {id:"share",title:"Sharing keys with us, safely",lede:"When we need a key from Bitwarden, use Bitwarden Send. Open the item, choose Send, set it to delete after one view, and send us only the link. We will ask for each key when we need it.",items:[
+      {id:"sharekeys",title:"Read how to share a key with Bitwarden Send",note:"Nothing to do yet. Tick it once you have read it, and you will know exactly what to do when we ask.",href:"https://bitwarden.com/help/about-send/",cta:"How Send works"}
     ]},
     {id:"business",title:"About the business",lede:"Short answers are fine. We turn them into your price list, terms and the assistant's knowledge.",items:[
       {id:"prices",title:"Send your price list",note:"Your packages, day rates, travel and expenses, usage rights, the deposit percentage and how long a quote stays valid. A rough list is fine to start."},
